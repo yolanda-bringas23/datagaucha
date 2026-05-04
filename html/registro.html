@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DataGaucha - Registro</title>
+
+  <style>
+    :root {
+      --air-force-blue: #50849D;
+      --black: #000000;
+      --silver: #ADACA9;
+      --platinum: #EEF0F2;
+      --yellow: #f8dc5b;
+      --pink: #ff718f;
+      --green: #10b753;
+      --red: #ff1111;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background-color: #d9d9d9;
+      color: var(--black);
+    }
+
+    .top-bar {
+      height: 28px;
+      background-color: var(--yellow);
+      border-bottom: 1px solid var(--black);
+      display: flex;
+      align-items: center;
+      padding: 0 24px;
+      gap: 10px;
+    }
+
+    .circle {
+      width: 11px;
+      height: 11px;
+      background-color: #4550c9;
+      border-radius: 50%;
+    }
+
+    .square {
+      width: 11px;
+      height: 11px;
+      background-color: #4550c9;
+    }
+
+    .triangle {
+      width: 0;
+      height: 0;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-bottom: 11px solid #4550c9;
+    }
+
+    .top-line {
+      flex: 1;
+      height: 5px;
+      background-color: var(--pink);
+      border-radius: 20px;
+      margin-left: 20px;
+    }
+
+    .register-page {
+      padding: 18px 44px;
+    }
+
+    .title {
+      font-size: 16px;
+      font-weight: 400;
+      margin-bottom: 28px;
+    }
+
+    .form-container {
+      width: 100%;
+      max-width: 430px;
+      margin: 0 auto;
+    }
+
+    .input-field {
+      width: 100%;
+      height: 30px;
+      border: none;
+      background-color: var(--silver);
+      text-align: center;
+      font-size: 14px;
+      margin-bottom: 21px;
+      outline: none;
+      color: var(--black);
+    }
+
+    .input-field::placeholder {
+      color: var(--black);
+      opacity: 1;
+    }
+
+    .birth-label {
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+
+    .birth-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 35px;
+      margin-bottom: 20px;
+    }
+
+    .birth-input {
+      width: 105px;
+      height: 30px;
+      border: none;
+      border-radius: 20px;
+      background-color: var(--silver);
+      text-align: center;
+      outline: none;
+    }
+
+    .checkbox-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+      font-size: 14px;
+    }
+
+    .checkbox-row input {
+      width: 22px;
+      height: 22px;
+      accent-color: var(--green);
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 14px;
+      padding: 0 22px;
+    }
+
+    .btn {
+      width: 140px;
+      height: 38px;
+      border: none;
+      border-radius: 22px;
+      color: white;
+      font-weight: bold;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .btn-register {
+      background-color: var(--green);
+    }
+
+    .btn-cancel {
+      background-color: var(--red);
+    }
+
+    @media (max-width: 600px) {
+      .register-page {
+        padding: 18px 20px;
+      }
+
+      .form-container {
+        max-width: 100%;
+      }
+
+      .birth-row {
+        gap: 10px;
+      }
+
+      .birth-input {
+        width: 100%;
+      }
+
+      .buttons {
+        padding: 0;
+        gap: 15px;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="top-bar">
+    <span class="circle"></span>
+    <span class="square"></span>
+    <span class="triangle"></span>
+    <span class="top-line"></span>
+  </header>
+
+  <main class="register-page">
+    <h1 class="title">
+      Crea tu cuenta en DataGaucha para ver y crear todo el contenido que quieras
+    </h1>
+
+    <form class="form-container">
+
+      <input class="input-field" type="text" placeholder="Nombre completo">
+
+      <input class="input-field" type="text" placeholder="Tu nombre de usuario">
+
+      <input class="input-field" type="password" placeholder="Contraseña">
+
+      <input class="input-field" type="password" placeholder="Repetir contraseña">
+
+      <input class="input-field" type="email" placeholder="Mail">
+
+      <p class="birth-label">Fecha de nacimiento</p>
+
+      <div class="birth-row">
+        <input class="birth-input" type="text" placeholder="Dia">
+        <input class="birth-input" type="text" placeholder="Mes">
+        <input class="birth-input" type="text" placeholder="Año">
+      </div>
+
+      <label class="checkbox-row">
+        <input type="checkbox">
+        <span>Acepto terminos y condiciones de uso</span>
+      </label>
+
+      <label class="checkbox-row">
+        <input type="checkbox">
+        <span>Soy mayor de 18 años</span>
+      </label>
+
+      <div class="buttons">
+        <button type="submit" class="btn btn-register">Registrarse</button>
+        <button type="button" class="btn btn-cancel">Cancelar</button>
+      </div>
+
+    </form>
+  </main>
+
+</body>
+</html>
