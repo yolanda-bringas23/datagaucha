@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil - DataGaucha</title>
+    <link rel="stylesheet" href="css/perfil.css">
+</head>
+<body>
+
+    <!-- Barra superior -->
+    <nav class="top-nav">
+        <div class="nav-container">
+
+            <!-- Parte Izquierda - Hamburguesa -->
+            <button class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <!-- Parte del centro - Barra de búsqueda -->
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Barra de busqueda">
+            </div>
+
+            <!-- Parte de la Derecha: campanita de notificacion y avatar -->
+            <div class="nav-icons">
+                <button class="icon-btn">
+                    <img src="img/Campanita.jpg" alt="Notificaciones" width="26" height="28">
+                </button>
+                <button class="icon-btn">
+                    <img src="img/avatar.jpg" alt="Perfil" width="26" height="28">
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-layout">
+        <!-- Barras lado izquierdo -->
+        <aside class="sidebar">
+            <nav class="sidebar-menu">
+                <a href="#" class="menu-item"><span class="circle">○</span><span class="line"></span></a>
+                <a href="#" class="menu-item"><span class="circle">○</span><span class="line"></span></a>
+                <a href="#" class="menu-item"><span class="circle">○</span><span class="line"></span></a>
+                <a href="#" class="menu-item"><span class="circle">○</span><span class="line"></span></a>
+                <a href="#" class="menu-item"><span class="circle">○</span><span class="line"></span></a>
+            </nav>
+            
+            <div class="sidebar-footer">
+                DohCode - 2026
+            </div>
+        </aside>
+
+        <!-- Zona del medio (avatar, seguidores, posts) -->
+        <main class="profile-main">
+            <div class="profile-header">
+                <div class="profile-avatar">
+                    <img src="img/avatar.jpg" alt="Foto de perfil" width="140" height="140">
+                </div>
+                
+                <div class="profile-info">
+                    <h1 class="username">Nombre de usuario</h1>
+                    <div class="stats">
+                        <div class="stat">
+                            <span class="stat-number">80</span>
+                            <span class="stat-label">Seguidores</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">80</span>
+                            <span class="stat-label">Seguidos</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="divider">
+
+            <!--  Posts -->
+            <div class="content-grid">
+                <div class="card-placeholder"></div>
+                <div class="card-placeholder"></div>
+                <div class="card-placeholder"></div>
+                <div class="card-placeholder"></div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
