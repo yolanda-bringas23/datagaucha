@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <title>Crear Publicacion</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <form action="" method="get">
+                <button type="submit">
+                    <img src="img/Imagen3.jpg" alt="Buscar">
+                </button>
+                <input type="text" name="search" placeholder="Búsqueda" required>
+                <button type="reset">X</button>
+
+                <ul>
+                    <li>
+                        <a href="#">
+                            <img src="img/Imagen5.jpg" alt="Notificaciones"> Notificaciones
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="img/Imagen6.jpg" alt="Perfil"> Perfil
+                        </a>
+                    </li>
+                </ul>
+            </form>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="#">Menú</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Condiciones de Uso</a></li>
+            </ul>
+        </nav>
+
+        <section>
+            <h1>Crear Publicación</h1>
+            <form action="" method="post" enctype="multipart/form-data">
+                <h3>Título de la Publicación</h3>
+                <input type="text" name="title" placeholder="Escribe un título atractivo..." required>
+
+                <h3>Contenido</h3>
+                <textarea name="content" placeholder="Escribe el contenido de la publicación..." required></textarea>
+
+                <h3>Imagen de la publicación (opcional)</h3>
+                <img src="img/Imagen6.jpg" alt="Perfil">
+                <input type="file" name="image">
+
+                <button type="submit">Aceptar</button>
+                <button type="reset">Cancelar</button>
+            </form>
+        </section>
+
+        <footer>
+            <p>© DohCode 2026</p>
+        </footer>
+    </div>
+</body>
+</html>
