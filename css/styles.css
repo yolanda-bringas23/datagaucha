@@ -4,20 +4,36 @@
     box-sizing: border-box;
     list-style: none;
 }
-.roboto-mono {
+body {
   font-family: "Roboto Mono", monospace;
   font-optical-sizing: auto;
   font-weight: 100;
   font-style: normal;
 }
 
-body{
-    font-family: "Roboto mono", monospace;
-}
-
-
 html{
     font-size: 62.5%;
 }
 
+h1{
+    font-size: 2.5rem;
+}
+
+
+h2{
+    font-size: 2rem;
+}
+
+h3{
+    font-size: 1.75;
+}
+
+h4{
+    font-size: 1.5rem;
+}
+
+
+p{
+    font-size: 1rem;
+}
 

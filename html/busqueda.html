@@ -3,18 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
     <title>Búsqueda</title>
 </head>
 <body>
+    <nav>
+        <button class="Dropdown-menu">menu-despegable</button>
+        <ul>
+            <li>Inicio</li>
+            <li>Create</li>
+            <li>Profile</li>
+            <li>Exit</li>
+            <li>© DohCode - 2026</li>
+        </ul>
+    </nav>
     <div class="container">
         <header>
             <form action="" method="get">
-                <button type="submit">🔎</button>
+                <button type="submit">Buscar</button>
                 <input type="text" name="search" placeholder="Buscar" required>
                 <button type="reset">X</button>
 
                 <ul>
-                    <li><a href="#">Notificaciones</a></li>
                     <li><a href="#">Perfil</a></li>
                     <li><a href="Crear_Publicacion.html">Crear Publicación</a></li>
                 </ul>
@@ -23,15 +36,15 @@
 
         <nav>
             <ul>
-                <li><a href="#">Menú</a></li>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Condiciones de Uso</a></li>
+                <button><li><a href="#">Menú</a></li></button>
+                <button><li><a href="#">Home</a></li></button>
+                <button><li><a href="#">Condiciones de Uso</a></li></button>
             </ul>
         </nav>
-
+        <main>
         <section>
+            <main>
             <h1>Resultados de la Búsqueda</h1>
-
             <article>
                 <img src="Image/Imagen1.jpg" alt="Avatar de usuario">
                 <p>user5656566 hace 7 horas</p>
@@ -46,6 +59,7 @@
                 <h2>Perro Adorable</h2>
                 <p>Este perro es tan adorable y cariñoso.</p>
             </article>
+            </main>
         </section>
 
         <footer>
