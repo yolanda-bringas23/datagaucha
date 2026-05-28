@@ -7,51 +7,55 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
   <title>Registro</title>
 </head>
-<body>
-  <main class="register">
-    <h1 class="page-title">
-      Crea tu cuenta de DataGaucha para ver y crear todo el contenido que quieras
-    </h1>
+<body class="body-register bg-secondary-subtle">
+  <div class="container-page-title">
+    <h1 class="page-title">Crea tu cuenta de DataGaucha para ver y crear todo el contenido que quieras</h1>
+  </div>
+  <main class="container d-flex flex-column justify-content-center align-items-center">
+    <div class="container-form-register w-75">
+      <form class="registration d-flex flex-column gap-5">
+        <input class="form-control form-control-lg rounded-4 text-center required" type="text" id="NameInput" placeholder="Nombre completo">
+        <input class="form-control form-control-lg rounded-4 text-center required" type="text" id="nameUser-register" placeholder="Tu nombre de usuario">
+        <input class="form-control form-control-lg rounded-4 text-center required" type="password" id="password-register" placeholder="contraseña">
+        <input class="form-control form-control-lg rounded-4 text-center required" type="password" placeholder="Repetir contraseña" id="Password-again">
+        <input class="form-control form-control-lg rounded-4 text-center required" type="email" id="Email-register" placeholder="Email">
 
-    <form class="registration">
-      <input class="input-field" type="text" placeholder="nombre">
-      <br>
-      <input class="input-field" type="text" placeholder="usuario">
-      <br>
-      <input class="input-field" type="password" placeholder="contraseña">
-      <br>
-      <input class="input-field" type="password" placeholder="repita contraseña">
-      <br>
-      <input class="input-field" type="email" placeholder="email">
+        <div>
+          <p class="birth-date-label fs-4 mb-3">Fecha de Nacimiento</p>
+        </div>
+        
+        <div class="row g-6 w-100">
+          <div class="col">
+            <input class="form-control form-control-lg rounded-4 text-center required" type="text" placeholder="Dia">
+          </div>
+          <div class="col">
+            <input class="form-control form-control-lg rounded-4 text-center required" type="text" placeholder="Mes">
+          </div>
+          <div class="col">
+            <input class="form-control form-control-lg rounded-4 text-center required" type="text" placeholder="Año">
+          </div>
+        </div>
+        
+        <div class="form-check">
+          <input class="form-check-label" type="checkbox" id="terms-check">
+          <label for="form-check-label"><a href="conditions-of-use.html"><h2>Acepto los términos y condiciones de uso</h2></a></label>
+        </div>
 
-      <p class="birth-date-label">Fecha de Nacimiento</p>
+        <div class="form-check">
+          <input type="checkbox" type="checkbox" id="age-check">
+          <label for="age-check" class="form-check-label"><h2>Soy mayor de 18 años</h2></label>
+        </div>
 
-      <div class="birth-date">
-        <input class="birth-date-input" type="text" placeholder="dia">
-        <br>
-        <input class="birth-date-input" type="text" placeholder="mes">
-        <br>
-        <input class="birth-date-input" type="text" placeholder="año">
-        <br>
-      </div>
-
-      <label class="checkbox1">
-        <input type="checkbox">
-        <span>Acepto los términos y condiciones de uso</span>
-      </label>
-
-      <label class="checkbox2">
-        <input type="checkbox">
-        <span>Tengo más de 18 años</span>
-      </label>
-
-      <div class="button1">
-        <button type="submit" class="button register-button">Registrarse</button>
-        <button type="button" class="button cancel-button">Cancelar</button>
-      </div>
-    </form>
+        <div class="button-register d-flex gap-5 py-2">
+          <a href="LOGIN.html" type="submit" class="btn btn-success rounded-pill btn-lg px-5">Registrarse</a>
+          <a href="LOGIN.html" type="submit" class="btn btn-danger rounded-pill btn-lg px-5">Cancelar</a>
+        </div>
+      </form>
+  </div>
   </main>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

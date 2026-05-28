@@ -7,11 +7,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
     <title>DataGaucha</title>
 </head>
 <body>
     <nav>
-        <button class="Dropdown-menu">menu-despegable</button>
+        <button class="dropdown-menu">menú-despegable</button>
         <ul>
             <li>Inicio</li>
             <li>Create</li>
@@ -23,7 +24,7 @@
     <div class="container">
         <header>
             <form action="">
-                <input type="text" placeholder="Busqueda">
+                <input type="text" placeholder="Búsqueda">
             </form>
             
             <button>
@@ -38,8 +39,8 @@
 
                 <h1>Nombre de usuario</h1>
                 
-                <p>80 Seguidores</p>
-                <p>80 Siguiendo</p>
+                <button type="button" data-toggle="modal" data-target="#modalSeguidores">80 Seguidores</button>
+                <button type="button" data-toggle="modal" data-target="#modalSeguidos">80 Siguiendo</button>
 
                 <h2>Mis Publicaciones</h2>
                 
@@ -54,5 +55,62 @@
             <p>© DohCode 2026</p>
         </footer>
     </div>
+
+    
+    <div class="modal fade" id="modalSeguidores" tabindex="-1" role="dialog" aria-labelledby="modalSeguidoresLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalSeguidoresLabel">Seguidores</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="followers">
+                        <div class="d-flex align-items-center gap-2 mb-2">
+                            <button class="btn btn-sm btn-secondary">Profile</button>
+                            <p class="mb-0">Nombre Usuario</p>
+                            <p class="mb-0">Nombre completo</p>
+                            <button class="btn btn-sm btn-danger">Quitar Seguidor</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="modalSeguidos" tabindex="-1" role="dialog" aria-labelledby="modalSeguidosLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalSeguidosLabel">Siguiendo</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="followers">
+                        <div class="d-flex align-items-center gap-2 mb-2">
+                            <button class="btn btn-sm btn-secondary">Profile</button>
+                            <p class="mb-0">Nombre Usuario</p>
+                            <p class="mb-0">Nombre completo</p>
+                            <button class="btn btn-sm btn-danger">Dejar de seguir</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

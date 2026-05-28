@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
     <title>Home</title>
 </head>
 <body>
@@ -14,36 +15,48 @@
         <button class="Dropdown-menu">menu-despegable</button>
         <ul>
             <li>Inicio</li>
-            <li>Create</li>
+            <li>
+                <button type="button" data-toggle="modal" data-target="#modalCrearPublicacion">Create</button>
+            </li>
             <li>Profile</li>
             <li>Exit</li>
             <li>© DohCode - 2026</li>
         </ul>
     </nav>
     <div class="container">
-        <aside>
-            <button class="Menu">Menu</button>
-            <form action="">
-                <input type="text"> <button>Search</button>
-            </form>
-            <button>Profile</button>
-        </aside>
-        <div class="Main">
-            <div class="Titulo">
-                <textarea name="Title" id="Title"S>Mi dia</textarea>
-            </div>
-            <div class="Description">
-                <textarea name="Description" id="Description">Hoy tuve un buen dia con mi familia</textarea>
-            </div>
-            <div>
-                <img src="" alt="Publication"> 
-            </div>
-            <div>
-                <button>Like</button>
-                <button>Comments</button>
-                <button>Reactions</button>
+
+        
+    <div class="modal fade" id="modalCrearPublicacion" tabindex="-1" role="dialog" aria-labelledby="modalCrearPublicacionLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalCrearPublicacionLabel">Crear Publicación</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="" method="post" enctype="multipart/form-data">
+                        <h2>Título de la Publicación</h2>
+                        <input type="text" name="title" placeholder="Escribe un título atractivo..." required class="form-control mb-3">
+
+                        <h2>Contenido</h2>
+                        <textarea name="content" placeholder="Escribe el contenido de la publicación..." required class="form-control mb-3"></textarea>
+
+                        <h2>Imagen de la publicación (opcional)</h2>
+                        <input type="file" name="image" class="form-control-file mb-3">
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                            <button type="submit" class="btn btn-success">Aceptar</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
