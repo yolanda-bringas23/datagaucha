@@ -250,7 +250,11 @@ p{
     color: #000000;
 }
 
-/* perfil*/
+@media (max-width: 768px){
+    
+}
+
+/* perfil */
 
 .profile-page {
     min-height: 100vh;
