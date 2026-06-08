@@ -253,7 +253,6 @@ p{
 @media (max-width: 768px){
     .body-register{
         min-height: 100vh;
-        background-color: #000000;
     }
 
     .container-form-register{
