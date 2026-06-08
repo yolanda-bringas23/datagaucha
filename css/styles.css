@@ -271,69 +271,7 @@ p{
 }
 
 @media (max-width: 768px){
-    .container-page-title {
-        padding: 3rem 1.6rem 0;
-    }
-
-    .container-page-title .dipl {
-        font-size: 2.1rem;
-        line-height: 1.3;
-    }
-
-    .body-register main.container {
-        padding: 3rem 1.6rem !important;
-    }
-
-    .container-form-register {
-        width: 100% !important;
-    }
-
-    .registration {
-        gap: 2rem !important;
-    }
-
-    .registration .row {
-        gap: 1.2rem;
-    }
-
-    .registration .row .col {
-        flex: 0 0 100%;
-        width: 100%;
-    }
-
-    .form-check {
-        display: flex;
-        align-items: flex-start;
-        gap: 0.8rem;
-    }
-
-    .form-check h2 {
-        font-size: 1.5rem;
-        line-height: 1.35;
-    }
-
-    .button-register {
-        flex-direction: column;
-        gap: 1.2rem !important;
-    }
-
-    .button-register .btn {
-        width: 100%;
-    }
-}
-
-@media (max-width: 480px){
-    .container-page-title .dipl {
-        font-size: 1.9rem;
-    }
-
-    .registration input {
-        font-size: 1.4rem;
-    }
-
-    .birth-date-label {
-        font-size: 1.6rem !important;
-    }
+    
 }
 
 /* perfil */
