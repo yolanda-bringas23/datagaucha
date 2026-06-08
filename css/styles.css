@@ -1326,3 +1326,277 @@ body:has(.Dropdown-menu) .User-comment p {
         grid-column: 1;
     }
 }
+/* mio */
+.grid {
+    display: grid;
+    grid-template-areas:
+        "nav header header"
+        "nav section section"
+        "nav footer footer";
+    grid-template-rows: 6.25rem 1fr 4.69rem;
+    grid-template-columns: 15% 1fr 1fr;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.nav {
+    grid-area: nav;
+    background-color: #000000;
+    color: #ffffff;
+    padding-top: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    overflow-y: auto;
+}
+
+.nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    padding: 0;
+    margin: 0.75rem 0 0 0;
+    list-style: none;
+    width: 100%;
+}
+
+.nav li {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.nav li button {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0.65rem 0.5rem;
+    border: none;
+    background-color: #00000000;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 1.2;
+    text-align: center;
+    appearance: none;
+}
+
+.nav li button:hover {
+    background-color: #1f1f1f;
+}
+
+.nav li button:focus {
+    outline: none;
+}
+
+.header {
+    grid-area: header;
+    background-color: #50849D;
+    color: #ffffff;
+    padding: 0 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    position: relative;
+}
+
+.search-form {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(32rem, 60%);
+    display: flex;
+    justify-content: center;
+}
+
+.search-form .input-group {
+    width: 100%;
+}
+
+.section {
+    grid-area: section;
+    background-color: #4d4d4d;
+    color: #ffffff;
+    padding: 0.75rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer {
+    grid-area: footer;
+    background-color: #50849D;
+    color: #ffffff;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.publication-card {
+    background-color: #000000;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.38rem;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 50rem;
+    flex: 1;
+    min-height: 0;
+    margin: 0.75rem auto 0 auto;
+    overflow: hidden;
+}
+
+.btn-like {
+    color: #ff0000;
+    background-color: #00000000;
+    font-size: 1.8rem;
+}
+
+.btn-comment {
+    color: #ffffff;
+    background-color: #00000000;
+    font-size: 1.8rem;
+}
+
+.btn-share {
+    color: #ffff00;
+    background-color: #00000000;
+    font-size: 1.8rem;
+}
+
+.publication-card .btn-group-actions button {
+    background-color: #00000000;
+    border: none;
+    padding: 0.6rem;
+    min-width: 3.8rem;
+    min-height: 3.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-btn {
+    color: #ffffff;
+    background-color: #00000000;
+    font-size: 1.8rem;
+}
+
+.btn-menu {
+    color: #ffffff;
+    background-color: #00000000;
+    border: none;
+    font-size: 1.8rem;
+}
+
+.btn-user {
+    color: #ffffff;
+    background-color: #00000000;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    align-self: flex-start;
+    font-size: 1.2rem;
+    border: none;
+}
+
+.btn-user .p-index {
+    margin: 0;
+}
+
+.btn-profile {
+    color: #ffffff;
+    background-color: #00000000;
+    border: none;
+    margin-left: auto;
+    font-size: 1.8rem;
+}
+
+.btn-crear {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.btn-group-actions {
+    display: flex;
+    gap: 1rem;
+    background-color: #00000000;
+    border: none;
+    align-items: center;
+}
+
+.image-publication {
+    width: 100%;
+    min-height: 0;
+    flex: 1;
+    object-fit: cover;
+}
+
+.publication-card h1 {
+    font-size: 2.2rem;
+}
+
+.publication-card .p-index {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.footer .p-index {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.btn-crear,
+.btn-user,
+.btn-submit,
+.btn-reset,
+.btn-profile,
+.btn-menu,
+.publication-card .btn-group-actions button,
+.modal .close,
+.modal .btn-danger,
+.modal .btn-success {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.nav li {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.header .btn-submit,
+.header .btn-reset {
+    background-color: #ffffff;
+    border: none;
+    color: #50849D;
+    padding: 0.375rem 0.75rem;
+    display: flex;
+    align-items: center;
+}
+
+.header .btn-submit {
+    border-radius: 0.25rem 0 0 0.25rem;
+}
+
+.header .btn-reset {
+    border-radius: 0 0.25rem 0.25rem 0;
+}
+
+.header .form-control {
+    background-color: #ffffff;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
