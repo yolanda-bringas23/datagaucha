@@ -237,6 +237,26 @@ p{
 
 .body-register{
     background-image:linear-gradient(90deg, #adaca9,#000000);
+    min-height: 100vh;
+}
+
+.container-page-title {
+    max-width: 92rem;
+    margin: 0 auto;
+    padding: 4rem 2rem 0;
+}
+
+.container-page-title .dipl {
+    color: #000000;
+    font-size: 2.6rem;
+    font-weight: 700;
+    line-height: 1.25;
+    text-align: center;
+}
+
+.container-form-register {
+    max-width: 62rem;
+    margin: 0 auto;
 }
 .form-check a{
     color: #000000;
@@ -251,7 +271,69 @@ p{
 }
 
 @media (max-width: 768px){
-    
+    .container-page-title {
+        padding: 3rem 1.6rem 0;
+    }
+
+    .container-page-title .dipl {
+        font-size: 2.1rem;
+        line-height: 1.3;
+    }
+
+    .body-register main.container {
+        padding: 3rem 1.6rem !important;
+    }
+
+    .container-form-register {
+        width: 100% !important;
+    }
+
+    .registration {
+        gap: 2rem !important;
+    }
+
+    .registration .row {
+        gap: 1.2rem;
+    }
+
+    .registration .row .col {
+        flex: 0 0 100%;
+        width: 100%;
+    }
+
+    .form-check {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.8rem;
+    }
+
+    .form-check h2 {
+        font-size: 1.5rem;
+        line-height: 1.35;
+    }
+
+    .button-register {
+        flex-direction: column;
+        gap: 1.2rem !important;
+    }
+
+    .button-register .btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px){
+    .container-page-title .dipl {
+        font-size: 1.9rem;
+    }
+
+    .registration input {
+        font-size: 1.4rem;
+    }
+
+    .birth-date-label {
+        font-size: 1.6rem !important;
+    }
 }
 
 /* perfil */
@@ -473,4 +555,793 @@ footer{
     text-align: center;
     margin-top: 4rem;
     padding-bottom: 2rem;
+}
+
+/* busqueda y comentarios */
+
+.search-page,
+.comments-page {
+    min-height: 100vh;
+    background-color: #eef0f2;
+    color: #111111;
+}
+
+.app-topbar {
+    display: grid;
+    grid-template-columns: 1fr minmax(28rem, 48rem) 1fr;
+    align-items: center;
+    gap: 2rem;
+    min-height: 5.6rem;
+    padding: 0.8rem 2rem;
+    border-bottom: 0.2rem solid #000000;
+    background-color: #f4d95f;
+}
+
+.topbar-icons {
+    display: flex;
+    gap: 0.8rem;
+}
+
+.topbar-icons span {
+    width: 1rem;
+    height: 1rem;
+    background-color: #4057bf;
+}
+
+.topbar-icons span:first-child {
+    border-radius: 50%;
+}
+
+.topbar-icons span:last-child {
+    width: 0;
+    height: 0;
+    border-right: 0.6rem solid transparent;
+    border-bottom: 1.1rem solid #4057bf;
+    border-left: 0.6rem solid transparent;
+    background-color: transparent;
+}
+
+.topbar-search {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+    border: 0.1rem solid #000000;
+    border-radius: 0.7rem;
+    background-color: #ffffff;
+}
+
+.topbar-search input {
+    width: 100%;
+    min-width: 0;
+    padding: 0.9rem 1rem;
+    border: none;
+    font-size: 1.4rem;
+    font-family: inherit;
+}
+
+.topbar-search button {
+    border: none;
+    padding: 0.9rem 1rem;
+    background-color: transparent;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.topbar-avatar {
+    justify-self: end;
+}
+
+.topbar-avatar img,
+.result-avatar,
+.publication-user img,
+.user-comment img {
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.topbar-avatar img {
+    width: 4rem;
+    height: 4rem;
+    border: 0.2rem solid #000000;
+}
+
+.search-layout,
+.comments-layout {
+    display: grid;
+    grid-template-columns: 18rem minmax(0, 1fr);
+    max-width: 110rem;
+    min-height: calc(100vh - 9rem);
+    margin: 0 auto;
+    border-right: 0.2rem solid #000000;
+    border-left: 0.2rem solid #000000;
+    background-color: #ffffff;
+}
+
+.search-sidebar,
+.comments-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+    padding: 2rem 1.4rem;
+    background-color: #b7b7b4;
+}
+
+.search-sidebar a,
+.comments-sidebar a,
+.search-sidebar button,
+.comments-sidebar button {
+    border: none;
+    border-bottom: 0.2rem solid #50849D;
+    padding: 0.7rem 0;
+    background-color: transparent;
+    color: #111111;
+    font-family: inherit;
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-align: left;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.search-results {
+    padding: 2.4rem 4.4rem;
+}
+
+.search-results h1 {
+    margin-bottom: 2.4rem;
+    font-size: 2.2rem;
+    letter-spacing: 0;
+}
+
+.result-card {
+    display: grid;
+    grid-template-columns: 3.4rem 1fr;
+    gap: 1.6rem;
+    margin-bottom: 2.6rem;
+}
+
+.result-avatar {
+    width: 2.8rem;
+    height: 2.8rem;
+    border: 0.1rem solid #111111;
+}
+
+.result-meta {
+    margin-bottom: 0.8rem;
+    font-size: 1.2rem;
+}
+
+.result-meta span {
+    margin-left: 1.2rem;
+    font-weight: 400;
+}
+
+.result-card h2 {
+    margin-bottom: 0.8rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.result-card p {
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.45;
+}
+
+.result-image {
+    width: 100%;
+    max-height: 16rem;
+    margin-top: 1rem;
+    object-fit: cover;
+}
+
+.publication-detail {
+    display: grid;
+    gap: 2rem;
+    padding: 2.4rem 4.4rem;
+}
+
+.publication-card,
+.comments-box {
+    padding: 2rem;
+    border: 0.1rem solid #d4d4d4;
+    background-color: #ffffff;
+}
+
+.publication-user {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    margin-bottom: 1.4rem;
+}
+
+.publication-user img,
+.user-comment img {
+    width: 4rem;
+    height: 4rem;
+}
+
+.publication-user h1 {
+    font-size: 2rem;
+}
+
+.publication-user p,
+.publication-text,
+.comments-box p {
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.45;
+}
+
+.publication-image {
+    width: 100%;
+    max-height: 28rem;
+    margin: 1.6rem 0;
+    object-fit: cover;
+}
+
+.publication-actions,
+.comment-form {
+    display: flex;
+    gap: 1rem;
+}
+
+.publication-actions button,
+.comment-form button {
+    border: none;
+    border-radius: 1.4rem;
+    padding: 0.8rem 1.3rem;
+    background-color: #50849D;
+    color: #ffffff;
+    font-family: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.comments-box h2 {
+    margin-bottom: 1.4rem;
+}
+
+.comment-form {
+    margin-bottom: 2rem;
+}
+
+.comment-form input {
+    width: 100%;
+    padding: 0.9rem 1.2rem;
+    border: 0.1rem solid #adaca9;
+    border-radius: 1.4rem;
+    font-family: inherit;
+}
+
+.user-comment {
+    display: flex;
+    gap: 1.2rem;
+    padding: 1.2rem 0;
+    border-top: 0.1rem solid #dddddd;
+}
+
+.comment-name {
+    margin-bottom: 0.4rem;
+    font-weight: 700 !important;
+}
+
+.app-footer {
+    margin-top: 0;
+    padding: 1rem;
+    border-top: 0.2rem solid #000000;
+    background-color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+@media (max-width: 768px) {
+    .app-topbar {
+        grid-template-columns: 1fr auto;
+        gap: 1.2rem;
+        padding: 1rem 1.4rem;
+    }
+
+    .topbar-icons {
+        display: none;
+    }
+
+    .topbar-search {
+        grid-column: 1;
+    }
+
+    .search-layout,
+    .comments-layout {
+        grid-template-columns: 1fr;
+        border: none;
+    }
+
+    .search-sidebar,
+    .comments-sidebar {
+        flex-direction: row;
+        gap: 1rem;
+        overflow-x: auto;
+        padding: 1rem 1.4rem;
+    }
+
+    .search-sidebar a,
+    .comments-sidebar a,
+    .search-sidebar button,
+    .comments-sidebar button {
+        flex: 0 0 auto;
+        border: 0.1rem solid #50849D;
+        border-radius: 1.4rem;
+        padding: 0.7rem 1rem;
+        background-color: #eef0f2;
+    }
+
+    .search-results,
+    .publication-detail {
+        padding: 2rem 1.6rem;
+    }
+
+    .search-results h1 {
+        font-size: 1.9rem;
+    }
+
+    .publication-actions,
+    .comment-form {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .app-topbar {
+        grid-template-columns: 1fr;
+    }
+
+    .topbar-avatar {
+        display: none;
+    }
+
+    .topbar-search input {
+        font-size: 1.3rem;
+    }
+
+    .result-card {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+    }
+
+    .result-avatar {
+        width: 3.2rem;
+        height: 3.2rem;
+    }
+
+    .publication-card,
+    .comments-box {
+        padding: 1.4rem;
+    }
+}
+
+/* Version simple para busqueda y comentarios */
+
+.simple-nav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem 2rem;
+    background-color: #50849D;
+    color: #ffffff;
+}
+
+.simple-nav ul {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+    margin: 0;
+    padding: 0;
+}
+
+.simple-nav li {
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.simple-nav button,
+.search-page button,
+.comments-page button {
+    border: none;
+    border-radius: 1.2rem;
+    padding: 0.7rem 1rem;
+    font-family: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.search-container,
+.comments-container {
+    max-width: 95rem;
+    margin: 2rem auto;
+    padding: 0 1.6rem;
+}
+
+.search-header form {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.search-header input,
+.comments-container input,
+.comments-container textarea {
+    width: 100%;
+    padding: 0.9rem;
+    border: 0.1rem solid #adaca9;
+    border-radius: 1rem;
+    font-family: inherit;
+}
+
+.search-menu ul {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding: 0;
+}
+
+.search-menu a {
+    color: #000000;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.search-results {
+    padding: 0;
+}
+
+.search-results h1 {
+    margin-bottom: 1.8rem;
+    font-size: 2.2rem;
+}
+
+.search-results article {
+    display: grid;
+    grid-template-columns: 4rem 1fr;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 0.1rem solid #adaca9;
+}
+
+.search-results article img {
+    width: 3.2rem;
+    height: 3.2rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.search-results article h2 {
+    grid-column: 2;
+    font-size: 1.6rem;
+}
+
+.search-results article p {
+    grid-column: 2;
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+.comments-container {
+    display: grid;
+    grid-template-columns: 18rem 1fr;
+    gap: 2rem;
+}
+
+.comments-container aside {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.comments-container aside form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.comments-container main {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.comments-container textarea {
+    min-height: 5rem;
+    resize: vertical;
+}
+
+.Description textarea {
+    min-height: 9rem;
+}
+
+.publication-image-basic img {
+    width: 100%;
+    max-height: 24rem;
+    object-fit: cover;
+}
+
+.comment-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.User-comment {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.8rem;
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: #eef0f2;
+}
+
+.User-comment p {
+    font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+    .simple-nav {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .simple-nav ul,
+    .search-menu ul {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    .search-header form,
+    .comment-buttons {
+        flex-direction: column;
+    }
+
+    .comments-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .search-container,
+    .comments-container {
+        margin-top: 1.2rem;
+        padding: 0 1.2rem;
+    }
+
+    .search-results article {
+        grid-template-columns: 1fr;
+    }
+
+    .search-results article h2,
+    .search-results article p {
+        grid-column: 1;
+    }
+}
+
+/* estilos para los html originales de busqueda y comments */
+
+body:has(.dropdown-menu),
+body:has(.Dropdown-menu) {
+    min-height: 100vh;
+    background-color: #eef0f2;
+}
+
+body:has(.dropdown-menu) > nav,
+body:has(.Dropdown-menu) > nav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem 2rem;
+    background-color: #50849D;
+    color: #ffffff;
+}
+
+body:has(.dropdown-menu) > nav ul,
+body:has(.Dropdown-menu) > nav ul {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+    margin: 0;
+    padding: 0;
+}
+
+body:has(.dropdown-menu) > nav li,
+body:has(.Dropdown-menu) > nav li {
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+body:has(.dropdown-menu) button,
+body:has(.Dropdown-menu) button {
+    border: none;
+    border-radius: 1.2rem;
+    padding: 0.7rem 1rem;
+    font-family: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+body:has(.dropdown-menu) .container,
+body:has(.Dropdown-menu) .container {
+    max-width: 95rem;
+    margin: 2rem auto;
+    padding: 0 1.6rem;
+}
+
+body:has(.dropdown-menu) header form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+body:has(.dropdown-menu) header input {
+    flex: 1;
+    min-width: 20rem;
+    padding: 0.9rem;
+    border: 0.1rem solid #adaca9;
+    border-radius: 1rem;
+    font-family: inherit;
+}
+
+body:has(.dropdown-menu) header ul,
+body:has(.dropdown-menu) .container > nav ul {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    padding: 0;
+}
+
+body:has(.dropdown-menu) a {
+    color: #000000;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+body:has(.dropdown-menu) main h1 {
+    margin-bottom: 1.8rem;
+    font-size: 2.2rem;
+}
+
+body:has(.dropdown-menu) article {
+    display: grid;
+    grid-template-columns: 4rem 1fr;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 0.1rem solid #adaca9;
+}
+
+body:has(.dropdown-menu) article img {
+    width: 3.2rem;
+    height: 3.2rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+body:has(.dropdown-menu) article h2,
+body:has(.dropdown-menu) article p {
+    grid-column: 2;
+}
+
+body:has(.dropdown-menu) article p {
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+body:has(.Dropdown-menu) .container {
+    display: grid;
+    grid-template-columns: 18rem 1fr;
+    gap: 2rem;
+}
+
+body:has(.Dropdown-menu) aside {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+body:has(.Dropdown-menu) aside form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+body:has(.Dropdown-menu) main {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+body:has(.Dropdown-menu) input,
+body:has(.Dropdown-menu) textarea {
+    width: 100%;
+    padding: 0.9rem;
+    border: 0.1rem solid #adaca9;
+    border-radius: 1rem;
+    font-family: inherit;
+}
+
+body:has(.Dropdown-menu) textarea {
+    min-height: 5rem;
+    resize: vertical;
+}
+
+body:has(.Dropdown-menu) .Description textarea {
+    min-height: 9rem;
+}
+
+body:has(.Dropdown-menu) main img {
+    width: 100%;
+    max-height: 22rem;
+    object-fit: cover;
+}
+
+body:has(.Dropdown-menu) main > div:nth-of-type(4) {
+    display: flex;
+    gap: 1rem;
+}
+
+body:has(.Dropdown-menu) .User-comment {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.8rem;
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: #ffffff;
+}
+
+body:has(.Dropdown-menu) .User-comment p {
+    font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+    body:has(.dropdown-menu) > nav,
+    body:has(.Dropdown-menu) > nav {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    body:has(.dropdown-menu) > nav ul,
+    body:has(.Dropdown-menu) > nav ul,
+    body:has(.dropdown-menu) header ul,
+    body:has(.dropdown-menu) .container > nav ul {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    body:has(.dropdown-menu) header form,
+    body:has(.Dropdown-menu) main > div:nth-of-type(4) {
+        flex-direction: column;
+    }
+
+    body:has(.Dropdown-menu) .container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    body:has(.dropdown-menu) .container,
+    body:has(.Dropdown-menu) .container {
+        margin-top: 1.2rem;
+        padding: 0 1.2rem;
+    }
+
+    body:has(.dropdown-menu) article {
+        grid-template-columns: 1fr;
+    }
+
+    body:has(.dropdown-menu) article h2,
+    body:has(.dropdown-menu) article p {
+        grid-column: 1;
+    }
 }
