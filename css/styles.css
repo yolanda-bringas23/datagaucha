@@ -223,11 +223,8 @@ p{
 /* Aqui empieza el html de Registro*/
 
 .page-title{
-    padding: 3rem;
-    margin-bottom: 3rem;
-}
-
-.page-title{
+    text-align: start;
+    padding: 1rem;
     color: #000000;
 }
 
