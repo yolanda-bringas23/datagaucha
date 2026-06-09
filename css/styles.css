@@ -317,18 +317,51 @@ p{
 /* perfil */
 
 .profile-page {
+    display: grid;
     min-height: 100vh;
     background-color: #eef0f2;
+    grid-template-columns: 25rem 1fr;
+    grid-template-rows: 6rem 1fr auto;
 }
 
 .profile-nav {
-    display: flex;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-column: 1/3;
     align-items: center;
     gap: 2rem;
-    min-height: 6rem;
+    min-height: 5rem;
     padding: 1rem 2rem;
     background-color: #50849D;
     color: #ffffff;
+}
+
+.nav-profile{
+    grid-row: 2/3;
+    grid-column: 1/2;
+}
+
+.main-profile{
+    display: grid;
+    grid-column: 2/3;
+    grid-row: 2/3;
+}
+
+.footer-profile{
+    grid-template-columns: 2/4;
+    grid-template-rows: 3/4;
+}
+
+.nav-profile ul{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 0;
+    margin: 1rem;
+}
+
+.searching-profile{
+    justify-content: space-between
 }
 
 .profile-nav ul {
