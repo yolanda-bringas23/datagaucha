@@ -424,39 +424,69 @@ p{
 
 .profile-page header img,
 .profile-avatar {
+    width: 170px;
+    height: 170px;
     border-radius: 50%;
     object-fit: cover;
 }
 
 .profile {
-    display: grid;
-    justify-items: center;
-    gap: 1.6rem;
-    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    padding: 4rem;
     border-radius: 1.2rem;
     background-color: #ffffff;
     box-shadow: 0 0.4rem 1.4rem rgba(0, 0, 0, 0.12);
-    text-align: center;
+}
+
+.profile-top-section {
+    display:flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.info-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+    text-align: left;
 }
 
 .profile h1 {
     margin: 0;
     font-size: 2.8rem;
     font-weight: 700;
+    
 }
 
-.profile h2 {
-    margin-top: 1rem;
-    font-size: 2.2rem;
-    font-weight: 700;
+.profile-counters {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
 }
 
-.profile > button {
+.profile-counters button {
     background-color: #50849D;
     color: #ffffff;
+    font-size: 1.4rem;
+}
+.profile h2 {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    font-size: 2.2rem;
+    font-weight: 700;
+    text-align: center;
 }
 
-.profile > div {
+.profile-post { 
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.profile-post > div {
     width: 100%;
     max-width: 42rem;
     padding: 1.2rem;
