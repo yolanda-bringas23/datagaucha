@@ -378,8 +378,6 @@ p{
 
 .profile-page header img,
 .profile-avatar {
-    width: 170px;
-    height: 170px;
     border-radius: 50%;
     object-fit: cover;
 }
@@ -396,6 +394,7 @@ p{
 .profile-top-section {
     display:flex;
     align-items: center;
+    justify-content: center;
     gap: 1.5rem;
     margin-bottom: 2rem;
 }
@@ -403,9 +402,7 @@ p{
 .info-profile {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
     gap: 1.5rem;
-    text-align: left;
 }
 
 .profile h1 {
@@ -417,7 +414,6 @@ p{
 
 .profile-counters {
     display: flex;
-    flex-direction: row;
     gap: 1.5rem;
 }
 
@@ -427,8 +423,8 @@ p{
     font-size: 1.4rem;
 }
 .profile h2 {
-    margin-top: 1rem;
-    margin-bottom: 2rem;
+    margin-top: 6rem;
+    margin-bottom: 4rem;
     font-size: 2.2rem;
     font-weight: 700;
     text-align: center;
