@@ -6,51 +6,53 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <title>Home</title>
 </head>
 <body>
     <div class="grid">
-        <nav class="nav">
+        <nav id="nav">
             <button class="btn-menu" type="button">
                 <i class="fa-solid fa-bars"></i>
             </button>
             <ul>
-                <li><button type="button" onclick="location.href='html/busqueda.html'">Busqueda</button></li>
-                <li><button type="button" onclick="location.href='html/comments.html'">Commentarios</button></li>
-                <li><button type="button" onclick="location.href='html/Perfil.html'">Perfil</button></li>
-                <li><button type="button" onclick="location.href='html/conditions-of-use.html'">Condiciones de Uso</button></li>
-                <li><button type="button" onclick="location.href='html/LOGIN.html'">Cerrar Sesión</button></li>
+                <li><a href="html/busqueda.html">Busqueda</a></li>
+                <li><a href="html/comments.html">Comentarios</a></li>
+                <li><a href="html/Perfil.html">Perfil</a></li>
+                <li><a href="html/conditions-of-use.html">Condiciones de Uso</a></li>
+                <li><a href="html/LOGIN.html">Cerrar Sesión</a></li>
             </ul>
         </nav>
 
-        <header class="header">
+
+        <header id="header">
             <form class="search-form" action="">
                 <div class="input-group">
-                    <div class="input-group-prepend">
-                        <button class="btn-submit" type="submit">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                        </button>
-                    </div>
-                    <input type="search" class="form-control" placeholder="Buscar...">
-                    <div class="input-group-append">
-                        <button class="btn-reset" type="reset">
-                            <i class="fa-solid fa-xmark"></i>
-                        </button>
-                    </div>
+                    <button class="btn-submit" type="submit">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                    <input type="text" class="form-control" placeholder="Buscar...">
+                    <button class="btn-reset" type="reset">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
                 </div>
             </form>
             <button class="btn-profile" type="button">
-                <i class="fa-solid fa-circle-user user-btn"></i>
+                <a href="html/Perfil.html">
+                    <i class="fa-solid fa-circle-user user-btn"></i>
+                    <span class="text-profile">Perfil</span>
+                </a>
             </button>
         </header>
 
-        <section class="section">
-            <button type="button" class="btn btn-primary btn-crear" data-toggle="modal" data-target="#exampleModal">
+
+        <section id="section">
+            <button type="button" class="btn btn-primary btn-crear" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 Crear Publicación
             </button>
+
 
             <article class="publication-card">
                 <button class="btn-user" type="button">
@@ -68,46 +70,51 @@
             </article>
         </section>
 
-        <footer class="footer">
+
+        <footer id="footer">
             <p class="p-index">© DohCode 2026</p>
         </footer>
     </div>
 
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
             <div class="modal-content">
+
 
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Crear Publicación</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
+
 
                 <div class="modal-body">
                     <form action="" method="post" enctype="multipart/form-data">
                         <h2>Título de la Publicación</h2>
                         <input type="text" name="title" placeholder="Escribe un título atractivo..." required class="form-control mb-3">
 
+
                         <h2>Contenido</h2>
                         <textarea name="content" placeholder="Escribe el contenido de la publicación aquí..." required class="form-control mb-3"></textarea>
 
+
                         <h2>Imagen de la publicación (opcional)</h2>
-                        <input type="file" name="image" class="form-control-file mb-3">
+                        <input type="file" name="image" class="form-control mb-3">
+
 
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
                             <button type="submit" class="btn btn-success">Aceptar</button>
                         </div>
                     </form>
                 </div>
 
+
             </div>
         </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

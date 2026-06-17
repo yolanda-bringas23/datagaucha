@@ -8,6 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/styles.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <title>Registro</title>
 </head>
 <body class="body-register bg-secondary-subtle">
@@ -19,6 +20,14 @@
   <main class="container d-flex flex-column justify-content-center align-items-center">
     <div class="container-form-register w-75">
       <form class="registration d-flex flex-column gap-5">
+
+        <div class="avatar-wrapper">
+          <i class="fa-solid fa-circle-user avatar-icon"></i>
+          <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <i class="fa-solid fa-pen-to-square"></i>
+          </button>
+        </div>
+
         <input class="form-control form-control-lg rounded-4 text-center required" type="text" id="NameInput" placeholder="Nombre completo">
         <input class="form-control form-control-lg rounded-4 text-center required" type="text" id="nameUser-register" placeholder="Tu nombre de usuario">
         <input class="form-control form-control-lg rounded-4 text-center required" type="password" id="password-register" placeholder="contraseña">
@@ -28,7 +37,7 @@
         <div>
           <p class="birth-date-label fs-4 mb-3">Fecha de Nacimiento</p>
         </div>
-        
+
         <div class="birth-date row g-3 w-100">
           <div class="col">
             <input class="form-control form-control-lg rounded-4 text-center required" type="text" placeholder="Dia">
@@ -40,14 +49,14 @@
             <input class="form-control form-control-lg rounded-4 text-center required" type="text" placeholder="Año">
           </div>
         </div>
-        
+
         <div class="form-check">
           <input class="form-check-label" type="checkbox" id="terms-check">
           <label for="form-check-label"><a href="conditions-of-use.html"><h2>Acepto los términos y condiciones de uso</h2></a></label>
         </div>
 
         <div class="form-check">
-          <input type="checkbox" type="checkbox" id="age-check">
+          <input type="checkbox" id="age-check">
           <label for="age-check" class="form-check-label"><h2>Soy mayor de 18 años</h2></label>
         </div>
 
@@ -56,8 +65,31 @@
           <a href="LOGIN.html" type="submit" class="btn btn-danger rounded-pill btn-lg px-5">Cancelar</a>
         </div>
       </form>
-  </div>
+    </div>
   </main>
+
+  <!-- Modal fuera del form -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Elegir Avatar</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form action="" method="post" enctype="multipart/form-data">
+          <div class="modal-body">
+            <h2>Toca el boton seleccionar la imagen del avatar</h2>
+            <input type="file" name="image" class="form-control mb-3">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+            <button type="submit" class="btn btn-success">Aceptar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
