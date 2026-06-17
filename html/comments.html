@@ -1,65 +1,108 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
     <title>Comments</title>
 </head>
 <body>
-    <nav>
-        <button class="Dropdown-menu">menú-despegable</button>
-        <ul>
-            <li>Inicio</li>
-            <li>Create</li>
-            <li>Profile</li>
-            <li>Exit</li>
-            <li>© DohCode - 2026</li>
-        </ul>
-    </nav>
-    <div class="container">
-        <aside>
-            <button>Menu</button>
-            <form action="">
-                <input type="text"> <button>Search</button>
+    <div class="grid">
+        <nav id="nav">
+            <button class="btn-menu" type="button">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="busqueda.html">Busqueda</a></li>
+                <li><a href="Perfil.html">Perfil</a></li>
+                <li><a href="conditions-of-use.html">Condiciones de Uso</a></li>
+                <li><a href="registro.html">Registro</a></li>
+                <li><a href="LOGIN.html">Cerrar Sesión</a></li>
+            </ul>
+        </nav>
+
+        <header id="header">
+            <form class="search-form" action="">
+                <div class="input-group">
+                    <button class="btn-submit" type="submit">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                    <input type="text" class="form-control" placeholder="Buscar...">
+                    <button class="btn-reset" type="reset">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
             </form>
-            <button>Notifications</button>
-            <button>Profile</button>
-        </aside>
-        <main>
-            <div class="Titulo">
-                <textarea name="Title" id="Title">Mi día</textarea>
-            </div>
-            <div class="Description">
-                <textarea name="Description" id="Description">Hoy tuve un buen día con mi familia</textarea>
-            </div>
-            <div>
-                <img src="" alt="Publication"> 
-            </div>
-            <div>
-                <button>Like</button>
-                <button>Comments</button>
-                <button>Reactions</button>
-            </div>
-            <article>
-                <div class="User-comment">
-                    <button>Perfil</button><p>Nombre de usuario</p>
-                    <div>
-                        <p>Muy bueno</p>
-                    </div>
+
+            <button class="btn-profile" type="button">
+                <a href="Perfil.html">
+                    <i class="fa-solid fa-circle-user user-btn"></i>
+                    <span class="text-profile">Perfil</span>
+                </a>
+            </button>
+        </header>
+
+        <section id="section">
+            <article class="publication-card">
+                <button class="btn-user" type="button">
+                    <i class="fa-solid fa-circle-user user-btn"></i>
+                    <p class="p-index">Nombre de usuario</p>
+                </button>
+
+                <h1>Mi día</h1>
+
+                <p class="p-index">Hoy tuve un buen día con mi familia</p>
+
+                <img class="image-publication" src="../img/image.jpg" alt="Publication">
+
+                <div class="btn-group-actions">
+                    <button type="button"><i class="fa-solid fa-heart btn-like"></i></button>
+                    <button type="button"><i class="fa-solid fa-comment btn-comment"></i></button>
+                    <button type="button"><i class="fa-solid fa-face-smile btn-share"></i></button>
                 </div>
-                <div class="User-comment">
-                    <button>Perfil</button>
-                    <p>Nombre de usuario</p>
-                    <div>
-                        <p>eselente</p>
+
+                <form class="comment-write" action="" method="post">
+                    <textarea name="comment" placeholder="Escribe un comentario..."></textarea>
+                    <button class="btn btn-primary btn-crear" type="submit">
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                </form>
+
+                <article class="comments-list">
+                    <div class="User-comment">
+                        <button class="btn-user" type="button">
+                            <i class="fa-solid fa-circle-user comment-icon"></i>
+                            <p>Nombre de usuario</p>
+                        </button>
+                        <div class="comment-text">
+                            <p clas">Muy bueno</p>
+                        </div>
                     </div>
-                </div>
+
+                    <div class="User-comment">
+                        <button class="btn-user" type="button">
+                            <i class="fa-solid fa-circle-user comment-icon"></i>
+                            <p>Nombre de usuario</p>
+                        </button>
+                        <div class="comment-text">
+                            <p>Exelente</p>
+                        </div>
+                    </div>
+                </article>
             </article>
-        </main>
+        </section>
+
+        <footer id="footer">
+            <p class="p-index">© DohCode 2026</p>
+        </footer>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
