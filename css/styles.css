@@ -1648,3 +1648,520 @@ body:has(.Dropdown-menu) > nav ul {
     border-radius: 0;
     box-shadow: none;
 }
+
+.grid {
+    display: grid;
+    grid-template-areas:
+        "nav header header"
+        "nav section section"
+        "nav section section";
+    grid-template-rows: 6.25rem 1fr 4.69rem;
+    grid-template-columns: 15% 1fr 1fr;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+
+#nav {
+    grid-area: nav;
+    background-color: #50849D;
+    color: #ffffff;
+    padding-top: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    overflow: hidden;
+}
+
+
+#nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    padding: 0;
+    margin: 0.75rem 0 0 0;
+    list-style: none;
+    width: 100%;
+}
+
+
+#nav li {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+
+#nav li button {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0.65rem 0.5rem;
+    border: none;
+    background-color: #00000000;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 1.2;
+    text-align: center;
+    appearance: none;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+
+#nav li button:hover {
+    background-color: #1f1f1f;
+    transform: scale(1.05);
+    color: #f0f0f0;
+}
+
+
+#nav li button:focus {
+    outline: none;
+}
+
+#nav li button:active{
+    transform: scale(0.97);
+}
+
+#nav li a {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0.65rem 0.5rem;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 1.2;
+    text-align: center;
+    text-decoration: none;
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+#nav li a:hover {
+    background-color: #1f1f1f;
+    transform: scale(1.05);
+    color: #f0f0f0;
+}
+
+#nav li a:active {
+    transform: scale(0.97);
+}
+
+
+#header {
+    grid-area: header;
+    background-color: #50849D;
+    color: #ffffff;
+    padding: 0 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    position: relative;
+    overflow: hidden;
+}
+
+
+.search-form {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(32rem, 60%);
+    display: flex;
+    justify-content: center;
+}
+
+
+.search-form .input-group {
+    width: 100%;
+}
+
+
+#section {
+    grid-area: section;
+    background-color: #EEF0F2;
+    color: #ffffff;
+    padding: 0.75rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+
+#footer {
+    grid-area: footer;
+    background-color: #ADACA9;
+    color: #ffffff;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.publication-card {
+    background-color: #000000;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.38rem;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 50rem;
+    min-height: 0;
+    margin: 0.75rem auto 0 auto;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.publication-card:hover{
+    box-shadow: 0 0.4rem 1.2rem rgba(0,0,0,0.5);
+    transform: translateY(-2px);
+}
+
+
+.btn-like {
+    color: #ff0000;
+    background-color: #00000000;
+    font-size: 1.8rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.btn-like:hover{
+    transform: scale(1.25);
+    color: #ff4444;
+}
+
+.btn-like:active{
+    transform: scale(1.1);
+}
+
+
+.btn-comment {
+    color: #ffffff;
+    background-color: #00000000;
+    font-size: 1.8rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.btn-comment:hover{
+    transform: scale(1.25);
+    color: #cccccc;
+}
+
+.btn-comment:active{
+    transform: scale(1.1);
+}
+
+
+.btn-share {
+    color: #ffff00;
+    background-color: #00000000;
+    font-size: 1.8rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.btn-share:hover{
+    transform: scale(1.25);
+    color: #ffff88;
+}
+
+.btn-share:active{
+    transform: scale(1.1);
+}
+
+
+.publication-card .btn-group-actions button {
+    background-color: #00000000;
+    border: none;
+    padding: 0.6rem;
+    min-width: 3.8rem;
+    min-height: 3.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+
+.publication-card .btn-group-actions button:hover {
+    transform: scale(1.2);
+}
+
+.publication-card .btn-group-actions button:active{
+    transform: scale(1.05);
+}
+
+
+.user-btn {
+    color: #ffffff;
+    background-color: #00000000;
+    font-size: 1.8rem;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.user-btn:hover{
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+
+.btn-menu {
+    color: #ffffff;
+    background-color: #00000000;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+
+.btn-menu:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+.btn-menu:active{
+    transform: scale(0.95);
+}
+
+
+.btn-user {
+    color: #ffffff;
+    background-color: #00000000;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    align-self: flex-start;
+    font-size: 1.2rem;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+
+.btn-user:hover {
+    transform: scale(1.05);
+    opacity: 0.85;
+}
+
+.btn-user:active{
+    transform: scale(0.98);
+}
+
+
+.btn-user .p-index {
+    margin: 0;
+}
+
+
+.btn-profile {
+    color: #ffffff;
+    background-color: #00000000;
+    border: none;
+    margin-left: auto;
+    font-size: 1.8rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+
+.btn-profile:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+.btn-profile:active{
+    transform: scale(0.95);
+}
+
+
+.btn-crear {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.btn-crear:hover {
+    transform: scale(1.1);
+    box-shadow: 0.2rem 0.2rem black;
+}
+
+.btn-crear:active{
+    transform: scale(1.02);
+}
+
+
+.btn-group-actions {
+    display: flex;
+    gap: 1rem;
+    background-color: #00000000;
+    border: none;
+    align-items: center;
+}
+
+
+.image-publication {
+    width: 100%;
+    min-height: 0;
+    flex: 1;
+    object-fit: cover;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.image-publication:hover{
+    opacity: 0.9;
+    transform: scale(1.01);
+}
+
+
+.publication-card h1 {
+    font-size: 2.2rem;
+}
+
+
+.publication-card .p-index {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+
+.footer .p-index {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+
+.btn-crear,
+.btn-user,
+.btn-submit,
+.btn-reset,
+.btn-profile,
+.btn-menu,
+.publication-card .btn-group-actions button,
+.modal .close,
+.modal .btn-danger,
+.modal .btn-success {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.modal .close,
+.modal .btn-danger,
+.modal .btn-success{
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+}
+
+.modal .close:hover,
+.modal .btn-danger:hover,
+.modal .btn-success:hover{
+    transform: scale(1.07);
+    box-shadow: 0.2rem 0.2rem rgba(0,0,0,0.3);
+}
+
+.modal .close:active,
+.modal .btn-danger:active,
+.modal .btn-success:active{
+    transform: scale(0.97);
+}
+
+
+#header .btn-submit,
+#header .btn-reset {
+    background-color: #ffffff;
+    border: none;
+    color: #50849D;
+    padding: 0.375rem 0.75rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+
+#header .btn-submit:hover,
+#header .btn-reset:hover {
+    transform: scale(1.1);
+    box-shadow: 0.2rem 0.2rem black;
+    background-color: #f0f0f0;
+}
+
+#header .btn-submit:active,
+#header .btn-reset:active{
+    transform: scale(0.97);
+}
+
+
+#header .btn-submit {
+    border-radius: 0.25rem 0 0 0.25rem;
+}
+
+
+#header .btn-reset {
+    border-radius: 0 0.25rem 0.25rem 0;
+}
+
+
+#header .form-control {
+    background-color: #ffffff;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    max-height: 100%;
+    min-height: 0;
+    transition: box-shadow 0.3s ease;
+}
+
+#header .form-control:focus{
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(80, 132, 157, 0.3);
+}
+.btn-profile {
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+header .btn-profile a .text-profile {
+    display: none;
+}
+
+body {
+  --sb-track-color: #232E33;
+  --sb-thumb-color: #6baf8d;
+  --sb-size: 14px;
+}
+body::-webkit-scrollbar {
+  width: var(--sb-size)
+}
+body::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 3px;
+}
+body::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 3px;
+}
+@supports not selector(::-webkit-scrollbar) {
+  body {
+    scrollbar-color: var(--sb-thumb-color)
+                     var(--sb-track-color);
+  }
+}
