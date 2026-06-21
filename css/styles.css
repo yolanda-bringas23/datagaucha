@@ -483,12 +483,39 @@ p{
         font-size: 1.6rem;
         width: 33%;
     }
+    .nav-profile li a{
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0.65rem 0.5rem;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 1.2;
+    text-align: center;
+    text-decoration: none;
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .nav-profile li a:hover{
+        background-color: #000000;
+    }
+
+    .btn-menu{
+    display: flex;
+    margin-left: 10rem;
+    }
 }
 
 /*condiciones de uso*/
 
 .body-conditions{
     background-color: #eef0f2;
+}
+
+.nav-profile{
+    background-color: #50849D;
 }
 
 .navbar-conditions{
