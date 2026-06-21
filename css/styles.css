@@ -25,7 +25,7 @@ h2{
 }
 
 h3{
-    font-size: 1.75;
+    font-size: 1.75rem;
 }
 
 h4{
@@ -357,9 +357,10 @@ p{
     padding: 1.5rem;
 }
 
-.profile {
+.profile, .post {
     background-color: #ffffff;
     padding: 1.5rem;
+    margin-top: 1.5rem;
 }
 
 .profile-top-section {
@@ -387,7 +388,7 @@ p{
     transition: box-shadow 0.3s ease;
 }
 
-.boton-edi:hover {
+.boton-edit:hover {
     box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.8);
 }
 
@@ -416,9 +417,9 @@ p{
     color: #ffffff;
 }
 
-.profile h2 {
+.post h2 {
     text-align: center;
-    margin: 2rem 0 1rem;
+    margin: 2rem 1rem;
     font-size: 2rem;
 }
 
