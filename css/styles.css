@@ -2144,6 +2144,69 @@ header .btn-profile a .text-profile {
     display: none;
 }
 
+/* estilos para index mobile first */
+
+.grid {
+    grid-template-areas:
+        "header"
+        "nav"
+        "section";
+    grid-template-rows: auto auto 1fr;
+    grid-template-columns: 1fr;
+    min-height: 100vh;
+    height: auto;
+}
+
+#nav {
+    overflow-x: auto;
+}
+
+#nav ul {
+    flex-direction: row;
+    margin: 0;
+}
+
+#nav li {
+    flex: 0 0 auto;
+    width: auto;
+}
+
+#section {
+    overflow: auto;
+}
+
+/* media para index pc */
+
+@media (min-width: 769px) {
+    .grid {
+        grid-template-areas:
+            "nav header header"
+            "nav section section"
+            "nav section section";
+        grid-template-rows: 6.25rem 1fr 4.69rem;
+        grid-template-columns: 15% 1fr 1fr;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    #nav {
+        overflow: hidden;
+    }
+
+    #nav ul {
+        flex-direction: column;
+        margin: 0.75rem 0 0 0;
+    }
+
+    #nav li {
+        width: 100%;
+    }
+
+    #section {
+        overflow: hidden;
+    }
+}
+
 body {
   --sb-track-color: #232E33;
   --sb-thumb-color: #6baf8d;
