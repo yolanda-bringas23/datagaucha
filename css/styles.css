@@ -338,6 +338,21 @@ p{
     background-color: #ffffff;
 }
 
+    .nav-profile li a{
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0.65rem 0.5rem;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 1.2;
+    text-align: center;
+    text-decoration: none;
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+    }
+
 .nav-profile ul {
     display: flex;
     gap: 1rem;
