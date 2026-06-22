@@ -930,10 +930,6 @@ footer{
         padding: 2rem 1.6rem;
     }
 
-    .search-results h1 {
-        font-size: 1.9rem;
-    }
-
     .publication-actions,
     .comment-form {
         flex-direction: column;
@@ -1402,280 +1398,8 @@ body:has(.Dropdown-menu) > nav ul {
         grid-column: 1;
     }
 }
-/* mio */
-.grid {
-    display: grid;
-    grid-template-areas:
-        "nav header header"
-        "nav section section"
-        "nav footer footer";
-    grid-template-rows: 6.25rem 1fr 4.69rem;
-    grid-template-columns: 15% 1fr 1fr;
-    height: 100vh;
-    width: 100%;
-    overflow: hidden;
-}
 
-.nav {
-    grid-area: nav;
-    background-color: #000000;
-    color: #ffffff;
-    padding-top: 0.75rem;
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    overflow-y: auto;
-}
-
-.nav ul {
-    display: flex;
-    flex-direction: column;
-    gap: 0.6rem;
-    padding: 0;
-    margin: 0.75rem 0 0 0;
-    list-style: none;
-    width: 100%;
-}
-
-.nav li {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-}
-
-.nav li button {
-    display: block;
-    width: 100%;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0.65rem 0.5rem;
-    border: none;
-    background-color: #00000000;
-    color: #ffffff;
-    font-size: 1rem;
-    font-weight: bold;
-    line-height: 1.2;
-    text-align: center;
-    appearance: none;
-}
-
-.nav li button:hover {
-    background-color: #1f1f1f;
-}
-
-.nav li button:focus {
-    outline: none;
-}
-
-.header {
-    grid-area: header;
-    background-color: #50849D;
-    color: #ffffff;
-    padding: 0 0.75rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 0.75rem;
-    position: relative;
-}
-
-.search-form {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    width: min(32rem, 60%);
-    display: flex;
-    justify-content: center;
-}
-
-.search-form .input-group {
-    width: 100%;
-}
-
-.section {
-    grid-area: section;
-    background-color: #4d4d4d;
-    color: #ffffff;
-    padding: 0.75rem;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-}
-
-.footer {
-    grid-area: footer;
-    background-color: #50849D;
-    color: #ffffff;
-    text-align: center;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.publication-card {
-    background-color: #000000;
-    border-radius: 0.25rem;
-    padding: 0.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.38rem;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    max-width: 50rem;
-    flex: 1;
-    min-height: 0;
-    margin: 0.75rem auto 0 auto;
-    overflow: hidden;
-}
-
-.btn-like {
-    color: #ff0000;
-    background-color: #00000000;
-    font-size: 1.8rem;
-}
-
-.btn-comment {
-    color: #ffffff;
-    background-color: #00000000;
-    font-size: 1.8rem;
-}
-
-.btn-share {
-    color: #ffff00;
-    background-color: #00000000;
-    font-size: 1.8rem;
-}
-
-.publication-card .btn-group-actions button {
-    background-color: #00000000;
-    border: none;
-    padding: 0.6rem;
-    min-width: 3.8rem;
-    min-height: 3.8rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.user-btn {
-    color: #ffffff;
-    background-color: #00000000;
-    font-size: 1.8rem;
-}
-
-.btn-menu {
-    color: #ffffff;
-    background-color: #00000000;
-    border: none;
-    font-size: 1.8rem;
-}
-
-.btn-user {
-    color: #ffffff;
-    background-color: #00000000;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    align-self: flex-start;
-    font-size: 1.2rem;
-    border: none;
-}
-
-.btn-user .p-index {
-    margin: 0;
-}
-
-.btn-profile {
-    color: #ffffff;
-    background-color: #00000000;
-    border: none;
-    margin-left: auto;
-    font-size: 1.8rem;
-}
-
-.btn-crear {
-    display: block;
-    margin: 0 auto;
-    margin-bottom: 0;
-    font-size: 1.2rem;
-    font-weight: bold;
-}
-
-.btn-group-actions {
-    display: flex;
-    gap: 1rem;
-    background-color: #00000000;
-    border: none;
-    align-items: center;
-}
-
-.image-publication {
-    width: 100%;
-    min-height: 0;
-    flex: 1;
-    object-fit: cover;
-}
-
-.publication-card h1 {
-    font-size: 2.2rem;
-}
-
-.publication-card .p-index {
-    font-size: 1.2rem;
-    font-weight: bold;
-}
-
-.footer .p-index {
-    font-size: 1.1rem;
-    font-weight: bold;
-}
-
-.btn-crear,
-.btn-user,
-.btn-submit,
-.btn-reset,
-.btn-profile,
-.btn-menu,
-.publication-card .btn-group-actions button,
-.modal .close,
-.modal .btn-danger,
-.modal .btn-success {
-    font-size: 1.1rem;
-    font-weight: bold;
-}
-
-.nav li {
-    font-size: 1.1rem;
-    font-weight: bold;
-}
-
-.header .btn-submit,
-.header .btn-reset {
-    background-color: #ffffff;
-    border: none;
-    color: #50849D;
-    padding: 0.375rem 0.75rem;
-    display: flex;
-    align-items: center;
-}
-
-.header .btn-submit {
-    border-radius: 0.25rem 0 0 0.25rem;
-}
-
-.header .btn-reset {
-    border-radius: 0 0.25rem 0.25rem 0;
-}
-
-.header .form-control {
-    background-color: #ffffff;
-    border: none;
-    border-radius: 0;
-    box-shadow: none;
-}
+/* ── GRID LAYOUT (home / busqueda / comments con .grid) ── */
 
 .grid {
     display: grid;
@@ -1690,7 +1414,6 @@ body:has(.Dropdown-menu) > nav ul {
     overflow: hidden;
 }
 
-
 #nav {
     grid-area: nav;
     background-color: #50849D;
@@ -1702,7 +1425,6 @@ body:has(.Dropdown-menu) > nav ul {
     overflow: hidden;
 }
 
-
 #nav ul {
     display: flex;
     flex-direction: column;
@@ -1713,7 +1435,6 @@ body:has(.Dropdown-menu) > nav ul {
     width: 100%;
 }
 
-
 #nav li {
     width: 100%;
     margin: 0;
@@ -1721,7 +1442,6 @@ body:has(.Dropdown-menu) > nav ul {
     font-size: 1.1rem;
     font-weight: bold;
 }
-
 
 #nav li button {
     display: block;
@@ -1741,19 +1461,17 @@ body:has(.Dropdown-menu) > nav ul {
     transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
 }
 
-
 #nav li button:hover {
     background-color: #1f1f1f;
     transform: scale(1.05);
     color: #f0f0f0;
 }
 
-
 #nav li button:focus {
     outline: none;
 }
 
-#nav li button:active{
+#nav li button:active {
     transform: scale(0.97);
 }
 
@@ -1782,7 +1500,6 @@ body:has(.Dropdown-menu) > nav ul {
     transform: scale(0.97);
 }
 
-
 #header {
     grid-area: header;
     background-color: #50849D;
@@ -1796,7 +1513,6 @@ body:has(.Dropdown-menu) > nav ul {
     overflow: hidden;
 }
 
-
 .search-form {
     position: absolute;
     left: 50%;
@@ -1806,11 +1522,11 @@ body:has(.Dropdown-menu) > nav ul {
     justify-content: center;
 }
 
-
 .search-form .input-group {
     width: 100%;
 }
 
+/* ── #section: base (home/busqueda) ── */
 
 #section {
     grid-area: section;
@@ -1821,7 +1537,6 @@ body:has(.Dropdown-menu) > nav ul {
     display: flex;
     flex-direction: column;
 }
-
 
 #footer {
     grid-area: footer;
@@ -1835,6 +1550,7 @@ body:has(.Dropdown-menu) > nav ul {
     justify-content: center;
 }
 
+/* ── .publication-card: base (home) — ocupa toda la section ── */
 
 .publication-card {
     background-color: #000000;
@@ -1847,17 +1563,105 @@ body:has(.Dropdown-menu) > nav ul {
     align-items: center;
     width: 100%;
     max-width: 50rem;
+    flex: 1;
     min-height: 0;
     margin: 0.75rem auto 0 auto;
     overflow: hidden;
     transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
-.publication-card:hover{
+.publication-card:hover {
     box-shadow: 0 0.4rem 1.2rem rgba(0,0,0,0.5);
     transform: translateY(-2px);
 }
 
+/* ── .image-publication: base (home) — crece para llenar la card ── */
+
+.image-publication {
+    width: 100%;
+    min-height: 0;
+    flex: 1;
+    object-fit: cover;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.image-publication:hover {
+    opacity: 0.9;
+    transform: scale(1.01);
+}
+
+/* ── comments.html: estilos propios (no pisan home) ── */
+
+.comment-write {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    align-items: flex-end;
+}
+
+.comment-write textarea {
+    flex: 1;
+    min-height: 3.5rem;
+    resize: vertical;
+    padding: 0.6rem 0.8rem;
+    border: 0.1rem solid #adaca9;
+    border-radius: 0.5rem;
+    font-family: inherit;
+    font-size: 1.2rem;
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+.comment-write textarea::placeholder {
+    color: #888888;
+}
+
+.comments-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.User-comment {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    padding: 0.8rem;
+    background-color: #1a1a1a;
+    border-radius: 0.4rem;
+}
+
+.user-comment-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.comment-icon {
+    color: #ffffff;
+    font-size: 1.8rem;
+}
+
+.comment-username {
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.comment-text {
+    color: #cccccc;
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin: 0;
+    padding-left: 2.3rem;
+}
+
+/* ── botones de acción ── */
 
 .btn-like {
     color: #ff0000;
@@ -1866,15 +1670,14 @@ body:has(.Dropdown-menu) > nav ul {
     transition: transform 0.3s ease, color 0.3s ease;
 }
 
-.btn-like:hover{
+.btn-like:hover {
     transform: scale(1.25);
     color: #ff4444;
 }
 
-.btn-like:active{
+.btn-like:active {
     transform: scale(1.1);
 }
-
 
 .btn-comment {
     color: #ffffff;
@@ -1883,15 +1686,14 @@ body:has(.Dropdown-menu) > nav ul {
     transition: transform 0.3s ease, color 0.3s ease;
 }
 
-.btn-comment:hover{
+.btn-comment:hover {
     transform: scale(1.25);
     color: #cccccc;
 }
 
-.btn-comment:active{
+.btn-comment:active {
     transform: scale(1.1);
 }
-
 
 .btn-share {
     color: #ffff00;
@@ -1900,15 +1702,14 @@ body:has(.Dropdown-menu) > nav ul {
     transition: transform 0.3s ease, color 0.3s ease;
 }
 
-.btn-share:hover{
+.btn-share:hover {
     transform: scale(1.25);
     color: #ffff88;
 }
 
-.btn-share:active{
+.btn-share:active {
     transform: scale(1.1);
 }
-
 
 .publication-card .btn-group-actions button {
     background-color: #00000000;
@@ -1923,15 +1724,13 @@ body:has(.Dropdown-menu) > nav ul {
     transition: transform 0.3s ease;
 }
 
-
 .publication-card .btn-group-actions button:hover {
     transform: scale(1.2);
 }
 
-.publication-card .btn-group-actions button:active{
+.publication-card .btn-group-actions button:active {
     transform: scale(1.05);
 }
-
 
 .user-btn {
     color: #ffffff;
@@ -1940,11 +1739,10 @@ body:has(.Dropdown-menu) > nav ul {
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-.user-btn:hover{
+.user-btn:hover {
     transform: scale(1.1);
     opacity: 0.8;
 }
-
 
 .btn-menu {
     color: #ffffff;
@@ -1955,16 +1753,14 @@ body:has(.Dropdown-menu) > nav ul {
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-
 .btn-menu:hover {
     transform: scale(1.1);
     opacity: 0.8;
 }
 
-.btn-menu:active{
+.btn-menu:active {
     transform: scale(0.95);
 }
-
 
 .btn-user {
     color: #ffffff;
@@ -1979,21 +1775,18 @@ body:has(.Dropdown-menu) > nav ul {
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-
 .btn-user:hover {
     transform: scale(1.05);
     opacity: 0.85;
 }
 
-.btn-user:active{
+.btn-user:active {
     transform: scale(0.98);
 }
-
 
 .btn-user .p-index {
     margin: 0;
 }
-
 
 .btn-profile {
     color: #ffffff;
@@ -2003,18 +1796,21 @@ body:has(.Dropdown-menu) > nav ul {
     font-size: 1.8rem;
     cursor: pointer;
     transition: transform 0.3s ease, opacity 0.3s ease;
+    padding: 0;
 }
-
 
 .btn-profile:hover {
     transform: scale(1.1);
     opacity: 0.8;
 }
 
-.btn-profile:active{
+.btn-profile:active {
     transform: scale(0.95);
 }
 
+.btn-profile a .text-profile {
+    display: none;
+}
 
 .btn-crear {
     display: block;
@@ -2026,16 +1822,14 @@ body:has(.Dropdown-menu) > nav ul {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-
 .btn-crear:hover {
     transform: scale(1.1);
     box-shadow: 0.2rem 0.2rem black;
 }
 
-.btn-crear:active{
+.btn-crear:active {
     transform: scale(1.02);
 }
-
 
 .btn-group-actions {
     display: flex;
@@ -2045,37 +1839,19 @@ body:has(.Dropdown-menu) > nav ul {
     align-items: center;
 }
 
-
-.image-publication {
-    width: 100%;
-    min-height: 0;
-    flex: 1;
-    object-fit: cover;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.image-publication:hover{
-    opacity: 0.9;
-    transform: scale(1.01);
-}
-
-
 .publication-card h1 {
     font-size: 2.2rem;
 }
-
 
 .publication-card .p-index {
     font-size: 1.2rem;
     font-weight: bold;
 }
 
-
 .footer .p-index {
     font-size: 1.1rem;
     font-weight: bold;
 }
-
 
 .btn-crear,
 .btn-user,
@@ -2093,23 +1869,22 @@ body:has(.Dropdown-menu) > nav ul {
 
 .modal .close,
 .modal .btn-danger,
-.modal .btn-success{
+.modal .btn-success {
     transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
 }
 
 .modal .close:hover,
 .modal .btn-danger:hover,
-.modal .btn-success:hover{
+.modal .btn-success:hover {
     transform: scale(1.07);
     box-shadow: 0.2rem 0.2rem rgba(0,0,0,0.3);
 }
 
 .modal .close:active,
 .modal .btn-danger:active,
-.modal .btn-success:active{
+.modal .btn-success:active {
     transform: scale(0.97);
 }
-
 
 #header .btn-submit,
 #header .btn-reset {
@@ -2123,7 +1898,6 @@ body:has(.Dropdown-menu) > nav ul {
     transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
-
 #header .btn-submit:hover,
 #header .btn-reset:hover {
     transform: scale(1.1);
@@ -2132,20 +1906,17 @@ body:has(.Dropdown-menu) > nav ul {
 }
 
 #header .btn-submit:active,
-#header .btn-reset:active{
+#header .btn-reset:active {
     transform: scale(0.97);
 }
-
 
 #header .btn-submit {
     border-radius: 0.25rem 0 0 0.25rem;
 }
 
-
 #header .btn-reset {
     border-radius: 0 0.25rem 0.25rem 0;
 }
-
 
 #header .form-control {
     background-color: #ffffff;
@@ -2157,21 +1928,152 @@ body:has(.Dropdown-menu) > nav ul {
     transition: box-shadow 0.3s ease;
 }
 
-#header .form-control:focus{
+#header .form-control:focus {
     outline: none;
     box-shadow: 0 0 0 3px rgba(80, 132, 157, 0.3);
 }
-.btn-profile {
-    padding: 0;
-    border: none;
-    background: transparent;
-    cursor: pointer;
-}
-header .btn-profile a .text-profile {
-    display: none;
+
+/* ── scrollbar global ── */
+
+body {
+    --sb-track-color: #ffffff;
+    --sb-thumb-color: #50849D;
+    --sb-size: 14px;
 }
 
-/* estilos para index mobile first */
+body::-webkit-scrollbar {
+    width: var(--sb-size);
+}
+
+body::-webkit-scrollbar-track {
+    background: var(--sb-track-color);
+    border-radius: 3px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: var(--sb-thumb-color);
+    border-radius: 3px;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+    body {
+        scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+    }
+}
+
+/* ── estilos para tarjetas de busqueda (Busqueda.html) ── */
+
+.titulodebusqueda {
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    color: #000000;
+}
+
+.busqueda-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    padding: 1.2rem;
+    margin-bottom: 1.2rem;
+    background-color: #000000;
+    border-radius: 0.25rem;
+}
+
+.busqueda-card .btn-user {
+    align-self: flex-start;
+}
+
+.busqueda-card .btn-user .user-btn {
+    color: #ffffff;
+    font-size: 1.8rem;
+}
+
+.busqueda-meta {
+    margin: 0;
+    color: #ffffff;
+    font-size: 1.2rem;
+}
+
+.busqueda-meta span {
+    margin-left: 0.6rem;
+    font-weight: 400;
+    color: #ffffff;
+}
+
+.busqueda-hora {
+    align-self: flex-start;
+    margin-top: -0.6rem;
+    margin-left: 2.4rem;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #ffffff;
+}
+
+.busqueda-titulo {
+    margin: 0;
+    color: #ffffff;
+    font-size: 2.2rem;
+}
+
+.busqueda-texto {
+    margin: 0;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.45;
+}
+
+.busqueda-imagen {
+    width: 100%;
+    max-height: 18rem;
+    margin-top: 0.5rem;
+    object-fit: cover;
+    border-radius: 0.4rem;
+}
+
+/* ── copyright dentro del nav ── */
+
+#nav .p-index {
+    margin-top: auto;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+/* ── centrado del boton de menu y la lista en Busqueda.html ── */
+
+#nav .btn-menu {
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#nav ul {
+    justify-content: center;
+}
+
+/* ── scrollbar para #section ── */
+
+#section::-webkit-scrollbar {
+    width: var(--sb-size);
+}
+
+#section::-webkit-scrollbar-track {
+    background: var(--sb-track-color);
+    border-radius: 3px;
+}
+
+#section::-webkit-scrollbar-thumb {
+    background: var(--sb-thumb-color);
+    border-radius: 3px;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+    #section {
+        scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+    }
+}
+
+/* ── mobile first: grid en columna ── */
 
 .grid {
     grid-template-areas:
@@ -2202,7 +2104,7 @@ header .btn-profile a .text-profile {
     overflow: auto;
 }
 
-/* media para index pc */
+/* ── media para pc ── */
 
 @media (min-width: 769px) {
     .grid {
@@ -2230,29 +2132,24 @@ header .btn-profile a .text-profile {
     }
 
     #section {
-        overflow: hidden;
+        overflow-y: auto;
     }
 }
 
-body {
-  --sb-track-color: #232E33;
-  --sb-thumb-color: #6baf8d;
-  --sb-size: 14px;
+/* ── comments.html: overrides para section y publication-card ── */
+
+body:has(.comment-write) #section {
+    overflow-y: auto;
 }
-body::-webkit-scrollbar {
-  width: var(--sb-size)
+
+body:has(.comment-write) .publication-card {
+    overflow: visible;
+    flex: unset;
+    justify-content: flex-start;
+    margin-bottom: 0.75rem;
 }
-body::-webkit-scrollbar-track {
-  background: var(--sb-track-color);
-  border-radius: 3px;
-}
-body::-webkit-scrollbar-thumb {
-  background: var(--sb-thumb-color);
-  border-radius: 3px;
-}
-@supports not selector(::-webkit-scrollbar) {
-  body {
-    scrollbar-color: var(--sb-thumb-color)
-                     var(--sb-track-color);
-  }
+
+body:has(.comment-write) .image-publication {
+    flex: unset;
+    max-height: 20rem;
 }
