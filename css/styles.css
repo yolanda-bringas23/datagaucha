@@ -615,6 +615,12 @@ p{
     padding: 0 1rem;
 }
 
+.text-container p {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
 footer{
     text-align: center;
     margin-top: 4rem;
