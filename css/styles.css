@@ -351,7 +351,6 @@ p{
     text-align: center;
     text-decoration: none;
     transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
-    }
 
 .nav-profile ul {
     display: flex;
