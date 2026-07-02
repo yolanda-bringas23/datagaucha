@@ -225,14 +225,14 @@ p{
     max-width: 62rem;
     margin: 0 auto;
 }
+
 .form-check a{
     color: #000000;
     text-decoration: none;
     font-weight: bold;
-    cursor: pointer;    
-}
-.form-check h2{
-    color: #000000;
+    cursor: pointer; 
+    font-size: 2rem; 
+    text-decoration: underline;  
 }
 
 .registration input[type="text"],
@@ -338,7 +338,7 @@ p{
     background-color: #ffffff;
 }
 
-    .nav-profile li a{
+    .nav-profile li a {
     display: block;
     width: 100%;
     box-sizing: border-box;
@@ -351,6 +351,7 @@ p{
     text-align: center;
     text-decoration: none;
     transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
 
 .nav-profile ul {
     display: flex;
