@@ -1,24 +1,30 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="busqueda, publicaciones, Data Gaucha, DohCode, comunidad, resultados">
-    <meta name="description" content="Buscá publicaciones en Data Gaucha. Encontrá contenido de otros usuarios sobre cualquier tema dentro de la comunidad DohCode.">
+    <meta name="keywords" content="busqueda, usuarios, Data Gaucha, DohCode, comunidad, resultados">
+    <meta name="description" content="Buscá usuarios en Data Gaucha. Encontrá a otras personas dentro de la comunidad DohCode.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16x16.png">
     <title>Búsqueda | Data Gaucha</title>
 </head>
+
 <body>
+
     <div class="grid">
+
         <nav id="nav">
             <button class="btn-menu" type="button">
                 <i class="fa-solid fa-bars"></i>
             </button>
+
             <ul>
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="comentarios.html">Comentarios</a></li>
@@ -27,61 +33,162 @@
                 <li><a href="registro.html">Registro</a></li>
                 <li><a href="loguear.html">Cerrar Sesión</a></li>
             </ul>
+
             <p class="p-index">© DohCode 2026</p>
         </nav>
+
         <header id="header">
+
             <form class="search-form" action="" method="get">
                 <div class="input-group">
+
                     <button class="btn-submit" type="submit">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </button>
-                    <input type="text" class="form-control" name="search" placeholder="Buscar..." required>
+
+                    <input
+                        type="text"
+                        class="form-control"
+                        name="search"
+                        placeholder="Buscar..."
+                        required>
+
                     <button class="btn-reset" type="reset">
                         <i class="fa-solid fa-xmark"></i>
                     </button>
+
                 </div>
             </form>
+
             <a href="perfil.html" class="btn-profile">
                 <i class="fa-solid fa-circle-user user-btn"></i>
                 <span class="text-profile"></span>
             </a>
+
         </header>
+
         <section id="section">
-            <h1 class="titulodebusqueda">13 resultados encontrados</h1>
 
-            <article class="busqueda-card">
+            <h1 class="search-title">
+                13 resultados encontrados
+            </h1>
+
+            <article class="search-card">
                 <button class="btn-user" type="button">
                     <i class="fa-solid fa-circle-user user-btn"></i>
-                    <p class="busqueda-meta">user2k4321</p>
+
+                    <div class="search-user-info">
+                        <p class="search-name">Martina Gómez</p>
+                        <p class="search-username">@martinagomez</p>
+                    </div>
                 </button>
-                <span class="busqueda-hora">Hace 2 horas</span>
-                <h2 class="busqueda-titulo">Lugares para aprender a tocar guitarra</h2>
-                <p class="busqueda-texto">Tengo ya 1 año tocando y creo que estoy bastante más avanzado de lo que debería en tema de habilidad porque le puse muchas horas diarias, siempre fui autodidacta y siento que por eso me he saltado muchos escalones en lo que vendría a ser tocar y cosas más fundamentales, y me gustaría tener clases con un profesor, en lo posible que no sea un lugar en q toque mu...</p>
             </article>
 
-            <article class="busqueda-card">
+            <article class="search-card">
                 <button class="btn-user" type="button">
                     <i class="fa-solid fa-circle-user user-btn"></i>
-                    <p class="busqueda-meta">user31hgt5</p>
+
+                    <div class="search-user-info">
+                        <p class="search-name">Lucas Fernández</p>
+                        <p class="search-username">@lucasfernandez</p>
+                    </div>
                 </button>
-                <span class="busqueda-hora">Hace 7 horas</span>
-                <h2 class="busqueda-titulo">Escuelas de Canto y Guitarra</h2>
-                <p class="busqueda-texto">Buenas, lo del título. Estoy buscando una escuela de Canto y de Guitarra. Pueden ser por separado pero si son ambas cosas mejor! También estoy dispuesto a aprender con algún particular que de clases, si saben o tienen algún conocido que lo haga les agradezco la info. Que tengan un buen día!</p>
             </article>
 
-            <article class="busqueda-card">
+            <article class="search-card">
                 <button class="btn-user" type="button">
                     <i class="fa-solid fa-circle-user user-btn"></i>
-                    <p class="busqueda-meta">user87ukwn</p>
+
+                    <div class="search-user-info">
+                        <p class="search-name">Sofía Ramírez</p>
+                        <p class="search-username">@sofiaramirez</p>
+                    </div>
                 </button>
-                <span class="busqueda-hora">Hace 1 día</span>
-                <h2 class="busqueda-titulo">Estoy aprendiendo a tocar la guitarra</h2>
-                <p class="busqueda-texto">Eso, pasen tips porque me siento así con la guitarra que me regaló mi tío.</p>
-                <img class="busqueda-imagen" src="../img/Imagen3.jpg" alt="Foto de una guitarra compartida por el usuario">
             </article>
+
+            <article class="search-card">
+                <button class="btn-user" type="button">
+                    <i class="fa-solid fa-circle-user user-btn"></i>
+
+                    <div class="search-user-info">
+                        <p class="search-name">Agustín Torres</p>
+                        <p class="search-username">@agustintorres</p>
+                    </div>
+                </button>
+            </article>
+
+            <article class="search-card">
+                <button class="btn-user" type="button">
+                    <i class="fa-solid fa-circle-user user-btn"></i>
+
+                    <div class="search-user-info">
+                        <p class="search-name">Valentina Díaz</p>
+                        <p class="search-username">@valentinadiaz</p>
+                    </div>
+                </button>
+            </article>
+
+            <article class="search-card">
+                <button class="btn-user" type="button">
+                    <i class="fa-solid fa-circle-user user-btn"></i>
+
+                    <div class="search-user-info">
+                        <p class="search-name">Bruno Acosta</p>
+                        <p class="search-username">@brunoacosta</p>
+                    </div>
+                </button>
+            </article>
+
+            <article class="search-card">
+                <button class="btn-user" type="button">
+                    <i class="fa-solid fa-circle-user user-btn"></i>
+
+                    <div class="search-user-info">
+                        <p class="search-name">Camila Herrera</p>
+                        <p class="search-username">@camilaherrera</p>
+                    </div>
+                </button>
+            </article>
+
+            <article class="search-card">
+                <button class="btn-user" type="button">
+                    <i class="fa-solid fa-circle-user user-btn"></i>
+
+                    <div class="search-user-info">
+                        <p class="search-name">Nicolás Molina</p>
+                        <p class="search-username">@nicolasmolina</p>
+                    </div>
+                </button>
+            </article>
+
+            <article class="search-card">
+                <button class="btn-user" type="button">
+                    <i class="fa-solid fa-circle-user user-btn"></i>
+
+                    <div class="search-user-info">
+                        <p class="search-name">Julieta Rojas</p>
+                        <p class="search-username">@julietarojas</p>
+                    </div>
+                </button>
+            </article>
+
+            <article class="search-card">
+                <button class="btn-user" type="button">
+                    <i class="fa-solid fa-circle-user user-btn"></i>
+
+                    <div class="search-user-info">
+                        <p class="search-name">Franco Ibáñez</p>
+                        <p class="search-username">@francoibanez</p>
+                    </div>
+                </button>
+            </article>
+
         </section>
+
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
+
 </html>

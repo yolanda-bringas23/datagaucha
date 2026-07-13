@@ -36,6 +36,7 @@ h4{
 p{
     font-size: 1rem;
     font-weight: bold;
+    color: #000000;
 }
 
 /* login para mobile*/
@@ -1984,67 +1985,67 @@ body::-webkit-scrollbar-thumb {
 
 /* ── estilos para tarjetas de busqueda (Busqueda.html) ── */
 
-.titulodebusqueda {
+.search-title {
     margin-bottom: 1.5rem;
     font-size: 1.8rem;
     color: #000000;
 }
 
-.busqueda-card {
+.search-card {
     display: flex;
     flex-direction: column;
     gap: 0.6rem;
     padding: 1.2rem;
     margin-bottom: 1.2rem;
-    background-color: #000000;
+    background-color: #eef0f2;
     border-radius: 0.25rem;
 }
 
-.busqueda-card .btn-user {
+.search-card .btn-user {
     align-self: flex-start;
 }
 
-.busqueda-card .btn-user .user-btn {
-    color: #ffffff;
+.search-card .btn-user .user-btn {
+    color: #000000;
     font-size: 1.8rem;
 }
 
-.busqueda-meta {
+.search-meta {
     margin: 0;
-    color: #ffffff;
+    color: #000000;
     font-size: 1.2rem;
 }
 
-.busqueda-meta span {
+.search-meta span {
     margin-left: 0.6rem;
     font-weight: 400;
-    color: #ffffff;
+    color: #000000;
 }
 
-.busqueda-hora {
+.search-time {
     align-self: flex-start;
     margin-top: -0.6rem;
     margin-left: 2.4rem;
     font-weight: bold;
     font-size: 1.2rem;
-    color: #ffffff;
+    color: #000000;
 }
 
-.busqueda-titulo {
+.search-heading {
     margin: 0;
-    color: #ffffff;
+    color: #000000;
     font-size: 2.2rem;
 }
 
-.busqueda-texto {
+.search-text {
     margin: 0;
-    color: #ffffff;
+    color: #000000;
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.45;
 }
 
-.busqueda-imagen {
+.search-image {
     width: 100%;
     max-height: 18rem;
     margin-top: 0.5rem;
@@ -2058,6 +2059,7 @@ body::-webkit-scrollbar-thumb {
     margin-top: auto;
     padding: 1rem 0;
     text-align: center;
+    color: #ffffff;
 }
 
 /* ── centrado del boton de menu y la lista en Busqueda.html ── */
