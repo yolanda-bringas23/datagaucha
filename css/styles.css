@@ -2176,3 +2176,87 @@ body:has(.comment-write) .image-publication {
     flex: unset;
     max-height: 20rem;
 }
+/* ── comments.html: overrides para section y publication-card ── */
+
+body:has(.comment-write) #section {
+    overflow-y: auto;
+}
+
+body:has(.comment-write) .publication-card {
+    overflow: visible;
+    flex: unset;
+    justify-content: flex-start;
+    margin-bottom: 0.75rem;
+}
+
+body:has(.comment-write) .image-publication {
+    flex: unset;
+    max-height: 20rem;
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   AGREGADO: home (index.html) con varias .publication-card seguidas.
+   La base de arriba está pensada para UNA sola card que ocupa toda
+   la #section (flex:1). Con varias, eso las achica y desordena todo.
+   Esto solo se activa cuando #section tiene más de una publication-card
+   como hermanas, así que no pisa ninguna otra página (perfil, comments,
+   detalle de una sola publicación, etc.) que sigue usando las reglas
+   de arriba tal cual.
+   ══════════════════════════════════════════════════════════════════ */
+
+#section:has(.publication-card ~ .publication-card) {
+    overflow-y: auto;
+    align-items: center;
+}
+
+#section:has(.publication-card ~ .publication-card) .publication-card {
+    flex: none;
+    width: 100%;
+    min-height: auto;
+    overflow: visible;
+    justify-content: flex-start;
+    margin: 0 auto 1rem auto;
+}
+
+#section:has(.publication-card ~ .publication-card) .publication-card:last-child {
+    margin-bottom: 0.75rem;
+}
+
+#section:has(.publication-card ~ .publication-card) .image-publication {
+    flex: none;
+    width: 100%;
+    max-height: 24rem;
+    border-radius: 0.2rem;
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   AGREGADO: dentro de .publication-card, todo el texto en blanco
+   (p, h1, h2, h3, h4, span, etc.), porque el fondo de la card es
+   negro. El resto del sitio (p en negro, etc.) queda igual.
+   ══════════════════════════════════════════════════════════════════ */
+
+.publication-card,
+.publication-card p,
+.publication-card h1,
+.publication-card h2,
+.publication-card h3,
+.publication-card h4,
+.publication-card span {
+    color: #ffffff;
+}
+
+.fa-face-sad-tear {
+    color: #ffff00;
+    background-color: #00000000;
+    font-size: 1.8rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.fa-face-sad-tear:hover {
+    transform: scale(1.25);
+    color: #ffff88;
+}
+
+.fa-face-sad-tear:active {
+    transform: scale(1.1);
+}
