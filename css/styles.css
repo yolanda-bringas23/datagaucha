@@ -1575,7 +1575,7 @@ body:has(.Dropdown-menu) > nav ul {
 /* ── .publication-card: base (home) — ocupa toda la section ── */
 
 .publication-card {
-    background-color: #000000;
+    background-color: #50849D;
     border-radius: 0.25rem;
     padding: 0.5rem;
     display: flex;
@@ -1583,13 +1583,19 @@ body:has(.Dropdown-menu) > nav ul {
     gap: 0.38rem;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    height: auto;
     max-width: 50rem;
     flex: 1;
-    min-height: 0;
     margin: 0.75rem auto 0 auto;
     overflow: hidden;
     transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.publication-card button{
+    color: #000000;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .publication-card:hover {
@@ -1601,7 +1607,7 @@ body:has(.Dropdown-menu) > nav ul {
 
 .image-publication {
     width: 100%;
-    min-height: 0;
+    min-height: 1rem;
     flex: 1;
     object-fit: cover;
     transition: opacity 0.3s ease, transform 0.3s ease;
@@ -1786,8 +1792,10 @@ body:has(.Dropdown-menu) > nav ul {
 }
 
 .btn-user {
-    color: #000000;
-    background-color: #000000;
+    color: #eef0f2;
+    border: 500px #000000 solid;
+    background-color: #50849D;
+    width: 75%;
     display: flex;
     align-items: center;
     gap: 0.5rem;
