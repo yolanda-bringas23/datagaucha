@@ -10,28 +10,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16x16.png">
     <link rel="stylesheet" href="css/styles.css">
     <title>Inicio | Data Gaucha</title>
 </head>
 <body>
     <div class="grid">
-        <nav id="nav">
-            <button class="btn-menu" type="button">
-                <i class="fa-solid fa-bars"></i>
-            </button>
-            <ul>
-                <li><a href="html/busqueda.html">Busqueda</a></li>
-                <li><a href="html/comentarios.html">Comentarios</a></li>
-                <li><a href="html/perfil.html">Perfil</a></li>
-                <li><a href="html/condiciones-de-uso.html?back_uri=index.html">Condiciones de Uso</a></li>
-                <li><a href="html/loguear.html">Cerrar Sesión</a></li>
-            </ul>
-            <p class="p-index">© DohCode 2026</p>
-        </nav>
-
-
-        <header id="header">
+        <header id="header" class="">
             <form class="search-form" action="">
                 <div class="input-group">
                     <button class="btn-submit" type="submit">
@@ -48,7 +32,19 @@
                     <span class="text-profile"></span>
             </a>
         </header>
-
+        <nav id="nav" class="nav-index">
+            <button class="btn-menu" type="button" id="btn-menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <ul>
+                <li><a href="html/busqueda.html">Busqueda</a></li>
+                <li><a href="html/comentarios.html">Comentarios</a></li>
+                <li><a href="html/perfil.html">Perfil</a></li>
+                <li><a href="html/condiciones-de-uso.html?back_uri=index.html">Condiciones de Uso</a></li>
+                <li><a href="html/loguear.html">Cerrar Sesión</a></li>
+            </ul>
+            <p class="p-index">© DohCode 2026</p>
+        </nav>
 
         <section id="section">
             <h1 class="visually-hidden">Publicaciones de Data Gaucha</h1>
@@ -68,6 +64,23 @@
                 <div class="btn-group-actions">
                     <button type="button"><i class="fa-solid fa-heart btn-like"></i></button>
                     <button type="button"><i class="fa-solid fa-comment btn-comment"></i></button>
+                    <button type="button"><i class="fa-solid fa-face-smile btn-share"></i></button>
+                </div>
+            </article>
+
+            <article class="publication-card">
+                <button class="btn-user" type="button">
+                    <i class="fa-solid fa-circle-user user-btn"></i>
+                    <p class="p-index">Nombre de usuario</p>
+                </button>
+                <h2>Mi día</h2>
+                <p class="p-index">Ayer me encontre con Messi disfrutando de unos mates en la entrada de su casa,
+                                   obviamente le pedi una foto y mi mala suerte que no tenia un fibron para pedirle su firma y 
+                                   tatuarmela, aun asi me quedo con eso ya
+                </p>
+                <div class="btn-group-actions">
+                    <button type="button"><i class="fa-solid fa-heart btn-like"></i>4000</button>
+                    <button type="button"><i class="fa-solid fa-comment btn-comment"></i>67</button>
                     <button type="button"><i class="fa-solid fa-face-smile btn-share"></i></button>
                 </div>
             </article>
@@ -114,5 +127,6 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="Js/index.js"></script>
 </body>
 </html>
