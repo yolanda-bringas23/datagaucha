@@ -1447,6 +1447,15 @@ body:has(.Dropdown-menu) > nav ul {
     overflow: hidden;
 }
 
+.light #nav {
+    background-color: #2f3e56;
+    color: #000000;
+}
+
+.light #darkMode{
+    background-color: #2f3e56;
+}
+
 #nav ul {
     display: flex;
     flex-direction: column;
@@ -1535,6 +1544,11 @@ body:has(.Dropdown-menu) > nav ul {
     overflow: hidden;
 }
 
+.light #header {
+    background-color: #2f3e56;
+    color: #000000;
+}
+
 .search-form {
     position: absolute;
     left: 50%;
@@ -1558,6 +1572,11 @@ body:has(.Dropdown-menu) > nav ul {
     overflow: hidden;
     display: flex;
     flex-direction: column;
+}
+
+.light #section{
+    background-color: #0b0f1a;
+    color: #ffffff;
 }
 
 #footer {
@@ -1589,6 +1608,10 @@ body:has(.Dropdown-menu) > nav ul {
     margin: 0.75rem auto 0 auto;
     overflow: hidden;
     transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.light .publication-card{
+    background-color: #2f3e56;
 }
 
 .publication-card button{
@@ -1806,6 +1829,10 @@ body:has(.Dropdown-menu) > nav ul {
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
+.light .btn-user{
+    background-color: #2f3e56;
+}
+
 .btn-user:hover {
     transform: scale(1.05);
     opacity: 0.85;
@@ -1969,7 +1996,13 @@ body:has(.Dropdown-menu) > nav ul {
 body {
     --sb-track-color: #ffffff;
     --sb-thumb-color: #50849D;
-    --sb-size: 14px;
+    --sb-size: 1rem;
+}
+
+body.light{
+    --sb-track-color: #0b0f1a;
+    --sb-thumb-color: #2f3e56;
+    --sb-size: 1rem;
 }
 
 body::-webkit-scrollbar {
@@ -2224,7 +2257,7 @@ body:has(.comment-write) .image-publication {
     min-height: auto;
     overflow: visible;
     justify-content: flex-start;
-    margin: 0 auto 1rem auto;
+    margin: 1rem auto 1rem auto;
 }
 
 #section:has(.publication-card ~ .publication-card) .publication-card:last-child {
