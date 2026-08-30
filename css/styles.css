@@ -1510,8 +1510,8 @@ body:has(.Dropdown-menu) > nav ul {
     display: block;
     width: 100%;
     box-sizing: border-box;
-    margin: 0;
-    padding: 0.65rem 0.5rem;
+    margin: 3px;
+    padding: 0.4rem 0.5rem;
     color: #ffffff;
     font-size: 1rem;
     font-weight: bold;
@@ -1612,6 +1612,7 @@ body:has(.Dropdown-menu) > nav ul {
 
 .light .publication-card{
     background-color: #2f3e56;
+    border-color: #0d6efd;
 }
 
 .publication-card button{
