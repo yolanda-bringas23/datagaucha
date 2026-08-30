@@ -28,7 +28,7 @@
                 </div>
             </form>
             <a href="html/perfil.html" class="btn-profile" type="button">
-                    <i class="fa-solid fa-circle-user user-btn"></i>
+                    <i id="btnUser-header" class="fa-solid fa-circle-user user-btn"></i>
                     <span class="text-profile"></span>
             </a>
         </header>
@@ -49,7 +49,7 @@
 
         <section id="section">
             <h1 class="visually-hidden">Publicaciones de Data Gaucha</h1>
-            <button type="button" class="btn btn-primary btn-crear" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <button id="buttonModal" type="button" class="btn btn-primary btn-crear" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 Crear Publicación
             </button>
 
@@ -90,7 +90,7 @@
 
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
-            <div class="modal-content">
+            <div class="modal-content" id="modal">
 
 
                 <div class="modal-header">
@@ -102,15 +102,15 @@
                 <div class="modal-body">
                     <form action="" method="post" enctype="multipart/form-data">
                         <h2>Título de la Publicación</h2>
-                        <input type="text" name="title" placeholder="Escribe un título atractivo..." required class="form-control mb-3">
+                        <input id="contentModal" type="text" name="title" placeholder="Escribe un título atractivo..." required class="form-control mb-3">
 
 
                         <h2>Contenido</h2>
-                        <textarea name="content" placeholder="Escribe el contenido de la publicación aquí..." required class="form-control mb-3"></textarea>
+                        <textarea id="contentModal" name="content" placeholder="Escribe el contenido de la publicación aquí..." required class="form-control mb-3"></textarea>
 
 
                         <h2>Imagen de la publicación (opcional)</h2>
-                        <input type="file" name="image" class="form-control mb-3">
+                        <input id="contentModal" type="file" name="image" class="form-control mb-3">
 
 
                         <div class="modal-footer">

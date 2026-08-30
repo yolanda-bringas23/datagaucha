@@ -1603,7 +1603,7 @@ body:has(.Dropdown-menu) > nav ul {
     justify-content: center;
     align-items: center;
     height: auto;
-    max-width: 50rem;
+    max-width: 90rem;
     flex: 1;
     margin: 0.75rem auto 0 auto;
     overflow: hidden;
@@ -1630,7 +1630,7 @@ body:has(.Dropdown-menu) > nav ul {
 
 .image-publication {
     width: 100%;
-    min-height: 1rem;
+    min-height: 10rem;
     flex: 1;
     object-fit: cover;
     transition: opacity 0.3s ease, transform 0.3s ease;
@@ -1788,6 +1788,10 @@ body:has(.Dropdown-menu) > nav ul {
     background-color: #00000000;
     font-size: 1.8rem;
     transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+#btnUser-header{
+    font-size: 3.2rem;
 }
 
 .user-btn:hover {
@@ -2267,7 +2271,7 @@ body:has(.comment-write) .image-publication {
 #section:has(.publication-card ~ .publication-card) .image-publication {
     flex: none;
     width: 100%;
-    max-height: 24rem;
+    max-height: 50rem;
     border-radius: 0.2rem;
 }
 
@@ -2302,3 +2306,19 @@ body:has(.comment-write) .image-publication {
 .fa-face-sad-tear:active {
     transform: scale(1.1);
 }
+
+/*Estilo oscuro de el modal de bootstrap 5*/
+
+.light #modal{
+    background-color: #2f3e56;
+    color: #000000
+}
+
+.light #contentModal{
+    background-color: #eef0f2;
+}
+
+#buttonModal{
+    background-color: #000000;
+}
+
