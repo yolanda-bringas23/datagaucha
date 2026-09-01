@@ -448,6 +448,10 @@ p{
     font-size: 2.2rem;
 }
 
+.light .info-profile h1 {
+    color: #ADACA9;
+}
+
 .profile-counters {
     display: flex;
     flex-direction: column;
@@ -461,12 +465,17 @@ p{
 
 .light .profile-counters button{
     background-color: #0b0f1a;
+    color: #ADACA9;
 }
 
 .post h2 {
     text-align: center;
     margin: 2rem 1rem;
     font-size: 2rem;
+}
+
+.light .post h2 {
+    color: #ADACA9;
 }
 
 .profile-post {
@@ -647,14 +656,17 @@ p{
     background-color: #eef0f2;
 }
 
+.light.body-conditions{
+    background-color: #0b0f1a;
+}
+
 .navbar-conditions{
     display: flex;
     position: relative;
     height: 5rem;
     align-items: center;
-    padding: 0 1rem;
+    padding: 1rem;
     background-color: #adaca9;
-    padding:1rem ;
 }
 
 .nav-left{
@@ -710,6 +722,10 @@ p{
     animation: titulomovimiento 4s ease-in infinite;
 }
 
+.light .conditions-logo-container h2{
+    color: #ADACA9;
+}
+
 @keyframes titulomovimiento {
     0% {
         transform: translateX(-40px);
@@ -729,6 +745,10 @@ p{
     padding: 0 1rem;
 }
 
+.light .text-container{
+    color: #ADACA9;
+}
+
 .text-container p {
     font-size: 2rem;
     font-weight: bold;
@@ -739,6 +759,33 @@ footer{
     text-align: center;
     margin-top: 4rem;
     padding-bottom: 2rem;
+}
+
+.light footer{
+    color: #ADACA9;
+}
+
+
+header #darkMode {
+    position: relative;
+    width: auto;
+    height: auto;
+    margin-left: auto;
+    background-color: #ADACA9;
+    color: #000000;
+}
+
+.light header #darkMode {
+    position: relative;
+    width: auto;
+    height: auto;
+    margin-left: auto;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #ADACA9;
+    color: #000000;
 }
 
 /* busqueda y comentarios */
@@ -1895,7 +1942,7 @@ body:has(.Dropdown-menu) > nav ul {
 .user-btn {
     color: #ffffff;
     background-color: #00000000;
-    font-size: 1.8rem;
+    font-size: 3.2rem;
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
@@ -2112,7 +2159,7 @@ body {
     --sb-size: 1rem;
 }
 
-body .light{
+body.light{
     --sb-track-color: #0b0f1a;
     --sb-thumb-color: #2f3e56;
     --sb-size: 1rem;
@@ -2146,6 +2193,10 @@ body::-webkit-scrollbar-thumb {
     color: #000000;
 }
 
+.light .search-title{
+    color: #ADACA9;
+}
+
 .search-card {
     display: flex;
     flex-direction: column;
@@ -2156,8 +2207,12 @@ body::-webkit-scrollbar-thumb {
     border-radius: 0.25rem;
 }
 
+.light .search-card {
+    background-color: #0b0f1a;
+}
+
 .search-card .btn-user {
-    align-self: flex-start;
+    align-self: center;
 }
 
 .search-card .btn-user .user-btn {
@@ -2418,6 +2473,7 @@ body:has(.comment-write) .image-publication {
 
 /*Estilo oscuro de el modal de bootstrap 5*/
 
+/*Index*/
 .light #modal{
     background-color: #2f3e56;
     color: #000000
@@ -2429,5 +2485,12 @@ body:has(.comment-write) .image-publication {
 
 .light #buttonModal{
     background-color: #000000;
+}
+
+/*Perfil*/
+
+.light .modal-content{
+    background-color: #2f3e56;
+    color: #EEF0F2;
 }
 
