@@ -426,6 +426,10 @@ p{
     transition: box-shadow 0.3s ease;
 }
 
+.light .boton-edit{
+    color: #ADACA9;
+}
+
 .boton-edit:hover {
     box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.8);
 }
@@ -453,6 +457,10 @@ p{
 .profile-counters button {
     background-color: #50849D;
     color: #ffffff;
+}
+
+.light .profile-counters button{
+    background-color: #0b0f1a;
 }
 
 .post h2 {
