@@ -323,6 +323,9 @@ p{
     width: 100%;
     background-color: #50849D;
     padding: 0.8rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .light .profile-nav {
@@ -341,6 +344,9 @@ p{
 .nav-profile {
     width: 100%;
     background-color: #50849D;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .light .nav-profile {
@@ -362,7 +368,12 @@ p{
     transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
 }
 
+.nav-profile li a:hover{
+    background-color: #000000;
+}
+
 .nav-profile ul {
+    justify-content: center;
     display: flex;
     gap: 1rem;
     margin: 0;
@@ -500,7 +511,7 @@ p{
 }
 
 #darkMode{
-    font-size: 1rem;
+    font-size: 0.9rem;
     padding: 0.8rem 1.2rem;
     width: 100%;
     box-sizing: border-box;
@@ -516,6 +527,14 @@ p{
 
 .light #darkMode{
     background-color: #2f3e56;
+}
+
+#darkMode:hover{
+    background-color: #000000
+}
+
+.light #darkMode:hover{
+    background-color: #000000
 }
 
 /* media para perfil pc */
@@ -592,18 +611,18 @@ p{
     }
 
     .nav-profile li a{
-    display: block;
-    width: 100%;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 1rem 0.5rem;
-    color: #ffffff;
-    font-size: 1.4rem;
-    font-weight: bold;
-    line-height: 1.2;
-    text-align: center;
-    text-decoration: none;
-    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 1rem 0.5rem;
+        color: #ffffff;
+        font-size: 1.4rem;
+        font-weight: bold;
+        line-height: 1.2;
+        text-align: center;
+        text-decoration: none;
+        transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
     }
 
     .nav-profile li a:hover{
@@ -771,8 +790,10 @@ header #darkMode {
     width: auto;
     height: auto;
     margin-left: auto;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
     background-color: #ADACA9;
-    color: #000000;
+    color: white;
 }
 
 .light header #darkMode {
@@ -785,7 +806,7 @@ header #darkMode {
     border-radius: 5px;
     cursor: pointer;
     background-color: #ADACA9;
-    color: #000000;
+    color: white;
 }
 
 /* busqueda y comentarios */
@@ -1605,11 +1626,21 @@ body:has(.Dropdown-menu) > nav ul {
     flex-direction: column;
     align-items: stretch;
     overflow: hidden;
+    top: 0;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+}
+
+#nav{
+    position: sticky;
+    top: 0;
 }
 
 .light #nav {
     background-color: #2f3e56;
     color: #000000;
+    background-attachment: fixed;
+    position: sticky;
 }
 
 #nav ul {
@@ -1727,6 +1758,7 @@ body:has(.Dropdown-menu) > nav ul {
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    overflow: visible;
 }
 
 .light #section{
@@ -2083,7 +2115,6 @@ body:has(.Dropdown-menu) > nav ul {
 .modal .btn-danger,
 .modal .btn-success {
     font-size: 1.1rem;
-    font-weight: bold;
 }
 
 .modal .close,
@@ -2318,10 +2349,15 @@ body::-webkit-scrollbar-thumb {
     grid-template-columns: 1fr;
     min-height: 100vh;
     height: auto;
+    overflow: visible;
 }
 
-#nav {
-    overflow-x: auto;
+.btn-menu{
+    display: none;
+}
+
+#nav{
+    overflow: visible;
 }
 
 #nav ul {
@@ -2354,6 +2390,10 @@ body::-webkit-scrollbar-thumb {
 
     #nav {
         overflow: hidden;
+    }
+
+    .btn-menu{
+        display: block;
     }
 
     #nav ul {
@@ -2494,4 +2534,3 @@ body:has(.comment-write) .image-publication {
     background-color: #2f3e56;
     color: #EEF0F2;
 }
-
