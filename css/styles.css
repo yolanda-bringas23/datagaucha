@@ -1887,6 +1887,7 @@ body:has(.Dropdown-menu) > nav ul {
 }
 
 .btn-comment {
+    text-decoration: none;
     color: #ffffff;
     background-color: #00000000;
     font-size: 1.8rem;
