@@ -323,6 +323,13 @@ p{
     width: 100%;
     background-color: #50849D;
     padding: 0.8rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.light .profile-nav {
+    background-color: #2f3e56;
 }
 
 .menu-button {
@@ -336,10 +343,17 @@ p{
 
 .nav-profile {
     width: 100%;
-    background-color: #ffffff;
+    background-color: #50849D;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-    .nav-profile li a {
+.light .nav-profile {
+    background-color: #2f3e56;
+}
+
+.nav-profile li a {
     display: block;
     width: 100%;
     box-sizing: border-box;
@@ -354,7 +368,12 @@ p{
     transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
 }
 
+.nav-profile li a:hover{
+    background-color: #000000;
+}
+
 .nav-profile ul {
+    justify-content: center;
     display: flex;
     gap: 1rem;
     margin: 0;
@@ -373,10 +392,24 @@ p{
     padding: 1.5rem;
 }
 
+.light .main-profile {
+    background-color: #0b0f1a;
+}
+
 .profile, .post {
     background-color: #ffffff;
     padding: 1.5rem;
     margin-top: 1.5rem;
+}
+
+.light .post {
+    background-color: #2f3e56;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.light .profile {
+    background-color: #2f3e56;
 }
 
 .profile-top-section {
@@ -404,6 +437,10 @@ p{
     transition: box-shadow 0.3s ease;
 }
 
+.light .boton-edit{
+    color: #ADACA9;
+}
+
 .boton-edit:hover {
     box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.8);
 }
@@ -422,6 +459,10 @@ p{
     font-size: 2.2rem;
 }
 
+.light .info-profile h1 {
+    color: #ADACA9;
+}
+
 .profile-counters {
     display: flex;
     flex-direction: column;
@@ -433,10 +474,19 @@ p{
     color: #ffffff;
 }
 
+.light .profile-counters button{
+    background-color: #0b0f1a;
+    color: #ADACA9;
+}
+
 .post h2 {
     text-align: center;
     margin: 2rem 1rem;
     font-size: 2rem;
+}
+
+.light .post h2 {
+    color: #ADACA9;
 }
 
 .profile-post {
@@ -451,6 +501,42 @@ p{
     font-weight: bold;
 }
 
+.light .profile-post div{
+    background-color: #0b0f1a;
+    color: #ADACA9;
+}
+
+.light #darkMode li{
+    background-color: #ADACA9;
+}
+
+#darkMode{
+    font-size: 0.9rem;
+    padding: 0.8rem 1.2rem;
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+    background-color: #50849D;
+    color: #ffffff;
+    font-weight: bold;
+    line-height: 1.2;
+    appearance: none;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.light #darkMode{
+    background-color: #2f3e56;
+}
+
+#darkMode:hover{
+    background-color: #000000
+}
+
+.light #darkMode:hover{
+    background-color: #000000
+}
+
 /* media para perfil pc */
 
 @media (min-width: 769px) {
@@ -460,11 +546,35 @@ p{
         grid-template-rows: auto 1fr;
     }
 
-    .profile-page button {
+    .light #darkMode button {
         font-size: 1.4rem;
         padding: 0.8rem 1.2rem;
+        width: 100%;
+        box-sizing: border-box;
+        border: none;
+        background-color: #2f3e56;
+        color: #ffffff;
+        font-weight: bold;
+        line-height: 1.2;
+        appearance: none;
+        cursor: pointer;
+        transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
     }
 
+    #darkMode{
+        font-size: 1.4rem;
+        padding: 0.8rem 1.2rem;
+        width: 100%;
+        box-sizing: border-box;
+        border: none;
+        background-color: #50849D;
+        color: #ffffff;
+        font-weight: bold;
+        line-height: 1.2;
+        appearance: none;
+        cursor: pointer;
+        transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+    }
 
     .profile-nav {
         grid-column: 1/3;
@@ -499,19 +609,20 @@ p{
         font-size: 1.6rem;
         width: 33%;
     }
+
     .nav-profile li a{
-    display: block;
-    width: 100%;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0.65rem 0.5rem;
-    color: #ffffff;
-    font-size: 1rem;
-    font-weight: bold;
-    line-height: 1.2;
-    text-align: center;
-    text-decoration: none;
-    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 1rem 0.5rem;
+        color: #ffffff;
+        font-size: 1.4rem;
+        font-weight: bold;
+        line-height: 1.2;
+        text-align: center;
+        text-decoration: none;
+        transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
     }
 
     .nav-profile li a:hover{
@@ -519,8 +630,42 @@ p{
     }
 
     .btn-menu{
-    display: flex;
-    margin-left: 10rem;
+        display: flex;
+        margin-left: 10rem;
+    }
+
+    #darkMode button{
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 1.14rem 0.5rem;
+        border: none;
+        background-color: #50849D;
+        color: #ffffff;
+        font-size: 1.4rem;
+        font-weight: bold;
+        line-height: 1.2;
+        text-align: center;
+        appearance: none;
+        cursor: pointer;
+        transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .light #darkMode {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 1.14rem 0.5rem;
+        border: none;
+        background-color: #2f3e56;
+        color: #ffffff;
+        font-size: 1.4rem;
+        font-weight: bold;
+        line-height: 1.2;
+        text-align: center;
+        appearance: none;
+        cursor: pointer;
+        transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
     }
 }
 
@@ -530,8 +675,8 @@ p{
     background-color: #eef0f2;
 }
 
-.nav-profile{
-    background-color: #50849D;
+.light.body-conditions{
+    background-color: #0b0f1a;
 }
 
 .navbar-conditions{
@@ -539,9 +684,8 @@ p{
     position: relative;
     height: 5rem;
     align-items: center;
-    padding: 0 1rem;
+    padding: 1rem;
     background-color: #adaca9;
-    padding:1rem ;
 }
 
 .nav-left{
@@ -597,6 +741,10 @@ p{
     animation: titulomovimiento 4s ease-in infinite;
 }
 
+.light .conditions-logo-container h2{
+    color: #ADACA9;
+}
+
 @keyframes titulomovimiento {
     0% {
         transform: translateX(-40px);
@@ -616,6 +764,10 @@ p{
     padding: 0 1rem;
 }
 
+.light .text-container{
+    color: #ADACA9;
+}
+
 .text-container p {
     font-size: 2rem;
     font-weight: bold;
@@ -626,6 +778,35 @@ footer{
     text-align: center;
     margin-top: 4rem;
     padding-bottom: 2rem;
+}
+
+.light footer{
+    color: #ADACA9;
+}
+
+
+header #darkMode {
+    position: relative;
+    width: auto;
+    height: auto;
+    margin-left: auto;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    background-color: #ADACA9;
+    color: white;
+}
+
+.light header #darkMode {
+    position: relative;
+    width: auto;
+    height: auto;
+    margin-left: auto;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #ADACA9;
+    color: white;
 }
 
 /* busqueda y comentarios */
@@ -895,7 +1076,7 @@ footer{
 
 .comment-name {
     margin-bottom: 0.4rem;
-    font-weight: 700 !important;
+    font-weight: 700;
 }
 
 .app-footer {
@@ -1445,6 +1626,21 @@ body:has(.Dropdown-menu) > nav ul {
     flex-direction: column;
     align-items: stretch;
     overflow: hidden;
+    top: 0;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+}
+
+#nav{
+    position: sticky;
+    top: 0;
+}
+
+.light #nav {
+    background-color: #2f3e56;
+    color: #000000;
+    background-attachment: fixed;
+    position: sticky;
 }
 
 #nav ul {
@@ -1469,12 +1665,11 @@ body:has(.Dropdown-menu) > nav ul {
     display: block;
     width: 100%;
     box-sizing: border-box;
-    margin: 0;
-    padding: 0.65rem 0.5rem;
+    padding: 1.14rem 0.5rem;
     border: none;
     background-color: #00000000;
     color: #ffffff;
-    font-size: 1rem;
+    font-size: 1.4rem;
     font-weight: bold;
     line-height: 1.2;
     text-align: center;
@@ -1501,10 +1696,10 @@ body:has(.Dropdown-menu) > nav ul {
     display: block;
     width: 100%;
     box-sizing: border-box;
-    margin: 0;
-    padding: 0.65rem 0.5rem;
+    margin: 0.18rem;
+    padding: 1rem 0.5rem;
     color: #ffffff;
-    font-size: 1rem;
+    font-size: 1.4rem;
     font-weight: bold;
     line-height: 1.2;
     text-align: center;
@@ -1535,6 +1730,11 @@ body:has(.Dropdown-menu) > nav ul {
     overflow: hidden;
 }
 
+.light #header {
+    background-color: #2f3e56;
+    color: #000000;
+}
+
 .search-form {
     position: absolute;
     left: 50%;
@@ -1558,6 +1758,12 @@ body:has(.Dropdown-menu) > nav ul {
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    overflow: visible;
+}
+
+.light #section{
+    background-color: #0b0f1a;
+    color: #ffffff;
 }
 
 #footer {
@@ -1575,20 +1781,24 @@ body:has(.Dropdown-menu) > nav ul {
 /* ── .publication-card: base (home) — ocupa toda la section ── */
 
 .publication-card {
+    flex: none;
     background-color: #50849D;
     border-radius: 0.25rem;
     padding: 0.5rem;
     display: flex;
     flex-direction: column;
     gap: 0.38rem;
-    justify-content: center;
     align-items: center;
+    width: 65%;
+    min-height: auto;
     height: auto;
-    max-width: 50rem;
-    flex: 1;
-    margin: 0.75rem auto 0 auto;
-    overflow: hidden;
     transition: box-shadow 0.3s ease, transform 0.3s ease;
+    margin: 1rem auto 1rem auto;
+}
+
+.light .publication-card{
+    background-color: #2f3e56;
+    border-color: #0d6efd;
 }
 
 .publication-card button{
@@ -1607,7 +1817,7 @@ body:has(.Dropdown-menu) > nav ul {
 
 .image-publication {
     width: 100%;
-    min-height: 1rem;
+    min-height: 10rem;
     flex: 1;
     object-fit: cover;
     transition: opacity 0.3s ease, transform 0.3s ease;
@@ -1708,6 +1918,7 @@ body:has(.Dropdown-menu) > nav ul {
 }
 
 .btn-comment {
+    text-decoration: none;
     color: #ffffff;
     background-color: #00000000;
     font-size: 1.8rem;
@@ -1763,8 +1974,12 @@ body:has(.Dropdown-menu) > nav ul {
 .user-btn {
     color: #ffffff;
     background-color: #00000000;
-    font-size: 1.8rem;
+    font-size: 3.2rem;
     transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+#btnUser-header{
+    font-size: 3.2rem;
 }
 
 .user-btn:hover {
@@ -1804,6 +2019,10 @@ body:has(.Dropdown-menu) > nav ul {
     border: none;
     cursor: pointer;
     transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.light .btn-user{
+    background-color: #2f3e56;
 }
 
 .btn-user:hover {
@@ -1895,7 +2114,6 @@ body:has(.Dropdown-menu) > nav ul {
 .modal .btn-danger,
 .modal .btn-success {
     font-size: 1.1rem;
-    font-weight: bold;
 }
 
 .modal .close,
@@ -1969,7 +2187,13 @@ body:has(.Dropdown-menu) > nav ul {
 body {
     --sb-track-color: #ffffff;
     --sb-thumb-color: #50849D;
-    --sb-size: 14px;
+    --sb-size: 1rem;
+}
+
+body.light{
+    --sb-track-color: #0b0f1a;
+    --sb-thumb-color: #2f3e56;
+    --sb-size: 1rem;
 }
 
 body::-webkit-scrollbar {
@@ -2000,6 +2224,10 @@ body::-webkit-scrollbar-thumb {
     color: #000000;
 }
 
+.light .search-title{
+    color: #ADACA9;
+}
+
 .search-card {
     display: flex;
     flex-direction: column;
@@ -2010,8 +2238,12 @@ body::-webkit-scrollbar-thumb {
     border-radius: 0.25rem;
 }
 
+.light .search-card {
+    background-color: #0b0f1a;
+}
+
 .search-card .btn-user {
-    align-self: flex-start;
+    align-self: center;
 }
 
 .search-card .btn-user .user-btn {
@@ -2116,10 +2348,15 @@ body::-webkit-scrollbar-thumb {
     grid-template-columns: 1fr;
     min-height: 100vh;
     height: auto;
+    overflow: visible;
 }
 
-#nav {
-    overflow-x: auto;
+.btn-menu{
+    display: none;
+}
+
+#nav{
+    overflow: visible;
 }
 
 #nav ul {
@@ -2145,13 +2382,17 @@ body::-webkit-scrollbar-thumb {
             "nav section section"
             "nav section section";
         grid-template-rows: 6.25rem 1fr 4.69rem;
-        grid-template-columns: 15% 1fr 1fr;
+        grid-template-columns: 18% 1fr 1fr;
         height: 100vh;
         overflow: hidden;
     }
 
     #nav {
         overflow: hidden;
+    }
+
+    .btn-menu{
+        display: block;
     }
 
     #nav ul {
@@ -2183,7 +2424,7 @@ body:has(.comment-write) .publication-card {
 
 body:has(.comment-write) .image-publication {
     flex: unset;
-    max-height: 20rem;
+    max-height: 50rem;
 }
 /* ── comments.html: overrides para section y publication-card ── */
 
@@ -2200,7 +2441,8 @@ body:has(.comment-write) .publication-card {
 
 body:has(.comment-write) .image-publication {
     flex: unset;
-    max-height: 20rem;
+    max-height: auto;
+    width: 100%;
 }
 
 /* ══════════════════════════════════════════════════════════════════
@@ -2220,11 +2462,11 @@ body:has(.comment-write) .image-publication {
 
 #section:has(.publication-card ~ .publication-card) .publication-card {
     flex: none;
-    width: 100%;
+    width: 70%;
     min-height: auto;
     overflow: visible;
     justify-content: flex-start;
-    margin: 0 auto 1rem auto;
+    margin: 1rem auto 1rem auto;
 }
 
 #section:has(.publication-card ~ .publication-card) .publication-card:last-child {
@@ -2234,7 +2476,7 @@ body:has(.comment-write) .image-publication {
 #section:has(.publication-card ~ .publication-card) .image-publication {
     flex: none;
     width: 100%;
-    max-height: 24rem;
+    max-height: 50rem;
     border-radius: 0.2rem;
 }
 
@@ -2268,4 +2510,27 @@ body:has(.comment-write) .image-publication {
 
 .fa-face-sad-tear:active {
     transform: scale(1.1);
+}
+
+/*Estilo oscuro de el modal de bootstrap 5*/
+
+/*Index*/
+.light #modal{
+    background-color: #2f3e56;
+    color: #000000
+}
+
+.light #contentModal{
+    background-color: #eef0f2;
+}
+
+.light #buttonModal{
+    background-color: #000000;
+}
+
+/*Perfil*/
+
+.light .modal-content{
+    background-color: #2f3e56;
+    color: #EEF0F2;
 }
