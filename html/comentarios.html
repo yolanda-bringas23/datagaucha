@@ -24,7 +24,6 @@
                 <li><a href="busqueda.html">Busqueda</a></li>
                 <li><a href="perfil.html">Perfil</a></li>
                 <li><a href="condiciones-de-uso.html?back_uri=comentarios.html">Condiciones de Uso</a></li>
-                <li><a href="registro.html">Registro</a></li>
                 <li><a href="loguear.html">Cerrar Sesión</a></li>
                 <li><button id="darkMode">Darkmode</button></li>
             </ul>
@@ -68,8 +67,8 @@
                     <button type="button"><i class="fa-solid fa-comment btn-comment"></i></button>
                 </div>
 
-                <form class="comment-write" action="" method="post">
-                    <textarea name="comment" placeholder="Escribe un comentario..."></textarea>
+                <form class="comment-write" id="comment-write" action="" method="post">
+                    <textarea name="comment" id="txt-comment" placeholder="Escribe un comentario..."></textarea>
                     <button class="btn btn-primary btn-crear" type="submit">
                         <i class="fa-solid fa-paper-plane"></i>
                     </button>
@@ -97,12 +96,20 @@
                         </div>
                         <p class="comment-text">Me encanta la foto es muy linda como el que la toma, 10 puntos!!</p>
                     </div>
-                                        <div class="User-comment">
+                    <div class="User-comment">
                         <div class="user-comment-header">
                             <i class="fa-solid fa-circle-user comment-icon"></i>
                             <p class="comment-username">Nombre de usuario</p>
                         </div>
                         <p class="comment-text">Me encanta la foto es muy linda como el que la toma, 10 puntos!!</p>
+                    </div>
+                    <div class="User-comment">
+                        <div class="user-comment-header">
+                            <i class="fa-solid fa-circle-user comment-icon"></i>
+                            <p class="comment-username">Nombre de usuario</p>
+                        </div>
+                        <p class="comment-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis tempore dicta nam et labore ad molestias? 
+                            Dolores, libero veniam, cupiditate corporis dicta fugit beatae sunt placeat qui nemo maxime animi!</p>
                     </div>
                 </div>
 
@@ -112,6 +119,7 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../Js/comentarios.js"></script>
     <script src="../Js/darkMode.js"></script>
 </body>
 </html>

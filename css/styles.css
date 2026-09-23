@@ -1781,20 +1781,19 @@ body:has(.Dropdown-menu) > nav ul {
 /* ── .publication-card: base (home) — ocupa toda la section ── */
 
 .publication-card {
+    flex: none;
     background-color: #50849D;
     border-radius: 0.25rem;
     padding: 0.5rem;
     display: flex;
     flex-direction: column;
     gap: 0.38rem;
-    justify-content: center;
     align-items: center;
+    width: 65%;
+    min-height: auto;
     height: auto;
-    max-width: 90rem;
-    flex: 1;
-    margin: 0.75rem auto 0 auto;
-    overflow: hidden;
     transition: box-shadow 0.3s ease, transform 0.3s ease;
+    margin: 1rem auto 1rem auto;
 }
 
 .light .publication-card{
@@ -2425,7 +2424,7 @@ body:has(.comment-write) .publication-card {
 
 body:has(.comment-write) .image-publication {
     flex: unset;
-    max-height: 20rem;
+    max-height: 50rem;
 }
 /* ── comments.html: overrides para section y publication-card ── */
 
@@ -2442,7 +2441,8 @@ body:has(.comment-write) .publication-card {
 
 body:has(.comment-write) .image-publication {
     flex: unset;
-    max-height: 20rem;
+    max-height: auto;
+    width: 100%;
 }
 
 /* ══════════════════════════════════════════════════════════════════
