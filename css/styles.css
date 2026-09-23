@@ -344,9 +344,9 @@ p{
     width: 100%;
     box-sizing: border-box;
     margin: 0;
-    padding: 0.65rem 0.5rem;
+    padding: 0.9rem 0.5rem;
     color: #ffffff;
-    font-size: 1rem;
+    font-size: 1.6rem;
     font-weight: bold;
     line-height: 1.2;
     text-align: center;
@@ -504,9 +504,9 @@ p{
     width: 100%;
     box-sizing: border-box;
     margin: 0;
-    padding: 0.65rem 0.5rem;
+    padding: 0.9rem 0.5rem;
     color: #ffffff;
-    font-size: 1rem;
+    font-size: 1.6rem;
     font-weight: bold;
     line-height: 1.2;
     text-align: center;
@@ -1502,9 +1502,9 @@ body:has(.Dropdown-menu) > nav ul {
     width: 100%;
     box-sizing: border-box;
     margin: 0;
-    padding: 0.65rem 0.5rem;
+    padding: 0.9rem 0.5rem;
     color: #ffffff;
-    font-size: 1rem;
+    font-size: 1.6rem;
     font-weight: bold;
     line-height: 1.2;
     text-align: center;
@@ -1539,7 +1539,7 @@ body:has(.Dropdown-menu) > nav ul {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    width: min(32rem, 60%);
+    width: min(90rem, 75%);
     display: flex;
     justify-content: center;
 }
@@ -1763,7 +1763,7 @@ body:has(.Dropdown-menu) > nav ul {
 .user-btn {
     color: #ffffff;
     background-color: #00000000;
-    font-size: 1.8rem;
+    font-size: 3.2rem;
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
@@ -1922,7 +1922,7 @@ body:has(.Dropdown-menu) > nav ul {
     background-color: #ffffff;
     border: none;
     color: #50849D;
-    padding: 0.375rem 0.75rem;
+    padding: 1.15rem 0.5rem;
     display: flex;
     align-items: center;
     cursor: pointer;
