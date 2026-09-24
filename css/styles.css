@@ -511,9 +511,10 @@ p{
 }
 
 #darkMode{
-    font-size: 0.9rem;
-    padding: 0.8rem 1.2rem;
+    font-size: 1.2rem;
+    padding: 0.5rem 0.3rem;
     width: 100%;
+    gap: 1rem;
     box-sizing: border-box;
     border: none;
     background-color: #50849D;
@@ -530,6 +531,7 @@ p{
 }
 
 #darkMode:hover{
+    transform: scale(1.05);
     background-color: #000000
 }
 
@@ -626,6 +628,7 @@ p{
     }
 
     .nav-profile li a:hover{
+        transform: scale(1.05);
         background-color: #000000;
     }
 
@@ -2360,12 +2363,8 @@ body::-webkit-scrollbar-thumb {
         font-size: 1.3rem;
     }
 
-    #darkMode {
-        font-size: 0;
-    }
-
-    #darkMode i {
-        font-size: 1.3rem;
+    #darkMode span {
+        display: none;
     }
 }
 
@@ -2551,4 +2550,21 @@ body:has(.comment-write) .image-publication {
 .light .modal-content{
     background-color: #2f3e56;
     color: #EEF0F2;
+}
+
+@media (max-width: 600px) {
+    .nav-profile li a {
+        align-items: center;
+        font-size: 0;
+    }
+
+    .nav-profile li a i {
+        font-size: 1.3rem;
+    }
+
+    .nav-profile #darkMode {
+        padding: 0.7rem 0.4rem;
+        align-items: center;
+        justify-content: center;
+    }
 }
