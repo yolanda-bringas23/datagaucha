@@ -2351,6 +2351,24 @@ body::-webkit-scrollbar-thumb {
     overflow: visible;
 }
 
+@media (max-width: 600px) {
+    #nav ul li a {
+        font-size: 0;
+    }
+
+    #nav ul li a i {
+        font-size: 1.3rem;
+    }
+
+    #darkMode {
+        font-size: 0;
+    }
+
+    #darkMode i {
+        font-size: 1.3rem;
+    }
+}
+
 .btn-menu{
     display: none;
 }
