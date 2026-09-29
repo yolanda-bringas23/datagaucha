@@ -2,7 +2,7 @@ class Post{
     constructor(element){
         this.title = element.title,
         this.body = element.body,
-        this.image = element.imageUrl
+        this.image = element.imageUrl,
         this.userName = element.userName
     }
     /* Atributos, constructor, etc */ 
@@ -15,7 +15,7 @@ class Post{
                 </button>
                 <h2>${this.title}</h2>
                 <p class="p-index">${this.body}</p>
-                <img class="image-publication" src="${this.image}" alt="Publicación de usuario: foto del día en familia">
+               ${renderImage(this.image)}
                 <div class="btn-group-actions">
                     <button type="button"><i class="fa-solid fa-heart btn-like"></i></button>
                     <a href="html/comentarios.html"><button type="button"><i class="fa-solid fa-comment btn-comment"></i></button></a>
@@ -23,5 +23,14 @@ class Post{
                 </div>
             </article>
         `
+    }
+}
+
+function renderImage(img){
+    if(img == null || img == 'undefined' || img == ""){
+        return "";
+    } 
+    else{
+        return `<img class="image-publication" src="${img}" alt="Publicación de usuario: foto del día en familia"></img> `
     }
 }
