@@ -5,8 +5,8 @@ const commentsList = document.getElementById("comments-list")
 commentForm.addEventListener("submit", (eventInformation) =>{
     eventInformation.preventDefault();
 
-    if (txtComment.value == "") {
-        alert("escribe un comentario antes de publicar!")
+    if (txtComment.value == "" || null) {
+        alert("Escribe un comentario antes de publicar!")
         return
     }
 
