@@ -6,6 +6,7 @@ commentForm.addEventListener("submit", (eventInformation) =>{
     eventInformation.preventDefault();
 
     if (txtComment.value == "") {
+        alert("escribe un comentario antes de publicar!")
         return
     }
 
@@ -33,4 +34,5 @@ commentForm.addEventListener("submit", (eventInformation) =>{
     commentsList.append(comment)
 
     txtComment.value = ""
+    txtComment.focus()
 })
