@@ -1,0 +1,434 @@
+.user-avatar {
+    border-radius: 50%;
+    object-fit: cover;
+    flex: none;
+    width: 2.6rem;
+    height: 2.6rem;
+}
+
+.comment-avatar {
+    width: 2rem;
+    height: 2rem;
+}
+
+.btn-follow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 8.5rem;
+    padding: 0.45rem 1rem;
+    border: 2px solid #50849D;
+    border-radius: 0.5rem;
+    background-color: #50849D;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1rem;
+    font-family: inherit;
+    line-height: 1.2;
+    cursor: pointer;
+    transition: background-color 0.25s ease, color 0.25s ease,
+                border-color 0.25s ease, transform 0.15s ease;
+}
+
+.btn-follow:hover {
+    background-color: #3d6b81;
+    border-color: #3d6b81;
+    transform: scale(1.03);
+}
+
+.btn-follow.is-following {
+    background-color: transparent;
+    color: #50849D;
+    border-color: #50849D;
+}
+
+.btn-follow.is-following:hover {
+    background-color: rgba(176, 42, 55, 0.12);
+    color: #b02a37;
+    border-color: #b02a37;
+}
+
+.btn-follow:active {
+    transform: scale(0.97);
+}
+
+#section .btn-follow {
+    display: inline-flex;
+    flex-direction: row;
+    color: #ffffff;
+    background-color: #50849D;
+    border: 2px solid #50849D;
+    padding: 0.45rem 1rem;
+}
+
+#section .btn-follow.is-following {
+    color: #50849D;
+    background-color: transparent;
+    border-color: #50849D;
+}
+
+#section .btn-quitar {
+    color: #b02a37;
+}
+
+.profile-page .btn-follow,
+.profile-page .user-row-btn.btn-follow {
+    background-color: #50849D;
+    border: 2px solid #50849D;
+    color: #ffffff;
+    padding: 0.45rem 1rem;
+}
+
+.profile-page .btn-follow.is-following,
+.profile-page .user-row-btn.btn-follow.is-following {
+    background-color: transparent;
+    border-color: #50849D;
+    color: #50849D;
+}
+
+.profile-page .btn-follow.is-following:hover {
+    background-color: rgba(176, 42, 55, 0.12);
+    border-color: #b02a37;
+    color: #b02a37;
+}
+
+.profile-page .btn-quitar,
+#section .btn-quitar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 8.5rem;
+    padding: 0.45rem 1rem;
+    border: 1px solid rgba(176, 42, 55, 0.5);
+    border-radius: 0.5rem;
+    background-color: transparent;
+    color: #b02a37;
+    font-weight: bold;
+    font-size: 1rem;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background-color 0.25s ease, transform 0.15s ease;
+}
+
+.profile-page .btn-quitar:hover,
+#section .btn-quitar:hover {
+    background-color: rgba(176, 42, 55, 0.12);
+    transform: scale(1.03);
+}
+
+#section .btn-follow.btn-follow-sm,
+.btn-follow.btn-follow-sm {
+    min-width: 6.5rem;
+    padding: 0.3rem 0.7rem;
+    font-size: 0.85rem;
+    border-width: 1px;
+}
+
+.comment-follow {
+    margin-left: auto;
+}
+
+.user-link {
+    text-decoration: none;
+    color: #eef0f2;
+}
+
+.user-link:hover {
+    text-decoration: none;
+    opacity: 0.9;
+}
+
+.user-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.8rem;
+    padding: 0.6rem 0.9rem;
+    background-color: #eef0f2;
+    border-radius: 0.6rem;
+}
+
+.user-row-link {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    min-width: 0;
+    text-decoration: none;
+    color: inherit;
+}
+
+.user-row-link:hover {
+    text-decoration: none;
+    opacity: 0.85;
+}
+
+.user-row-info {
+    min-width: 0;
+    text-align: left;
+}
+
+.user-row-name {
+    margin: 0;
+    font-weight: bold;
+    font-size: 1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.user-row-username {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #50849D;
+}
+
+.user-row-badge {
+    padding: 0.35rem 0.7rem;
+    border-radius: 0.5rem;
+    background-color: #ADACA9;
+    color: #1a1a1a;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.profile-users,
+#listaSeguidores,
+#listaSeguidos {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.search-card {
+    align-items: center;
+    border: 1px solid rgba(80, 132, 157, 0.45);
+}
+
+.search-card .user-link {
+    justify-content: flex-start;
+    width: 100%;
+    text-decoration: none;
+    color: inherit;
+}
+
+.search-card-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.link-ver-perfil,
+.link-volver {
+    font-weight: bold;
+    font-size: 0.95rem;
+    color: #50849D;
+    text-decoration: none;
+}
+
+.link-ver-perfil:hover,
+.link-volver:hover {
+    text-decoration: underline;
+    color: #3d6b81;
+}
+
+.search-name {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.search-username {
+    margin: 0;
+    font-size: 0.95rem;
+    font-weight: normal;
+    opacity: 0.8;
+}
+
+.author-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.author-row .btn-user {
+    width: auto;
+    max-width: 100%;
+    justify-content: flex-start;
+}
+
+.author-row .btn-user .p-index {
+    margin: 0;
+}
+
+.comment-author-link {
+    font-weight: bold;
+    color: #50849D;
+    text-decoration: none;
+}
+
+.comment-author-link:hover {
+    text-decoration: underline;
+}
+
+.User-comment .user-comment-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.profile-username {
+    margin: 0 0 0.6rem 0;
+    color: #50849D;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.profile-bio {
+    max-width: 32rem;
+    margin: 0 auto 0.6rem auto;
+    line-height: 1.5;
+    font-size: 1.05rem;
+}
+
+.profile-email {
+    margin: 0;
+    font-size: 0.95rem;
+    opacity: 0.85;
+}
+
+.profile-email i {
+    margin-right: 0.35rem;
+    color: #50849D;
+}
+
+.profile-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.profile-hint {
+    max-width: 34rem;
+    margin: 0 auto 1rem auto;
+    text-align: center;
+    font-size: 0.95rem;
+    opacity: 0.75;
+}
+
+.profile-empty {
+    margin: 0.4rem 0;
+    font-style: italic;
+    opacity: 0.8;
+    text-align: center;
+}
+
+#perfilPublicaciones .publication-card {
+    max-width: 48rem;
+    margin: 1rem auto;
+}
+
+#perfilPublicaciones .image-publication {
+    max-height: 22rem;
+}
+
+.profile-toast {
+    position: fixed;
+    left: 50%;
+    bottom: 1.5rem;
+    z-index: 2000;
+    transform: translateX(-50%) translateY(1rem);
+    max-width: 90vw;
+    padding: 0.8rem 1.2rem;
+    border-radius: 0.6rem;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    font-weight: bold;
+    text-align: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.profile-toast.is-visible {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+.profile-toast.is-error {
+    background-color: #b02a37;
+}
+
+.light .profile-username,
+.light .profile-email i,
+.light .user-row-username,
+.light .link-ver-perfil,
+.light .link-volver,
+.light .comment-author-link {
+    color: #ADACA9;
+}
+
+.light .user-row {
+    background-color: #0b0f1a;
+    color: #ADACA9;
+}
+
+.light .user-row-name {
+    color: #EEF0F2;
+}
+
+.light .user-row-badge {
+    background-color: #2f3e56;
+    color: #EEF0F2;
+}
+
+.light .btn-follow,
+.light #section .btn-follow,
+.light .profile-page .btn-follow {
+    background-color: #50849D;
+    color: #ffffff;
+    border-color: #50849D;
+}
+
+.light .btn-follow.is-following,
+.light #section .btn-follow.is-following,
+.light .profile-page .btn-follow.is-following {
+    background-color: transparent;
+    color: #ADACA9;
+    border-color: #ADACA9;
+}
+
+.light .profile-page .btn-quitar,
+.light #section .btn-quitar {
+    color: #f2b8bd;
+    border-color: rgba(242, 184, 189, 0.5);
+}
+
+.light .profile-toast {
+    background-color: #EEF0F2;
+    color: #0b0f1a;
+}
+
+@media (max-width: 576px) {
+    .user-row,
+    .author-row {
+        flex-wrap: wrap;
+    }
+
+    .btn-follow,
+    .user-row-btn {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .user-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
