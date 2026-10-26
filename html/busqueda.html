@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/perfil.css">
     <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16x16.png">
     <title>Búsqueda | Data Gaucha</title>
 </head>
@@ -54,126 +55,23 @@
 
         <section id="section">
 
-            <h1 class="search-title">
-                13 resultados encontrados
-            </h1>
+            <h1 class="search-title" id="tituloResultados">Personas en la comunidad</h1>
 
-            <article class="search-card">
-                <button class="btn-user" type="button">
-                    <i class="fa-solid fa-circle-user user-btn"></i>
-
-                    <div class="search-user-info">
-                        <h2 class="search-name">Martina Gómez</h2>
-                        <h3 class="search-username">@martinagomez</h3>
-                    </div>
-                </button>
-            </article>
-
-            <article class="search-card">
-                <button class="btn-user" type="button">
-                    <i class="fa-solid fa-circle-user user-btn"></i>
-
-                    <div class="search-user-info">
-                        <h2 class="search-name">Lucas Fernández</h2>
-                        <h3 class="search-username">@lucasfernandez</h3>
-                    </div>
-                </button>
-            </article>
-
-            <article class="search-card">
-                <button class="btn-user" type="button">
-                    <i class="fa-solid fa-circle-user user-btn"></i>
-
-                    <div class="search-user-info">
-                        <h2 class="search-name">Sofía Ramírez</h2>
-                        <h3 class="search-username">@sofiara</h3>
-                    </div>
-                </button>
-            </article>
-
-            <article class="search-card">
-                <button class="btn-user" type="button">
-                    <i class="fa-solid fa-circle-user user-btn"></i>
-
-                    <div class="search-user-info">
-                        <h2 class="search-name">Agustín Torres</h2>
-                        <h3 class="search-username">@agustintorres</h3>
-                    </div>
-                </button>
-            </article>
-
-            <article class="search-card">
-                <button class="btn-user" type="button">
-                    <i class="fa-solid fa-circle-user user-btn"></i>
-
-                    <div class="search-user-info">
-                        <h2 class="search-name">Valentina Díaz</h2>
-                        <h3 class="search-username">@valentinadiaz</h3>
-                    </div>
-                </button>
-            </article>
-
-            <article class="search-card">
-                <button class="btn-user" type="button">
-                    <i class="fa-solid fa-circle-user user-btn"></i>
-
-                    <div class="search-user-info">
-                        <h2 class="search-name">Bruno Acosta</h2>
-                        <h3 class="search-username">@brunoacosta</h3>
-                    </div>
-                </button>
-            </article>
-
-            <article class="search-card">
-                <button class="btn-user" type="button">
-                    <i class="fa-solid fa-circle-user user-btn"></i>
-
-                    <div class="search-user-info">
-                        <h2 class="search-name">Camila Herrera</h2>
-                        <h3 class="search-username">@camilaherrera</h3>
-                    </div>
-                </button>
-            </article>
-
-            <article class="search-card">
-                <button class="btn-user" type="button">
-                    <i class="fa-solid fa-circle-user user-btn"></i>
-
-                    <div class="search-user-info">
-                        <h2 class="search-name">Nicolás Molina</h2>
-                        <h3 class="search-username">@nicolasmolina</h3>
-                    </div>
-                </button>
-            </article>
-
-            <article class="search-card">
-                <button class="btn-user" type="button">
-                    <i class="fa-solid fa-circle-user user-btn"></i>
-
-                    <div class="search-user-info">
-                        <h2 class="search-name">Julieta Rojas</h2>
-                        <h3 class="search-username">@julietarojas</h3>
-                    </div>
-                </button>
-            </article>
-
-            <article class="search-card">
-                <button class="btn-user" type="button">
-                    <i class="fa-solid fa-circle-user user-btn"></i>
-
-                    <div class="search-user-info">
-                        <h2 class="search-name">Franco Ibáñez</h2>
-                        <h3 class="search-username">@francoibanez</h3>
-                    </div>
-                </button>
-            </article>
+            <div id="resultadosBusqueda"></div>
 
         </section>
 
     </div>
+
+    <div id="avisoBusqueda" class="profile-toast" role="status" aria-live="polite"></div>
+
     <script src="../Js/condicionesDeUso.js"></script>
     <script src="../Js/darkMode.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../Js/repositories/userRepositories.js"></script>
+    <script src="../Js/classes/user.js"></script>
+    <script src="../Js/classes/toast.js"></script>
+    <script src="../Js/busquedaPresentation.js"></script>
 
 </body>
 
