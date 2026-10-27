@@ -65,7 +65,7 @@ class User {
                 </a>
                 <div class="search-card-actions">
                     ${this.getFollowButtonPresentation(loSigo)}
-                    <a class="link-ver-perfil" href="${this.getPerfilHref()}">Ver perfil</a>
+                    <a class="btn-follow link-ver-perfil" href="${this.getPerfilHref()}">Ver perfil</a>
                 </div>
             </article>
         `;
