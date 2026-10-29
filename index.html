@@ -36,7 +36,7 @@
         </header>
         <nav id="nav" class="nav-index">
             <button class="btn-menu" type="button" id="btn-menu">
-                <i class="fa-solid fa-bars"></i>
+                <img src="img/DataGaucha-removebg-preview.png" alt="logo">
             </button>
             <ul>
                 <li><a href="html/busqueda.html"><i class="bi bi-search"></i> Búsqueda</a></li>
@@ -47,32 +47,46 @@
             </ul>
         </nav>
 
-        <section id="section">
+        <main id="section">
             <h1 class="visually-hidden">Publicaciones de Data Gaucha</h1>
             <button id="buttonModal" type="button" class="btn btn-primary btn-crear" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 Crear Publicación
             </button>
 
             <article class="publication-card">
-                <button class="btn-user" type="button">
-                    <i class="fa-solid fa-circle-user user-btn"></i>
-                    <p class="p-index">Nombre de usuario</p>
-                </button>
+                <header class="card-header">
+                    <a href="html/perfil.html" class="btn-user">
+                        <i class="fa-solid fa-circle-user user-btn"></i>
+                        <span class="user-name">Nombre de usuario</span>
+                    </a>
+
+                    <button class="btn-more-options" type="button" aria-label="Más opciones">
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                    </button>
+                </header>
+
                 <h2>Mi día</h2>
                 <p class="p-index">Hoy tuve un buen día con mi familia</p>
                 <img class="image-publication" src="img/image.jpg" alt="Publicación de usuario: foto del día en familia">
                 <div class="btn-group-actions">
                     <button type="button"><i class="fa-solid fa-heart btn-like"></i></button>
-                    <a href="html/comentarios.html"><button type="button"><i class="fa-solid fa-comment btn-comment"></i></button></a>
+                    <a href="html/comentarios.html" class="btn-sef" aria-label="Ver comentarios">
+                        <i class="fa-solid fa-comment btn-comment"></i>
+                    </a>
                     <button type="button"><i class="fa-solid fa-face-sad-tear"></i></button>
                 </div>
             </article>
 
             <article class="publication-card">
-                <button class="btn-user" type="button">
-                    <i class="fa-solid fa-circle-user user-btn"></i>
-                    <p class="p-index">Nombre de usuario</p>
-                </button>
+                <header class="card-header">
+                    <a href="html/perfil.html" class="btn-user">
+                        <i class="fa-solid fa-circle-user user-btn"></i>
+                        <span class="user-name">Nombre de usuario</span>
+                    </a>
+                    <button class="btn-more-options" type="button" aria-label="Más opciones">
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                    </button>
+                </header>
                 <h2>Mi día</h2>
                 <p class="p-index">Ayer me encontre con Messi disfrutando de unos mates en la entrada de su casa,
                                    obviamente le pedi una foto y mi mala suerte que no tenia un fibron para pedirle su firma y 
@@ -80,11 +94,13 @@
                 </p>
                 <div class="btn-group-actions">
                     <button type="button"><i class="fa-solid fa-heart btn-like"></i>4000</button>
-                    <a href="html/comentarios.html"><button type="button"><i class="fa-solid fa-comment btn-comment"></i>67</button></a>
+                    <a href="html/comentarios.html" class="btn-sef" aria-label="Ver comentarios">
+                        <i class="fa-solid fa-comment btn-comment"></i>67
+                    </a>
                     <button type="button"><i class="fa-solid fa-face-smile btn-share"></i></button>
                 </div>
             </article>
-        </section>
+        </main>
     </div>
 
 

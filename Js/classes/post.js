@@ -9,16 +9,23 @@ class Post{
     getPostPresentation() {
         return `
             <article class="publication-card">
-                <button class="btn-user" type="button">
-                    <i class="fa-solid fa-circle-user user-btn"></i>
-                    <p class="p-index">${this.userName}</p>
-                </button>
+                <header class="card-header">
+                    <a href="html/perfil.html" class="btn-user">
+                        <i class="fa-solid fa-circle-user user-btn"></i>
+                        <span class="user-name">${this.userName}</span>
+                    </a>
+                    <button class="btn-more-options" type="button" aria-label="Más opciones">
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                    </button>
+                </header>
                 <h2>${this.title}</h2>
                 <p class="p-index">${this.body}</p>
                ${renderImage(this.image)}
                 <div class="btn-group-actions">
                     <button type="button"><i class="fa-solid fa-heart btn-like"></i></button>
-                    <a href="html/comentarios.html"><button type="button"><i class="fa-solid fa-comment btn-comment"></i></button></a>
+                    <a href="html/comentarios.html" class="btn-sef" aria-label="Ver comentarios">
+                        <i class="fa-solid fa-comment btn-comment"></i>
+                    </a>
                     <button type="button"><i class="fa-solid fa-face-sad-tear"></i></button>
                 </div>
             </article>

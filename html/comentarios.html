@@ -52,10 +52,21 @@
             </a>
         </header>
 
-        <section id="section">
+        <main id="section">
             <article class="publication-card">
 
-                <div id="autorPublicacion" class="autor-publicacion"></div>
+                <!-- Cabecera de la publicación -->
+                <header class="card-header">
+                    <div id="autorPublicacion" class="autor-publicacion">
+                        <a href="perfil.html" class="btn-user">
+                            <i class="fa-solid fa-circle-user user-btn"></i>
+                            <span class="user-name">Nombre de usuario</span>
+                        </a>
+                    </div>
+                    <button class="btn-more-options" type="button" aria-label="Más opciones">
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                    </button>
+                </header>
 
                 <h1>Mi día</h1>
 
@@ -65,8 +76,12 @@
 
                 <div class="btn-group-actions">
                     <button type="button"><i class="fa-solid fa-heart btn-like"></i></button>
+                    <a href="../index.html" class="btn-sef" aria-label="Volver al inicio">
+                        <i class="fa-solid fa-comment btn-comment"></i>
+                    </a>
+                    
                     <button type="button"><i class="fa-solid fa-face-sad-tear"></i></button>
-                    <button type="button"><i class="fa-solid fa-comment btn-comment"></i></button>
+                    
                 </div>
 
                 <form class="comment-write" id="comment-write" action="" method="post">
@@ -116,15 +131,13 @@
                 </div>
 
             </article>
-        </section>
+        </main>
 
     </div>
 
     <div id="avisoComentarios" class="profile-toast" role="status" aria-live="polite"></div>
 
-    <!-- Los links de abajo(Que estan comentados) aun no funcionan, quedan para futuras correcciones -->
-
-    <script src="../Js/repositories/commentsRepositories.js"></script>-->
+    <script src="../Js/repositories/commentsRepositories.js"></script>
     <script src="../Js/darkMode.js"></script>
     <script src="../Js/condicionesDeUsoPresentation.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
