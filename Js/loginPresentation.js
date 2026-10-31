@@ -10,6 +10,7 @@ loginForm.addEventListener("submit", (eventInformation) =>{
         password : txtPassword.value
     }
 
+
     if(data.userName === ""){
         alert("Ingresá tu usuario o correo")
         return

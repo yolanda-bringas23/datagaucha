@@ -10,6 +10,7 @@ const txtYear = document.getElementById("year-register")
 const termsCheck = document.getElementById("terms-check")
 const ageCheck = document.getElementById("age-check")
 
+
 registerForm.addEventListener("submit", (eventInformation) =>{
     eventInformation.preventDefault();
 
@@ -23,7 +24,16 @@ registerForm.addEventListener("submit", (eventInformation) =>{
         year : txtYear.value
     }
 
-    if(data.name === ""){
+    const nameComplete = data.name
+
+    const nameCompleteFormat = /^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ]+( [a-zA-ZáéíóúÁÉÍÓÚñÑüÜ]+)+$/
+
+    if(!nameCompleteFormat.test(nameComplete)){
+        alert("Tu nombre completo no puede contener caracteres especiales")
+        return
+    }
+
+    if(nameComplete === ""){
         alert("Ingresa tu nombre completo")
         return
     }
