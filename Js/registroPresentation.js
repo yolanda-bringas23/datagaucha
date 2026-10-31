@@ -29,52 +29,92 @@ registerForm.addEventListener("submit", (eventInformation) =>{
     const nameCompleteFormat = /^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ]+( [a-zA-ZáéíóúÁÉÍÓÚñÑüÜ]+)+$/
 
     if(!nameCompleteFormat.test(nameComplete)){
-        alert("Tu nombre completo no puede contener caracteres especiales")
+        show(
+            "Nombre incorrecto",
+            "Tu nombre completo no debe contener caracteres especiales",
+            "error"
+        )
         return
     }
 
     if(nameComplete === ""){
-        alert("Ingresa tu nombre completo")
+        show(
+            "Nombre inválido",
+            "Ingresa tu nombre completo",
+            "error"
+        )
         return
     }
 
     if(data.userName === ""){
-        alert("Ingresá tu nombre de usuario")
+        show(
+            "Nombre de usuario incorrecto",
+            "Ingresa tu nombre de usuario",
+            "error"
+        )
         return
     }
 
     if(data.password === ""){
-        alert("Ingresá tu contraseña")
+        show(
+            "Contraseña incorrecta",
+            "Debes introducir una contraseña valida",
+            "error"
+        )
         return
     }
 
     if(txtPasswordAgain.value === ""){
-        alert("volve a poner tu contraseña")
+        show(
+            "Contraseña incorrecta",
+            "Debes ingresar nuevamente tu contraseña",
+            "error"
+        )
         return
     }
 
     if(data.password !== txtPasswordAgain.value){
-        alert("Las contraseñas no coinciden")
+        show(
+            "Contraseña incorrecta",
+            "Las contraseñas no coinciden",
+            "error"
+        )
         return
     }
 
     if(data.email === ""){
-        alert("Ingresá tu email")
+        show(
+            "Email inválido",
+            "Ingresá nuevamente tu email",
+            "error"
+        )
         return
     }
 
     if(data.day === "" || data.month === "" || data.year === ""){
-        alert("Completa tu fecha de nacimiento")
+        show(
+            "Fecha de nacimiento inválida",
+            "Debes ingresar tu fecha de nacimiento",
+            "error"
+        )
         return
     }
 
     if(termsCheck.checked === false){
-        alert("Aceptá los terminos y condiciones!")
+        show(
+            "¡Aviso!",
+            "Acepta los terminos y condiciones",
+            "warning"
+        )
         return
     }
 
     if(ageCheck.checked === false){
-        alert("confirma que eres mayor de 18 años")
+        show(
+            "¡Aviso!",
+            "Confirma que eres mayor de 18 años",
+            "warning"
+        )
         return
     }
 
