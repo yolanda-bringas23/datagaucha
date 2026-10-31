@@ -28,19 +28,20 @@ registerForm.addEventListener("submit", (eventInformation) =>{
 
     const nameCompleteFormat = /^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ]+( [a-zA-ZáéíóúÁÉÍÓÚñÑüÜ]+)+$/
 
-    if(!nameCompleteFormat.test(nameComplete)){
-        show(
-            "Nombre incorrecto",
-            "Tu nombre completo no debe contener caracteres especiales",
-            "error"
-        )
-        return
-    }
-
+    
     if(nameComplete === ""){
         show(
             "Nombre inválido",
             "Ingresa tu nombre completo",
+            "error"
+        )
+        return
+    }
+    
+    if(!nameCompleteFormat.test(nameComplete)){
+        show(
+            "Nombre incorrecto",
+            "Tu nombre completo no debe contener caracteres especiales",
             "error"
         )
         return
