@@ -3,9 +3,11 @@
 
 !localStorage.getItem("token") && (window.location.href = "html/loguear.html");
 
-const currentUser = obtenerUsuarioActualHome();
+const currentUser = getHomeCurrentUser();
 const nombreEnHeader = document.querySelector(".text-profile");
-currentUser?.name && (nombreEnHeader.innerText = currentUser.name);
+if(currentUser?.userName && nombreEnHeader){
+    nombreEnHeader.innerText = currentUser.userName
+}
 
 const muro = document.getElementById("section");
 
