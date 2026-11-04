@@ -1,55 +1,54 @@
-const resultadosBusqueda = document.getElementById("resultadosBusqueda");
-const tituloResultados = document.getElementById("tituloResultados");
-const inputBusqueda = document.querySelector(".search-form input[name='search']");
+/* Copyright (c) 2026 David-irusta
+   This code is licensed under the MIT License (see LICENSE file for details) */
 
-const avisoBusqueda = new Toast("avisoBusqueda");
+!localStorage.getItem("token") && (window.location.href = "loguear.html");
 
-const parametros = new URLSearchParams(window.location.search);
-const consulta = (parametros.get("search") || "").trim();
+const query = getSearchQuery();
 
-if (inputBusqueda) inputBusqueda.value = consulta;
+const currentUser = getCurrentUser();
+const headerName = document.querySelector(".text-profile");
+currentUser?.name && (headerName.innerText = currentUser.name);
 
-function renderResultados() {
-    const personas = searchUsers(consulta);
+const ui = {
+    title: document.getElementById("tituloResultados"),
+    results: document.getElementById("resultadosBusqueda")
+};
 
-    if (consulta === "") {
-        tituloResultados.innerText = `${personas.length} personas en la comunidad`;
-    } else if (personas.length === 1) {
-        tituloResultados.innerText = `1 resultado para "${consulta}"`;
-    } else {
-        tituloResultados.innerText = `${personas.length} resultados para "${consulta}"`;
+const searchForm = document.querySelector(".search-form");
+searchForm && (searchForm.search.value = query);
+
+const list = new ListaPaginada({
+    contenedor: ui.results,
+    zonaScroll: window,
+    cargarPagina: (page, cb) => loadSearchUsers(query, page, cb),
+    armarFila: (u) => new User(u).getSearchCardPresentation(u.isFollowing),
+    vacio: query
+        ? `We couldn't find anyone matching "${User.escape(query)}". Try another name or @username.`
+        : "No users to show.",
+    alCargar: (total, done) => {
+        ui.title.innerText = buildSearchTitle(total, query, !done);
     }
-
-    if (personas.length === 0) {
-        resultadosBusqueda.innerHTML = `
-            <p class="profile-empty">
-                No encontramos a nadie con "${User.escape(consulta)}".
-                Probá con otro nombre o @usuario.
-            </p>`;
-        return;
-    }
-
-    resultadosBusqueda.innerHTML = personas
-        .map(persona => new User(persona).getSearchCardPresentation(isFollowing(persona.id)))
-        .join("");
-}
-
-document.addEventListener("click", (event) => {
-    const boton = event.target.closest("[data-action='toggle']");
-    if (!boton) return;
-
-    const id = parseInt(boton.dataset.userId);
-    const resultado = toggleFollow(id);
-    if (!resultado) return;
-
-    renderResultados();
-
-    avisoBusqueda.mostrar(resultado.isFollowing
-        ? `Ahora seguís a ${resultado.target.fullName}`
-        : `Dejaste de seguir a ${resultado.target.fullName}`);
 });
 
-const nombreEnHeader = document.querySelector(".text-profile");
-if (nombreEnHeader) nombreEnHeader.innerText = getCurrentUser().fullName;
+list.reiniciar();
 
-renderResultados();
+ui.results.addEventListener("click", (event) => {
+    const btn = event.target.closest("[data-action='toggle']");
+    if (!btn) return;
+
+    const userId = parseInt(btn.dataset.userId);
+    const alreadyFollowing = btn.getAttribute("aria-pressed") === "true";
+
+    followUser(userId, alreadyFollowing, (res) => {
+        btn.classList.toggle("is-following", res.isFollowing);
+        btn.setAttribute("aria-pressed", res.isFollowing);
+        btn.innerText = res.isFollowing ? "Following" : "Follow";
+        show("Follow", res.isFollowing ? "You are now following them" : "You stopped following them", "success");
+    });
+});
+
+searchForm?.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const q = searchForm.search.value.trim();
+    window.location.href = `busqueda.html?search=${encodeURIComponent(q)}`;
+});
