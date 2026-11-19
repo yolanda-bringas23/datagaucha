@@ -170,8 +170,8 @@ registerForm.addEventListener("submit", (eventInformation) => {
 
         console.log("Usuario registrado:", response);
         
-        //setTimeout(() => {
-            //window.location.href = "loguear.html"
-        //}, 2000)
+        setTimeout(() => {
+            window.location.href = "loguear.html"
+        }, 2000)
     });
 });
