@@ -1,7 +1,7 @@
 /* Copyright (c) 2026 David-irusta
    This code is licensed under the MIT License (see LICENSE file for details) */
 
-const BASE_URL = "https://localhost:5001/api/";
+const BASE_URL = "http://localhost:5033/api/";
 
 function pedido(ruta, metodo, body, callback) {
     const token = localStorage.getItem("token");

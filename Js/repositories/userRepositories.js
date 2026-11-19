@@ -10,6 +10,25 @@ function login(request, callback) {
     });
 }
 
+function register(request, callback){
+    const formData = new FormData();
+
+    formData.append("name", request.name)
+    formData.append("userName", request.userName)
+    formData.append("password", request.password)
+    formData.append("dateBirth", request.dateBirth)
+
+    if(request.file){
+        formData.append("file", request.file)
+    }
+
+    pedido("user", "POST", formData, (payload) => {
+        const response = new createUserResponse(payload)
+        callback(response)
+    })
+}
+
+
 function getUsers({ currentPage, pageSize, search }, callback) {
     const q = new URLSearchParams({ currentPage, pageSize, search: search ?? "" }).toString();
 

@@ -1,3 +1,6 @@
+/* Copyright (c) 2026 David-irusta
+   This code is licensed under the MIT License (see LICENSE file for details) */
+
 const boton = document.getElementById("darkMode")
 let darkMode = localStorage.getItem("darkMode")
 const body = document.getElementsByTagName("body")[0]

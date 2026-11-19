@@ -1,3 +1,6 @@
+/* Copyright (c) 2026 David-irusta
+   This code is licensed under the MIT License (see LICENSE file for details) */
+
 const loginForm = document.getElementById("login-form")
 const txtUser = document.getElementById("usuario")
 const txtPassword = document.getElementById("password")
