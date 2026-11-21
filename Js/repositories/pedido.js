@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+=======
+/* Copyright (c) 2026 David-irusta
+   This code is licensed under the MIT License (see LICENSE file for details) */
+
+>>>>>>> de25e5c2efbbb29cff3641c55a84bf763343249c
 const BASE_URL = "http://localhost:5033/api/";
 
 function pedido(ruta, metodo, body, callback) {

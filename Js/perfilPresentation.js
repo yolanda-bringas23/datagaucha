@@ -1,3 +1,6 @@
+/* Copyright (c) 2026 David-irusta
+   This code is licensed under the MIT License (see LICENSE file for details) */
+
 const perfilAvatar = document.getElementById("perfilAvatar");
 const perfilInfo = document.getElementById("perfilInfo");
 const perfilAcciones = document.getElementById("perfilAcciones");
