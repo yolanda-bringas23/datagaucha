@@ -1,7 +1,7 @@
 /* Copyright (c) 2026 David-irusta
    This code is licensed under the MIT License (see LICENSE file for details) */
 
-!localStorage.getItem("token") && (window.location.href = "html/loguear.html");
+//!localStorage.getItem("token") && (window.location.href = "html/loguear.html");
 
 const currentUser = obtenerUsuarioActualHome();
 const nombreEnHeader = document.querySelector(".text-profile");
@@ -47,4 +47,12 @@ formCrear?.addEventListener("submit", (event) => {
         lista.reiniciar();
         show("Publicación", "Creada correctamente", "success");
     });
+    const muro = document.getElementById("section")
+
+    const posts = getPost();
+
+    for(let post of posts) {
+        const p = new Post(post)
+        muro.innerHTML += p.getPostPresentation()
+    }
 });

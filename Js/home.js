@@ -1,29 +1,29 @@
 /* Copyright (c) 2026 David-irusta
    This code is licensed under the MIT License (see LICENSE file for details) */
 
-function getHomeSearch() {
+function obtenerSearchHome() {
     return (new URLSearchParams(window.location.search).get("search") ?? "").trim();
 }
 
-function loadHomePosts(page, callback) {
+function cargarPostsHome(page, callback) {
     getPosts({
         currentPage: page,
         pageSize: PAGE_SIZE,
         orderBy: "createdAt",
         orderDirection: "desc",
-        search: getHomeSearch()
+        search: obtenerSearchHome()
     }, callback);
 }
 
-function reactToPost(postId, type, callback) {
+function reaccionarPost(postId, type, callback) {
     setReaction(postId, type, callback);
 }
 
-function createHomePost(formData, callback) {
+function crearPostHome(formData, callback) {
     createPost(formData, callback);
 }
 
-function getHomeCurrentUser() {
+function obtenerUsuarioActualHome() {
     const saved = localStorage.getItem("user");
     return saved ? JSON.parse(saved) : null;
 }
