@@ -53,6 +53,16 @@ function getCurrentUser() {
     return saved ? JSON.parse(saved) : null;
 }
 
+function getProfile(callback) {
+    pedido("user/profile", "GET", null, (payload) => {
+        const user = new User(payload);
+
+        saveCurrentUser(user);
+
+        callback(user);
+    });
+}
+
 function logout() {
     localStorage.removeItem("token");
     localStorage.removeItem("user");

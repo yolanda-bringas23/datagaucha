@@ -2951,6 +2951,10 @@ body.light .dropdown-item:hover {
     color: #ffffff;
 }
 
+.light #buttonModal, .light #buttonModal:hover{
+    background-color: #2f3e56;
+}
+
 #buttonModal:focus {
     box-shadow: 0 0 0 0.25rem rgba(80, 132, 157, 0.5);
 }

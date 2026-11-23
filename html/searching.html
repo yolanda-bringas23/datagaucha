@@ -27,11 +27,10 @@
 
             <ul>
                 <li><a href="../index.html">Home</a></li>
-                <li><a href="perfil.html">Perfil</a></li>
-                <li><a href="condiciones-de-uso.html">Condiciones de Uso</a></li>
-                <li><a href="registro.html">Registro</a></li>
-                <li><a href="loguear.html">Cerrar Sesión</a></li>
-                <!-- [AGREGADO] Botón Darkmode -->
+                <li><a href="profile.html">Perfil</a></li>
+                <li><a href="terms-of-use.html">Condiciones de Uso</a></li>
+                <li><a href="register.html">Registro</a></li>
+                <li><a href="login.html">Cerrar Sesión</a></li>
                 <li><button id="darkMode">Darkmode</button></li>
             </ul>
 
@@ -61,7 +60,7 @@
                 </div>
             </form>
 
-            <a href="perfil.html" class="btn-profile">
+            <a href="profile.html" class="btn-profile">
                 <i class="fa-solid fa-circle-user user-btn"></i>
                 <span class="text-profile"></span>
             </a>
@@ -69,18 +68,11 @@
         </header>
 
         <section id="section">
-
-            <!-- [MODIFICADO] Se agregó el id="searchTitle" -->
             <h1 id="searchTitle" class="search-title">
                 13 resultados encontrados
             </h1>
-
-            <!-- [AGREGADO] Contenedor para el JS -->
             <div id="searchResults"></div>
-
-            <!-- TARJETA 1 -->
             <article class="search-card">
-                <!-- [AGREGADO] Envoltorio para ordenar con Flexbox -->
                 <div class="search-card-content">
                     <button class="btn-user" type="button">
                         <i class="fa-solid fa-circle-user user-btn"></i>
@@ -89,12 +81,10 @@
                             <p class="search-username">@martinagomez</p>
                         </div>
                     </button>
-                    <!-- [AGREGADO] Botón Follow -->
                     <button type="button" class="btn-follow" data-action="toggle" data-user-id="1" aria-pressed="false">Follow</button>
                 </div>
             </article>
 
-            <!-- TARJETA 2 -->
             <article class="search-card">
                 <div class="search-card-content">
                     <button class="btn-user" type="button">
@@ -108,7 +98,6 @@
                 </div>
             </article>
 
-            <!-- TARJETA 3 -->
             <article class="search-card">
                 <div class="search-card-content">
                     <button class="btn-user" type="button">
@@ -122,7 +111,6 @@
                 </div>
             </article>
 
-            <!-- TARJETA 4 -->
             <article class="search-card">
                 <div class="search-card-content">
                     <button class="btn-user" type="button">
@@ -136,7 +124,6 @@
                 </div>
             </article>
 
-            <!-- TARJETA 5 -->
             <article class="search-card">
                 <div class="search-card-content">
                     <button class="btn-user" type="button">
@@ -150,7 +137,6 @@
                 </div>
             </article>
 
-            <!-- TARJETA 6 -->
             <article class="search-card">
                 <div class="search-card-content">
                     <button class="btn-user" type="button">
@@ -164,7 +150,6 @@
                 </div>
             </article>
 
-            <!-- TARJETA 7 -->
             <article class="search-card">
                 <div class="search-card-content">
                     <button class="btn-user" type="button">
@@ -178,7 +163,6 @@
                 </div>
             </article>
 
-            <!-- TARJETA 8 -->
             <article class="search-card">
                 <div class="search-card-content">
                     <button class="btn-user" type="button">
@@ -192,7 +176,6 @@
                 </div>
             </article>
 
-            <!-- TARJETA 9 -->
             <article class="search-card">
                 <div class="search-card-content">
                     <button class="btn-user" type="button">
@@ -206,7 +189,6 @@
                 </div>
             </article>
 
-            <!-- TARJETA 10 -->
             <article class="search-card">
                 <div class="search-card-content">
                     <button class="btn-user" type="button">
@@ -224,7 +206,6 @@
 
     </div>
 
-    <!-- [MODIFICADO] Orden de scripts y CDNs -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 
@@ -237,7 +218,7 @@
     <script src="../Js/repositories/userRepositories.js"></script>
     <script src="../Js/repositories/followRepositories.js"></script>
 
-    <script src="../Js/presentation/busquedaPresentation.js"></script>
+    <script src="../Js/searchingPresentation.js"></script>
     <script src="../Js/darkMode.js"></script>
 
 </body>

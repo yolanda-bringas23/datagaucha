@@ -14,6 +14,51 @@ const txtYear = document.getElementById("year-register");
 const termsCheck = document.getElementById("terms-check");
 const ageCheck = document.getElementById("age-check");
 const txtFile = document.getElementById("avatar-register");
+const REGISTER_STORAGE_KEY = "registroTemporal";
+
+
+function restoreRegistrationData() {
+    const savedData = sessionStorage.getItem(REGISTER_STORAGE_KEY);
+
+    if (!savedData) return;
+
+    const data = JSON.parse(savedData);
+
+    txtName.value = data.name ?? "";
+    txtUser.value = data.userName ?? "";
+    txtEmail.value = data.email ?? "";
+
+    txtDay.value = data.day ?? "";
+    txtMonth.value = data.month ?? "";
+    txtYear.value = data.year ?? "";
+
+    termsCheck.checked = data.terms ?? false;
+    ageCheck.checked = data.age ?? false;
+}
+
+function saveRegistrationData() {
+    const data = {
+        name: txtName.value,
+        userName: txtUser.value,
+        email: txtEmail.value,
+        day: txtDay.value,
+        month: txtMonth.value,
+        year: txtYear.value,
+        terms: termsCheck.checked,
+        age: ageCheck.checked
+    };
+
+    sessionStorage.setItem(
+        REGISTER_STORAGE_KEY,
+        JSON.stringify(data)
+    );
+}
+
+restoreRegistrationData();
+
+registerForm.addEventListener("input", saveRegistrationData);
+registerForm.addEventListener("change", saveRegistrationData);
+
 
 registerForm.addEventListener("submit", (eventInformation) => {
     eventInformation.preventDefault();
@@ -104,7 +149,6 @@ registerForm.addEventListener("submit", (eventInformation) => {
         return;
     }
 
-    // Validación de fecha de nacimiento
     const day = Number(txtDay.value);
     const month = Number(txtMonth.value);
     const year = Number(txtYear.value);
@@ -130,7 +174,6 @@ registerForm.addEventListener("submit", (eventInformation) => {
         return;
     }
 
-    // Construir fecha para el backend
     const dateBirth = `${year}-${String(month).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
 
     if (termsCheck.checked === false) {
@@ -151,7 +194,6 @@ registerForm.addEventListener("submit", (eventInformation) => {
         return;
     }
 
-    // Preparar solicitud
     const request = {
         name: txtName.value.trim(),
         userName: txtUser.value.trim(),
@@ -160,8 +202,8 @@ registerForm.addEventListener("submit", (eventInformation) => {
         file: txtFile.files[0] ?? null
     };
 
-    // Enviar registro al backend
     register(request, (response) => {
+        sessionStorage.removeItem(REGISTER_STORAGE_KEY);
         show(
             "¡Registro exitoso!",
             "Tu cuenta fue creada correctamente",

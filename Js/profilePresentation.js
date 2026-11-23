@@ -27,11 +27,11 @@ const PESO_MAXIMO_AVATAR = 1.5 * 1024 * 1024;
 const parametros = new URLSearchParams(window.location.search);
 const usuarioPedido = parametros.get("usuario");
 
-const yo = getCurrentUser();
-const perfilPedido = usuarioPedido ? getUserByUserName(usuarioPedido) : yo;
+let yo = getCurrentUser();
+let perfilPedido = usuarioPedido ? getUserByUserName(usuarioPedido) : yo;
 
-const perfil = perfilPedido || yo;
-const esMiPerfil = perfil.id === yo.id;
+let perfil = perfilPedido || yo;
+let esMiPerfil = perfil.id === yo.id;
 
 const aviso = new Toast("avisoPerfil");
 
@@ -48,21 +48,37 @@ function cerrarModal(idModal) {
 }
 
 function renderPerfil() {
-    const persona = getUserById(perfil.id) || perfil;
+    const persona = perfil;
     const usuario = new User(persona);
 
-    perfilAvatar.src = persona.avatar;
+    // Datos básicos del usuario
+    if (persona.avatar) {
+        perfilAvatar.src = persona.avatar;
+    }
+
     perfilAvatar.alt = `Foto de perfil de ${persona.fullName}`;
     perfilInfo.innerHTML = usuario.getProfilePresentation();
 
-    btnSeguidores.innerText = `${persona.followers.length} Seguidores`;
-    btnSeguidos.innerText = `${persona.following.length} Siguiendo`;
+    // Contadores temporalmente sin datos
+    btnSeguidores.innerText = "0 Seguidores";
+    btnSeguidos.innerText = "0 Siguiendo";
 
-    renderAcciones(persona);
-    renderPublicaciones(persona);
-    renderSeguidores(persona);
-    renderSeguidos(persona);
-    renderComunidad();
+    // Configuración del perfil propio
+    btnEditarPerfil.hidden = true;
+    perfilAcciones.innerHTML = "";
+    tituloPublicaciones.innerText = "Mis Publicaciones";
+
+    // Secciones pendientes de integración con la API
+    perfilPublicaciones.innerHTML =
+        '<p class="profile-empty">Las publicaciones estarán disponibles próximamente.</p>';
+
+    listaSeguidores.innerHTML =
+        '<p class="profile-empty">Los seguidores estarán disponibles próximamente.</p>';
+
+    listaSeguidos.innerHTML =
+        '<p class="profile-empty">Los usuarios que seguís estarán disponibles próximamente.</p>';
+
+    listaComunidad.innerHTML = "";
 }
 
 function renderAcciones(persona) {
@@ -285,8 +301,29 @@ formEditarPerfil.addEventListener("submit", (event) => {
 
 document.getElementById("modalEditarPerfil").addEventListener("show.bs.modal", cargarFormulario);
 
-if (usuarioPedido && !perfilPedido) {
-    mostrarAviso("No encontramos ese perfil. Te mostramos el tuyo.", "error");
+function inicializarPerfil() {
+    if (usuarioPedido) {
+        if (!perfilPedido) {
+            mostrarAviso("No encontramos ese perfil. Te mostramos el tuyo.", "error");
+        }
+
+        renderPerfil();
+        return;
+    }
+
+    if (!localStorage.getItem("token")) {
+        window.location.href = "loguear.html";
+        return;
+    }
+
+    getProfile((usuario) => {
+        yo = usuario;
+        perfil = usuario;
+        perfilPedido = usuario;
+        esMiPerfil = true;
+
+        renderPerfil();
+    });
 }
 
-renderPerfil();
+inicializarPerfil();
