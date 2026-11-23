@@ -27,11 +27,12 @@
 
             <ul>
                 <li><a href="../index.html">Home</a></li>
-                <li><a href="comentarios.html">Comentarios</a></li>
                 <li><a href="perfil.html">Perfil</a></li>
                 <li><a href="condiciones-de-uso.html">Condiciones de Uso</a></li>
                 <li><a href="registro.html">Registro</a></li>
                 <li><a href="loguear.html">Cerrar Sesión</a></li>
+                <!-- [AGREGADO] Botón Darkmode -->
+                <li><button id="darkMode">Darkmode</button></li>
             </ul>
 
             <p class="p-index">© DohCode 2026</p>
@@ -69,125 +70,175 @@
 
         <section id="section">
 
-            <h1 class="search-title">
+            <!-- [MODIFICADO] Se agregó el id="searchTitle" -->
+            <h1 id="searchTitle" class="search-title">
                 13 resultados encontrados
             </h1>
 
-            <article class="search-card">
-                <button class="btn-user" type="button">
-                    <i class="fa-solid fa-circle-user user-btn"></i>
+            <!-- [AGREGADO] Contenedor para el JS -->
+            <div id="searchResults"></div>
 
-                    <div class="search-user-info">
-                        <p class="search-name">Martina Gómez</p>
-                        <p class="search-username">@martinagomez</p>
-                    </div>
-                </button>
+            <!-- TARJETA 1 -->
+            <article class="search-card">
+                <!-- [AGREGADO] Envoltorio para ordenar con Flexbox -->
+                <div class="search-card-content">
+                    <button class="btn-user" type="button">
+                        <i class="fa-solid fa-circle-user user-btn"></i>
+                        <div class="search-user-info">
+                            <p class="search-name">Martina Gómez</p>
+                            <p class="search-username">@martinagomez</p>
+                        </div>
+                    </button>
+                    <!-- [AGREGADO] Botón Follow -->
+                    <button type="button" class="btn-follow" data-action="toggle" data-user-id="1" aria-pressed="false">Follow</button>
+                </div>
             </article>
 
+            <!-- TARJETA 2 -->
             <article class="search-card">
-                <button class="btn-user" type="button">
-                    <i class="fa-solid fa-circle-user user-btn"></i>
-
-                    <div class="search-user-info">
-                        <p class="search-name">Lucas Fernández</p>
-                        <p class="search-username">@lucasfernandez</p>
-                    </div>
-                </button>
+                <div class="search-card-content">
+                    <button class="btn-user" type="button">
+                        <i class="fa-solid fa-circle-user user-btn"></i>
+                        <div class="search-user-info">
+                            <p class="search-name">Lucas Fernández</p>
+                            <p class="search-username">@lucasfernandez</p>
+                        </div>
+                    </button>
+                    <button type="button" class="btn-follow" data-action="toggle" data-user-id="2" aria-pressed="false">Follow</button>
+                </div>
             </article>
 
+            <!-- TARJETA 3 -->
             <article class="search-card">
-                <button class="btn-user" type="button">
-                    <i class="fa-solid fa-circle-user user-btn"></i>
-
-                    <div class="search-user-info">
-                        <p class="search-name">Sofía Ramírez</p>
-                        <p class="search-username">@sofiaramirez</p>
-                    </div>
-                </button>
+                <div class="search-card-content">
+                    <button class="btn-user" type="button">
+                        <i class="fa-solid fa-circle-user user-btn"></i>
+                        <div class="search-user-info">
+                            <p class="search-name">Sofía Ramírez</p>
+                            <p class="search-username">@sofiaramirez</p>
+                        </div>
+                    </button>
+                    <button type="button" class="btn-follow" data-action="toggle" data-user-id="3" aria-pressed="false">Follow</button>
+                </div>
             </article>
 
+            <!-- TARJETA 4 -->
             <article class="search-card">
-                <button class="btn-user" type="button">
-                    <i class="fa-solid fa-circle-user user-btn"></i>
-
-                    <div class="search-user-info">
-                        <p class="search-name">Agustín Torres</p>
-                        <p class="search-username">@agustintorres</p>
-                    </div>
-                </button>
+                <div class="search-card-content">
+                    <button class="btn-user" type="button">
+                        <i class="fa-solid fa-circle-user user-btn"></i>
+                        <div class="search-user-info">
+                            <p class="search-name">Agustín Torres</p>
+                            <p class="search-username">@agustintorres</p>
+                        </div>
+                    </button>
+                    <button type="button" class="btn-follow" data-action="toggle" data-user-id="4" aria-pressed="false">Follow</button>
+                </div>
             </article>
 
+            <!-- TARJETA 5 -->
             <article class="search-card">
-                <button class="btn-user" type="button">
-                    <i class="fa-solid fa-circle-user user-btn"></i>
-
-                    <div class="search-user-info">
-                        <p class="search-name">Valentina Díaz</p>
-                        <p class="search-username">@valentinadiaz</p>
-                    </div>
-                </button>
+                <div class="search-card-content">
+                    <button class="btn-user" type="button">
+                        <i class="fa-solid fa-circle-user user-btn"></i>
+                        <div class="search-user-info">
+                            <p class="search-name">Valentina Díaz</p>
+                            <p class="search-username">@valentinadiaz</p>
+                        </div>
+                    </button>
+                    <button type="button" class="btn-follow" data-action="toggle" data-user-id="5" aria-pressed="false">Follow</button>
+                </div>
             </article>
 
+            <!-- TARJETA 6 -->
             <article class="search-card">
-                <button class="btn-user" type="button">
-                    <i class="fa-solid fa-circle-user user-btn"></i>
-
-                    <div class="search-user-info">
-                        <p class="search-name">Bruno Acosta</p>
-                        <p class="search-username">@brunoacosta</p>
-                    </div>
-                </button>
+                <div class="search-card-content">
+                    <button class="btn-user" type="button">
+                        <i class="fa-solid fa-circle-user user-btn"></i>
+                        <div class="search-user-info">
+                            <p class="search-name">Bruno Acosta</p>
+                            <p class="search-username">@brunoacosta</p>
+                        </div>
+                    </button>
+                    <button type="button" class="btn-follow" data-action="toggle" data-user-id="6" aria-pressed="false">Follow</button>
+                </div>
             </article>
 
+            <!-- TARJETA 7 -->
             <article class="search-card">
-                <button class="btn-user" type="button">
-                    <i class="fa-solid fa-circle-user user-btn"></i>
-
-                    <div class="search-user-info">
-                        <p class="search-name">Camila Herrera</p>
-                        <p class="search-username">@camilaherrera</p>
-                    </div>
-                </button>
+                <div class="search-card-content">
+                    <button class="btn-user" type="button">
+                        <i class="fa-solid fa-circle-user user-btn"></i>
+                        <div class="search-user-info">
+                            <p class="search-name">Camila Herrera</p>
+                            <p class="search-username">@camilaherrera</p>
+                        </div>
+                    </button>
+                    <button type="button" class="btn-follow" data-action="toggle" data-user-id="7" aria-pressed="false">Follow</button>
+                </div>
             </article>
 
+            <!-- TARJETA 8 -->
             <article class="search-card">
-                <button class="btn-user" type="button">
-                    <i class="fa-solid fa-circle-user user-btn"></i>
-
-                    <div class="search-user-info">
-                        <p class="search-name">Nicolás Molina</p>
-                        <p class="search-username">@nicolasmolina</p>
-                    </div>
-                </button>
+                <div class="search-card-content">
+                    <button class="btn-user" type="button">
+                        <i class="fa-solid fa-circle-user user-btn"></i>
+                        <div class="search-user-info">
+                            <p class="search-name">Nicolás Molina</p>
+                            <p class="search-username">@nicolasmolina</p>
+                        </div>
+                    </button>
+                    <button type="button" class="btn-follow" data-action="toggle" data-user-id="8" aria-pressed="false">Follow</button>
+                </div>
             </article>
 
+            <!-- TARJETA 9 -->
             <article class="search-card">
-                <button class="btn-user" type="button">
-                    <i class="fa-solid fa-circle-user user-btn"></i>
-
-                    <div class="search-user-info">
-                        <p class="search-name">Julieta Rojas</p>
-                        <p class="search-username">@julietarojas</p>
-                    </div>
-                </button>
+                <div class="search-card-content">
+                    <button class="btn-user" type="button">
+                        <i class="fa-solid fa-circle-user user-btn"></i>
+                        <div class="search-user-info">
+                            <p class="search-name">Julieta Rojas</p>
+                            <p class="search-username">@julietarojas</p>
+                        </div>
+                    </button>
+                    <button type="button" class="btn-follow" data-action="toggle" data-user-id="9" aria-pressed="false">Follow</button>
+                </div>
             </article>
 
+            <!-- TARJETA 10 -->
             <article class="search-card">
-                <button class="btn-user" type="button">
-                    <i class="fa-solid fa-circle-user user-btn"></i>
-
-                    <div class="search-user-info">
-                        <p class="search-name">Franco Ibáñez</p>
-                        <p class="search-username">@francoibanez</p>
-                    </div>
-                </button>
+                <div class="search-card-content">
+                    <button class="btn-user" type="button">
+                        <i class="fa-solid fa-circle-user user-btn"></i>
+                        <div class="search-user-info">
+                            <p class="search-name">Franco Ibáñez</p>
+                            <p class="search-username">@francoibanez</p>
+                        </div>
+                    </button>
+                    <button type="button" class="btn-follow" data-action="toggle" data-user-id="10" aria-pressed="false">Follow</button>
+                </div>
             </article>
 
         </section>
 
     </div>
 
+    <!-- [MODIFICADO] Orden de scripts y CDNs -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="../Js/messages.js"></script>
+    <script src="../Js/repositories/pedido.js"></script>
+    <script src="../Js/paginado.js"></script>
+
+    <script src="../Js/classes/user.js"></script>
+
+    <script src="../Js/repositories/userRepositories.js"></script>
+    <script src="../Js/repositories/followRepositories.js"></script>
+
+    <script src="../Js/presentation/busquedaPresentation.js"></script>
+    <script src="../Js/darkMode.js"></script>
 
 </body>
 

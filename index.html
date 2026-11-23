@@ -53,34 +53,83 @@
                 Crear Publicación
             </button>
 
+            <!-- POSTEO 1 -->
             <article class="publication-card">
-                <button class="btn-user" type="button">
-                    <i class="fa-solid fa-circle-user user-btn"></i>
-                    <p class="p-index">Nombre de usuario</p>
-                </button>
+
+                <!-- Cabecera de la publicación -->
+                <header class="card-header">
+                    <div class="autor-publicacion">
+                        <button class="btn-user" type="button">
+                            <i class="fa-solid fa-circle-user user-btn"></i>
+                            <span class="user-name">Nombre de usuario</span>
+                        </button>
+                    </div>
+
+                    <!-- Tres puntitos con dropdown -->
+                    <div class="dropdown post-options">
+                        <button class="btn-more-options" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Más opciones">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li>
+                                <button class="dropdown-item" type="button" data-action="ban" data-user-id="1" data-user-name="Nombre de usuario">Ban user</button>
+                            </li>
+                        </ul>
+                    </div>
+                </header>
+
                 <h2>Mi día</h2>
+
                 <p class="p-index">Hoy tuve un buen día con mi familia</p>
+
                 <img class="image-publication" src="img/image.jpg" alt="Publicación de usuario: foto del día en familia">
+
                 <div class="btn-group-actions">
                     <button type="button"><i class="fa-solid fa-heart btn-like"></i></button>
-                    <a href="html/comentarios.html"><button type="button"><i class="fa-solid fa-comment btn-comment"></i></button></a>
+                    <a href="html/comentarios.html" class="btn-sef" aria-label="Ver comentarios">
+                        <i class="fa-solid fa-comment btn-comment"></i>
+                    </a>
                     <button type="button"><i class="fa-solid fa-face-sad-tear"></i></button>
                 </div>
             </article>
 
+            <!-- POSTEO 2 -->
             <article class="publication-card">
-                <button class="btn-user" type="button">
-                    <i class="fa-solid fa-circle-user user-btn"></i>
-                    <p class="p-index">Nombre de usuario</p>
-                </button>
+
+                <!-- Cabecera de la publicación -->
+                <header class="card-header">
+                    <div class="autor-publicacion">
+                        <button class="btn-user" type="button">
+                            <i class="fa-solid fa-circle-user user-btn"></i>
+                            <span class="user-name">Nombre de usuario</span>
+                        </button>
+                    </div>
+
+                    <!-- Tres puntitos con dropdown -->
+                    <div class="dropdown post-options">
+                        <button class="btn-more-options" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Más opciones">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li>
+                                <button class="dropdown-item" type="button" data-action="ban" data-user-id="2" data-user-name="Nombre de usuario">Ban user</button>
+                            </li>
+                        </ul>
+                    </div>
+                </header>
+
                 <h2>Mi día</h2>
+
                 <p class="p-index">Ayer me encontre con Messi disfrutando de unos mates en la entrada de su casa,
-                                   obviamente le pedi una foto y mi mala suerte que no tenia un fibron para pedirle su firma y 
-                                   tatuarmela, aun asi me quedo con eso ya
+                    obviamente le pedi una foto y mi mala suerte que no tenia un fibron para pedirle su firma y
+                    tatuarmela, aun asi me quedo con eso ya
                 </p>
+
                 <div class="btn-group-actions">
                     <button type="button"><i class="fa-solid fa-heart btn-like"></i>4000</button>
-                    <a href="html/comentarios.html"><button type="button"><i class="fa-solid fa-comment btn-comment"></i>67</button></a>
+                    <a href="html/comentarios.html" class="btn-sef" aria-label="Ver comentarios">
+                        <i class="fa-solid fa-comment btn-comment"></i>67
+                    </a>
                     <button type="button"><i class="fa-solid fa-face-smile btn-share"></i></button>
                 </div>
             </article>

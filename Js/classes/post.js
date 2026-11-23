@@ -15,42 +15,61 @@ class Post {
     static escape(t) { return User.escape(t); }
 
     static renderImage(url) {
-        return url
-            ? `<img class="image-publication" src="${Post.escape(url)}" alt="Post image">`
-            : "";
+    if (!url) return "";
+
+    // El backend devuelve "api/images/..." (sin host).
+    // BACKEND_HOST viene de pedido.js ("http://localhost:5033/") y ya NO incluye "api/",
+    // así que la URL final queda "http://localhost:5033/api/images/...".
+    const fullUrl = url.startsWith("http")
+        ? url
+        : `${BACKEND_HOST}${url.replace(/^\/+/, "")}`;
+
+    return `<img class="image-publication" src="${Post.escape(fullUrl)}" alt="Post image">`;
     }
 
     getPostPresentation() {
-        const likeActive = this.myReaction === "Like" ? "reaction-active" : "";
-        const dislikeActive = this.myReaction === "Dislike" ? "reaction-active" : "";
+    const likeActive = this.myReaction === "Like" ? "reaction-active" : "";
+    const dislikeActive = this.myReaction === "Dislike" ? "reaction-active" : "";
+    const userName = Post.escape(this.userName);
 
-        return `
-            <article class="publication-card" data-post-id="${this.id}">
-                <header class="card-header">
-                    <a href="html/perfil.html?usuario=${encodeURIComponent(this.userName)}" class="btn-user">
-                        <i class="fa-solid fa-circle-user user-btn"></i>
-                        <span class="user-name">${Post.escape(this.userName)}</span>
-                    </a>
-                    <button class="btn-more-options" type="button" aria-label="More options">
+    return `
+        <article class="publication-card" data-post-id="${this.id}">
+            <header class="card-header">
+                <a href="html/perfil.html?usuario=${encodeURIComponent(this.userName)}" class="btn-user">
+                    <i class="fa-solid fa-circle-user user-btn"></i>
+                    <span class="user-name">${userName}</span>
+                </a>
+                <div class="dropdown post-options">
+                    <button class="btn-more-options" type="button"
+                            data-bs-toggle="dropdown" aria-expanded="false"
+                            aria-label="Más opciones">
                         <i class="fa-solid fa-ellipsis-vertical"></i>
                     </button>
-                </header>
-                <h2>${Post.escape(this.title)}</h2>
-                <p class="p-index">${Post.escape(this.body)}</p>
-                ${Post.renderImage(this.image)}
-                <div class="btn-group-actions">
-                    <button type="button" class="${likeActive}"
-                            data-action="reaction" data-post-id="${this.id}" data-type="Like">
-                        <i class="fa-solid fa-heart btn-like"></i>
-                    </button>
-                    <a href="html/comentarios.html" class="btn-sef" aria-label="View comments">
-                        <i class="fa-solid fa-comment btn-comment"></i>
-                    </a>
-                    <button type="button" class="${dislikeActive}"
-                            data-action="reaction" data-post-id="${this.id}" data-type="Dislike">
-                        <i class="fa-solid fa-face-sad-tear"></i>
-                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li>
+                            <button class="dropdown-item" type="button"
+                                    data-action="ban"
+                                    data-user-name="${userName}">Ban user</button>
+                        </li>
+                    </ul>
                 </div>
-            </article>`;
+            </header>
+            <h2>${Post.escape(this.title)}</h2>
+            <p class="p-index">${Post.escape(this.body)}</p>
+            ${Post.renderImage(this.image)}
+            <div class="btn-group-actions">
+                <button type="button" class="${likeActive}"
+                        data-action="reaction" data-post-id="${this.id}" data-type="Like">
+                    <i class="fa-solid fa-heart btn-like"></i>
+                </button>
+                <a href="html/comentarios.html" class="btn-sef" aria-label="View comments">
+                    <i class="fa-solid fa-comment btn-comment"></i>
+                </a>
+                <button type="button" class="${dislikeActive}"
+                        data-action="reaction" data-post-id="${this.id}" data-type="Dislike">
+                    <i class="fa-solid fa-face-sad-tear"></i>
+                </button>
+            </div>
+        </article>`;
     }
 }
