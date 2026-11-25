@@ -14,3 +14,30 @@ function toggleFollow(userId, isFollowingNow, callback) {
         ? unfollow(userId, () => callback({ isFollowing: false, userId }))
         : follow(userId, (user) => callback({ isFollowing: true, userId, target: user }));
 }
+
+function getFollowers(userId, callback) {
+    getFollowList(userId, "followers", callback);
+}
+
+function getFollowing(userId, callback) {
+    getFollowList(userId, "following", callback);
+}
+
+function getFollowList(userId, list, callback) {
+    const users = [];
+    const pageSize = 50;
+
+    function getPage(currentPage) {
+        pedido(`follow/${userId}/${list}?currentPage=${currentPage}&pageSize=${pageSize}`, "GET", null, (payload) => {
+            users.push(...payload.map(user => new User(user)));
+
+            if (payload.length === pageSize) {
+                getPage(currentPage + 1);
+            } else {
+                callback(users);
+            }
+        });
+    }
+
+    getPage(1);
+}

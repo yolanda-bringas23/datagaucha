@@ -13,6 +13,9 @@ class User {
         this.fullName = name ?? fullName ?? userName ?? "";
         this.email = email ?? "";
         this.avatar = avatarUrl ?? urlAvatar ?? avatar ?? "";
+        if (this.avatar.startsWith("api/") && typeof BACKEND_HOST !== "undefined") {
+            this.avatar = BACKEND_HOST + this.avatar;
+        }
         this.bio = bio ?? "";
         this.dateBirth = dateBirth ?? null;
         this.isFollowing = isFollowing ?? false;
@@ -38,8 +41,8 @@ class User {
         return `
             <h1>${User.escape(this.fullName)}</h1>
             <p class="profile-username">@${User.escape(this.userName)}</p>
-            <p class="profile-bio">${User.escape(this.bio)}</p>
-            <p class="profile-email"><i class="fa-solid fa-envelope"></i> ${User.escape(this.email)}</p>
+            ${this.bio ? `<p class="profile-bio">${User.escape(this.bio)}</p>` : ""}
+            ${this.email ? `<p class="profile-email"><i class="fa-solid fa-envelope"></i> ${User.escape(this.email)}</p>` : ""}
         `;
     }
 

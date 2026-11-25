@@ -6,7 +6,6 @@
     <meta name="keywords" content="perfil, red social, seguidores, usuarios, comunidad, programación, instituto técnico, desarrollo de software">
     <meta name="description" content="Accede a tu perfil de usuario en DataGaucha. Controla tus publicaciones, revisa tu lista de seguidores y gestiona quiénes te siguen de forma rápida y sencilla.">
     <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/perfil.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
@@ -27,7 +26,7 @@
                 <li><a href="../index.html"><i class="bi bi-house"></i> Home</a></li>
                 <li><a href="busqueda.html"><i class="bi bi-search"></i> Búsqueda</a></li>
                 <li><a href="condiciones-de-uso.html?urlCallback=perfil.html"><i class="bi bi-file-text"></i> Condiciones de uso</a></li>
-                <li><a href="loguear.html"><i class="bi bi-box-arrow-left"></i> Cerrar Sesión</a></li>
+                <li><a id="cerrarSesion" href="loguear.html"><i class="bi bi-box-arrow-left"></i> Cerrar Sesión</a></li>
                 <li><button id="darkMode">Darkmode</button></li>
         </ul>
     </nav>
@@ -37,7 +36,7 @@
             <div class="profile-top-section">
                 <div class="avatar-container">
                     <img id="perfilAvatar" class="profile-avatar" src="../img/avatar.jpg" alt="Foto de perfil" width="100" height="100">
-                    <button id="btnEditarPerfil" class="boton-edit" data-bs-toggle="modal" data-bs-target="#modalEditarPerfil">Editar Perfil</button>
+                    <button id="btnEditarPerfil" class="boton-edit" data-bs-toggle="modal" data-bs-target="#modalEditarPerfil" hidden>Editar Perfil</button>
                 </div>
                 <div class="info-profile">
                     <div class="profile-edit">
@@ -47,8 +46,8 @@
                     </div>
 
                     <div class="profile-counters">
-                        <button id="btnSeguidores" type="button" data-bs-toggle="modal" data-bs-target="#modalSeguidores">0 Seguidores</button>
-                        <button id="btnSeguidos" type="button" data-bs-toggle="modal" data-bs-target="#modalSeguidos">0 Siguiendo</button>
+                        <button id="btnSeguidores" type="button" data-bs-toggle="modal" data-bs-target="#modalSeguidores" disabled>Seguidores</button>
+                        <button id="btnSeguidos" type="button" data-bs-toggle="modal" data-bs-target="#modalSeguidos" disabled>Siguiendo</button>
                     </div>
 
                     <div id="perfilAcciones" class="profile-actions"></div>
@@ -58,16 +57,14 @@
         </section>
             
         <section class="post">
-            <h2 id="tituloPublicaciones">Mis Publicaciones</h2>
+            <h2 id="tituloPublicaciones">Publicaciones recientes</h2>
 
             <div class="profile-post" id="perfilPublicaciones"></div>
         </section>
 
         <section class="post">
             <h2>Comunidad</h2>
-            <p class="profile-hint">Entrá al perfil de otra persona o seguila desde acá.</p>
-
-            <div class="profile-users" id="listaComunidad"></div>
+            <a class="link-volver" href="busqueda.html">Buscar usuarios</a>
         </section>
     </main>
 
@@ -130,14 +127,6 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="inputEmail">Correo Electrónico</label>
-                            <input type="email" class="form-control" id="inputEmail" placeholder="correo@ejemplo.com">
-                        </div>
-                        <div class="form-group">
-                            <label for="inputBio">Biografía</label>
-                            <textarea class="form-control" id="inputBio" rows="3" maxlength="160" placeholder="Contá algo sobre vos (máximo 160 caracteres)"></textarea>
-                        </div>
-                        <div class="form-group">
                             <label for="inputPassword">Nueva Contraseña</label>
                             <input type="password" class="form-control" id="inputPassword" placeholder="Déjalo en blanco para mantener la actual">
                         </div>
@@ -145,17 +134,21 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                    <button type="submit" form="formEditarPerfil" class="btn btn-dark">Guardar Cambios</button>
+                    <button id="btnGuardarPerfil" type="submit" form="formEditarPerfil" class="btn btn-dark">Guardar Cambios</button>
                 </div>
             </div>
         </div>
     </div>
 
     <script src="../Js/darkMode.js"></script>
-    <script src="../Js/condicionesDeUsoPresentation.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.26.25/dist/sweetalert2.all.min.js"></script>
+    <script src="../Js/messages.js"></script>
+    <script src="../Js/repositories/pedido.js"></script>
     <script src="../Js/repositories/userRepositories.js"></script>
+    <script src="../Js/repositories/perfilRepositories.js"></script>
+    <script src="../Js/repositories/followRepositories.js"></script>
     <script src="../Js/repositories/postRepositories.js"></script>
     <script src="../Js/classes/user.js"></script>
     <script src="../Js/classes/post.js"></script>

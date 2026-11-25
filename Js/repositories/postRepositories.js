@@ -2,7 +2,10 @@
    This code is licensed under the MIT License (see LICENSE file for details) */
 
 function getPosts({ currentPage, pageSize, orderBy = "createdAt", orderDirection = "desc", search = "" }, callback) {
-    const q = new URLSearchParams({ currentPage, pageSize, orderBy, orderDirection, search }).toString();
+    const q = new URLSearchParams({ currentPage, pageSize, orderBy, orderDirection });
+    if (search.trim()) {
+        q.set("search", search);
+    }
 
     pedido(`post?${q}`, "GET", null, (payload) => {
         callback((payload ?? []).map((p) => new Post(p)));

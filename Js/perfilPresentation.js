@@ -3,290 +3,156 @@
 
 const perfilAvatar = document.getElementById("perfilAvatar");
 const perfilInfo = document.getElementById("perfilInfo");
-const perfilAcciones = document.getElementById("perfilAcciones");
 const perfilPublicaciones = document.getElementById("perfilPublicaciones");
-const tituloPublicaciones = document.getElementById("tituloPublicaciones");
 const btnEditarPerfil = document.getElementById("btnEditarPerfil");
 
 const btnSeguidores = document.getElementById("btnSeguidores");
 const btnSeguidos = document.getElementById("btnSeguidos");
 const listaSeguidores = document.getElementById("listaSeguidores");
 const listaSeguidos = document.getElementById("listaSeguidos");
-const listaComunidad = document.getElementById("listaComunidad");
 
 const formEditarPerfil = document.getElementById("formEditarPerfil");
+const modalEditarPerfil = document.getElementById("modalEditarPerfil");
+const btnGuardarPerfil = document.getElementById("btnGuardarPerfil");
 const inputAvatar = document.getElementById("inputAvatar");
 const inputNombre = document.getElementById("inputNombre");
 const inputUsuario = document.getElementById("inputUsuario");
-const inputEmail = document.getElementById("inputEmail");
-const inputBio = document.getElementById("inputBio");
 const inputPassword = document.getElementById("inputPassword");
 
 const PESO_MAXIMO_AVATAR = 1.5 * 1024 * 1024;
-
+const aviso = new Toast("avisoPerfil");
 const parametros = new URLSearchParams(window.location.search);
 const usuarioPedido = parametros.get("usuario");
 
-const yo = getCurrentUser();
-const perfilPedido = usuarioPedido ? getUserByUserName(usuarioPedido) : yo;
+let perfil;
+let seguidores = [];
+let seguidos = [];
 
-const perfil = perfilPedido || yo;
-const esMiPerfil = perfil.id === yo.id;
-
-const aviso = new Toast("avisoPerfil");
-
-function mostrarAviso(texto, tipo = "ok") {
-    aviso.mostrar(texto, tipo);
-}
-
-function cerrarModal(idModal) {
-    const modal = document.getElementById(idModal);
-    if (!modal || typeof bootstrap === "undefined") return;
-
-    const instancia = bootstrap.Modal.getInstance(modal) || new bootstrap.Modal(modal);
-    instancia.hide();
-}
-
-function renderPerfil() {
-    const persona = getUserById(perfil.id) || perfil;
-    const usuario = new User(persona);
-
-    perfilAvatar.src = persona.avatar;
-    perfilAvatar.alt = `Foto de perfil de ${persona.fullName}`;
+function renderPerfil(usuario) {
+    perfil = usuario;
+    perfilAvatar.src = usuario.avatar || "../img/avatar.jpg";
+    perfilAvatar.alt = `Foto de perfil de ${usuario.fullName}`;
     perfilInfo.innerHTML = usuario.getProfilePresentation();
-
-    btnSeguidores.innerText = `${persona.followers.length} Seguidores`;
-    btnSeguidos.innerText = `${persona.following.length} Siguiendo`;
-
-    renderAcciones(persona);
-    renderPublicaciones(persona);
-    renderSeguidores(persona);
-    renderSeguidos(persona);
-    renderComunidad();
+    btnEditarPerfil.hidden = false;
 }
 
-function renderAcciones(persona) {
-    const usuario = new User(persona);
+function cargarPublicaciones() {
+    getPosts({ currentPage: 1, pageSize: 12 }, (posts) => {
+        const publicaciones = posts.filter(post => post.userName === perfil.userName);
 
-    if (esMiPerfil) {
-        btnEditarPerfil.hidden = false;
-        perfilAcciones.innerHTML = "";
-        tituloPublicaciones.innerText = "Mis Publicaciones";
-        return;
-    }
-
-    btnEditarPerfil.hidden = true;
-    tituloPublicaciones.innerText = `Publicaciones de ${persona.fullName}`;
-
-    const loSigo = isFollowing(persona.id);
-
-    perfilAcciones.innerHTML = `
-        ${usuario.getFollowButtonPresentation(loSigo)}
-        <a class="link-volver" href="perfil.html">Volver a mi perfil</a>
-    `;
+        perfilPublicaciones.innerHTML = publicaciones.length
+            ? publicaciones.map(post => post.getPostPresentation()).join("").replaceAll('href="html/', 'href="')
+            : '<p class="profile-empty">No hay publicaciones tuyas en el inicio reciente.</p>';
+    });
 }
 
-function renderPublicaciones(persona) {
-    const arreglarRuta = (url) => String(url || "").replace(/^\.\//, "../");
+function renderSeguidores() {
+    btnSeguidores.innerText = `${seguidores.length} Seguidores`;
+    btnSeguidos.innerText = `${seguidos.length} Siguiendo`;
 
-    const alias = getUserAliases(persona).map(nombre => nombre.toLowerCase());
-
-    const publicaciones = getPost()
-        .filter(post => alias.includes(String(post.userName).toLowerCase()))
-        .map(post => ({ ...post, imageUrl: arreglarRuta(post.imageUrl) }));
-
-    if (publicaciones.length === 0) {
-        const mensaje = esMiPerfil
-            ? "Todavía no publicaste nada."
-            : "Esta persona todavía no tiene publicaciones.";
-        perfilPublicaciones.innerHTML = `<p class="profile-empty">${mensaje}</p>`;
-        return;
-    }
-
-    perfilPublicaciones.innerHTML = publicaciones
-        .map(publicacion => new Post(publicacion).getPostPresentation())
-        .join("")
-        .replaceAll('href="html/comentarios.html"', 'href="comentarios.html"');
-}
-
-function renderSeguidores(persona) {
-    const seguidores = getFollowers(persona);
-
-    if (seguidores.length === 0) {
-        listaSeguidores.innerHTML = `<p class="profile-empty">Todavía no tiene seguidores.</p>`;
-        return;
-    }
-
-    listaSeguidores.innerHTML = seguidores
-        .map(seguidor => {
-            if (esMiPerfil) {
-                return new User(seguidor).getProfileRowPresentation({
-                    label: "Quitar",
-                    type: "remove"
-                });
-            }
-
-            return new User(seguidor).getProfileRowPresentation({
-                label: isFollowing(seguidor.id) ? "Siguiendo" : "Seguir",
-                type: "toggle",
-                isFollowing: isFollowing(seguidor.id)
-            });
-        })
-        .join("");
-}
-
-function renderSeguidos(persona) {
-    const seguidos = getFollowing(persona);
-
-    if (seguidos.length === 0) {
-        listaSeguidos.innerHTML = `<p class="profile-empty">Todavía no sigue a nadie.</p>`;
-        return;
-    }
-
-    listaSeguidos.innerHTML = seguidos
-        .map(seguido => {
-            const loSigo = isFollowing(seguido.id);
-
-            return new User(seguido).getProfileRowPresentation({
-                label: esMiPerfil ? "Dejar de seguir" : (loSigo ? "Siguiendo" : "Seguir"),
-                type: "toggle",
-                isFollowing: esMiPerfil ? true : loSigo
-            });
-        })
-        .join("");
-}
-
-function renderComunidad() {
-    listaComunidad.innerHTML = getCommunityUsers()
-        .map(persona => {
-            const loSigo = isFollowing(persona.id);
-
-            return new User(persona).getProfileRowPresentation({
+    listaSeguidores.innerHTML = seguidores.length
+        ? seguidores.map(usuario => {
+            const loSigo = seguidos.some(seguido => seguido.id === usuario.id);
+            return usuario.getProfileRowPresentation({
                 label: loSigo ? "Siguiendo" : "Seguir",
                 type: "toggle",
                 isFollowing: loSigo
             });
-        })
-        .join("");
+        }).join("")
+        : '<p class="profile-empty">Todavía no tenés seguidores.</p>';
+
+    listaSeguidos.innerHTML = seguidos.length
+        ? seguidos.map(usuario => usuario.getProfileRowPresentation({
+            label: "Dejar de seguir",
+            type: "toggle",
+            isFollowing: true
+        })).join("")
+        : '<p class="profile-empty">Todavía no seguís a nadie.</p>';
+}
+
+function cargarSeguidores() {
+    getFollowing(perfil.id, (usuarios) => {
+        seguidos = usuarios;
+        btnSeguidos.disabled = false;
+        renderSeguidores();
+
+        getFollowers(perfil.id, (usuarios) => {
+            seguidores = usuarios;
+            btnSeguidores.disabled = false;
+            renderSeguidores();
+        });
+    });
 }
 
 document.addEventListener("click", (event) => {
-    const boton = event.target.closest("[data-action]");
+    const boton = event.target.closest("[data-user-id][data-action='toggle']");
     if (!boton) return;
 
-    const id = parseInt(boton.dataset.userId);
-    const accion = boton.dataset.action;
+    const id = Number(boton.dataset.userId);
+    const loSigo = seguidos.some(usuario => usuario.id === id);
 
-    if (accion === "toggle") {
-        const resultado = toggleFollow(id);
-        if (!resultado) return;
+    toggleFollow(id, loSigo, (resultado) => {
+        if (resultado.isFollowing) {
+            seguidos.push(resultado.target);
+        } else {
+            seguidos = seguidos.filter(usuario => usuario.id !== id);
+        }
 
-        renderPerfil();
-        mostrarAviso(resultado.isFollowing
-            ? `Ahora seguís a ${resultado.target.fullName}`
-            : `Dejaste de seguir a ${resultado.target.fullName}`);
-    }
-
-    if (accion === "remove") {
-        const quitado = removeFollower(id);
-        if (!quitado) return;
-
-        renderPerfil();
-        mostrarAviso(`${quitado.fullName} ya no te sigue`);
-    }
+        renderSeguidores();
+        aviso.mostrar(resultado.isFollowing ? "Ahora seguís a este usuario." : "Dejaste de seguir a este usuario.");
+    });
 });
 
-function cargarFormulario() {
-    const persona = getCurrentUser();
-
-    inputNombre.value = persona.fullName;
-    inputUsuario.value = persona.userName;
-    inputEmail.value = persona.email;
-    inputBio.value = persona.bio;
+modalEditarPerfil.addEventListener("show.bs.modal", () => {
+    inputNombre.value = perfil.fullName;
+    inputUsuario.value = perfil.userName;
     inputPassword.value = "";
     inputAvatar.value = "";
-}
-
-function validarFormulario({ nombre, usuario, email, password }) {
-    if (nombre === "") return "El nombre completo no puede quedar vacío.";
-    if (nombre.length < 3) return "El nombre completo es demasiado corto.";
-
-    if (usuario === "") return "El nombre de usuario no puede quedar vacío.";
-    if (!/^[a-zA-Z0-9._]{3,20}$/.test(usuario)) {
-        return "El usuario debe tener entre 3 y 20 caracteres (letras, números, punto o guion bajo).";
-    }
-
-    const repetido = getUsers().some(otro =>
-        otro.id !== getCurrentUser().id &&
-        otro.userName.toLowerCase() === usuario.toLowerCase()
-    );
-    if (repetido) return "Ese nombre de usuario ya está en uso.";
-
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
-        return "Ingresá un correo electrónico válido.";
-    }
-
-    if (password !== "" && password.length < 6) {
-        return "La contraseña debe tener al menos 6 caracteres.";
-    }
-
-    return null;
-}
-
-function guardarCambios() {
-    const persona = getCurrentUser();
-
-    const nombre = inputNombre.value.trim();
-    const usuario = inputUsuario.value.trim().replace(/^@/, "");
-    const email = inputEmail.value.trim();
-    const bio = inputBio.value.trim();
-    const password = inputPassword.value;
-    const archivo = inputAvatar.files[0];
-
-    const error = validarFormulario({ nombre, usuario, email, password });
-    if (error) {
-        mostrarAviso(error, "error");
-        return;
-    }
-
-    if (archivo && archivo.size > PESO_MAXIMO_AVATAR) {
-        mostrarAviso("La imagen es muy pesada (máximo 1,5 MB).", "error");
-        return;
-    }
-
-    const guardar = (avatar) => {
-        updateUser({
-            id: persona.id,
-            fullName: nombre,
-            userName: usuario,
-            email: email,
-            bio: bio,
-            avatar: avatar
-        });
-
-        renderPerfil();
-        cerrarModal("modalEditarPerfil");
-        mostrarAviso("Perfil actualizado correctamente.");
-    };
-
-    if (archivo) {
-        const lector = new FileReader();
-        lector.onload = () => guardar(lector.result);
-        lector.readAsDataURL(archivo);
-    } else {
-        guardar(persona.avatar);
-    }
-}
+});
 
 formEditarPerfil.addEventListener("submit", (event) => {
     event.preventDefault();
-    guardarCambios();
+    if (!perfil || btnGuardarPerfil.disabled) return;
+
+    const name = inputNombre.value.trim();
+    const userName = inputUsuario.value.trim().replace(/^@/, "");
+    const password = inputPassword.value;
+    const file = inputAvatar.files[0];
+
+    if (!name || !userName) {
+        aviso.mostrar("Completá el nombre y el nombre de usuario.", "error");
+        return;
+    }
+
+    if (file && file.size > PESO_MAXIMO_AVATAR) {
+        aviso.mostrar("La imagen es muy pesada (máximo 1,5 MB).", "error");
+        return;
+    }
+
+    btnGuardarPerfil.disabled = true;
+    updateProfile({ name, userName, password, file }, (usuario) => {
+        renderPerfil(usuario);
+        cargarPublicaciones();
+        bootstrap.Modal.getInstance(modalEditarPerfil)?.hide();
+        aviso.mostrar("Perfil actualizado correctamente.");
+    }).finally(() => {
+        btnGuardarPerfil.disabled = false;
+    });
 });
 
-document.getElementById("modalEditarPerfil").addEventListener("show.bs.modal", cargarFormulario);
+document.getElementById("cerrarSesion").addEventListener("click", logout);
 
-if (usuarioPedido && !perfilPedido) {
-    mostrarAviso("No encontramos ese perfil. Te mostramos el tuyo.", "error");
+if (!localStorage.getItem("token")) {
+    window.location.href = "loguear.html";
+} else {
+    getProfile((usuario) => {
+        if (usuarioPedido && usuarioPedido.toLowerCase() !== usuario.userName.toLowerCase()) {
+            perfilInfo.innerHTML = '<p>No se puede consultar este perfil. <a href="perfil.html">Volver a mi perfil</a></p>';
+            return;
+        }
+
+        renderPerfil(usuario);
+        cargarPublicaciones();
+        cargarSeguidores();
+    });
 }
-
-renderPerfil();
