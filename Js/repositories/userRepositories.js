@@ -30,9 +30,14 @@ function register(request, callback){
 
 
 function getUsers({ currentPage, pageSize, search }, callback) {
-    const q = new URLSearchParams({ currentPage, pageSize, search: search ?? "" }).toString();
+    const params = new URLSearchParams({ currentPage, pageSize });
+    
+    // Si hay una búsqueda real, la agregamos. Si está vacía, NO la mandamos.
+    if (search && search.trim() !== "") {
+        params.append("search", search.trim());
+    }
 
-    pedido(`user?${q}`, "GET", null, (payload) => {
+    pedido(`user?${params.toString()}`, "GET", null, (payload) => {
         callback((payload ?? []).map((u) => new User(u)));
     });
 }

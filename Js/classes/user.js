@@ -26,10 +26,11 @@ class User {
             .replaceAll('"', "&quot;");
     }
 
+    // CORREGIDO: La ruta para que el perfil funcione desde busqueda.html
     getProfileHref() {
         return `perfil.html?usuario=${encodeURIComponent(this.userName)}`;
     }
-
+    
     getAvatarPresentation(classes = "user-avatar") {
         return `<img class="${classes}" src="${User.escape(this.avatar)}" alt="Profile picture of ${User.escape(this.fullName)}" width="44" height="44">`;
     }
@@ -47,7 +48,8 @@ class User {
         const classes = ["btn-follow", isFollowing ? "is-following" : "", extraClass]
             .filter(Boolean)
             .join(" ");
-        const text = isFollowing ? "Following" : "Follow";
+        
+        const text = isFollowing ? "Siguiendo" : "Seguir";
 
         return `<button
                     type="button"
@@ -58,19 +60,55 @@ class User {
                 >${text}</button>`;
     }
 
+    // CORREGIDO: Ahora usa FontAwesome si no hay imagen, y la estructura correcta
     getSearchCardPresentation(isFollowing) {
+        const avatarHTML = (this.avatar && this.avatar !== "null" && this.avatar !== "")
+            ? `<img src="${User.escape(this.avatar)}" class="user-avatar-img" alt="Avatar">` 
+            : `<i class="fa-solid fa-circle-user user-avatar-icon"></i>`;
+
+        const siguiendo = isFollowing ? "is-following" : "";
+        const textoBoton = isFollowing ? "Siguiendo" : "Seguir";
+        const profileUrl = this.getProfileHref();
+
         return `
             <article class="search-card" data-user-id="${this.id}">
-                <a class="btn-user user-link" href="${this.getProfileHref()}">
-                    ${this.getAvatarPresentation("user-avatar")}
-                    <div class="search-user-info">
-                        <h2 class="search-name">${User.escape(this.fullName)}</h2>
-                        <h3 class="search-username">@${User.escape(this.userName)}</h3>
+                <div class="search-card-content">
+                    
+                    <a href="${profileUrl}" class="btn-user user-link">
+                        ${avatarHTML}
+                        <div class="search-user-info">
+                            <h2 class="search-name">${User.escape(this.fullName)}</h2>
+                            <h3 class="search-username">@${User.escape(this.userName)}</h3>
+                        </div>
+                    </a>
+                    
+                    <div class="search-card-actions">
+                        <button class="btn-follow ${siguiendo}" 
+                                type="button"
+                                data-action="toggle" 
+                                data-user-id="${this.id}">
+                            ${textoBoton}
+                        </button>
+                        
+                        <div class="dropdown post-options">
+                            <button class="btn-more-options" type="button" 
+                                    data-dropdown-toggle="true" 
+                                    aria-expanded="false" 
+                                    aria-label="Más opciones">
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li>
+                                    <button class="dropdown-item" type="button" 
+                                            data-action="ban" 
+                                            data-user-id="${this.id}" 
+                                            data-user-name="${User.escape(this.userName)}">
+                                        Ban user
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                </a>
-                <div class="search-card-actions">
-                    ${this.getFollowButtonPresentation(isFollowing)}
-                    <a class="btn-follow link-ver-perfil" href="${this.getProfileHref()}">View profile</a>
                 </div>
             </article>
         `;

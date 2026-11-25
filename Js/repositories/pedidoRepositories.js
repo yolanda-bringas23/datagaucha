@@ -1,10 +1,8 @@
-<<<<<<< HEAD
-=======
 /* Copyright (c) 2026 David-irusta
    This code is licensed under the MIT License (see LICENSE file for details) */
 
->>>>>>> de25e5c2efbbb29cff3641c55a84bf763343249c
 const BASE_URL = "http://localhost:5033/api/";
+const BACKEND_HOST = "http://localhost:5033/";
 
 function pedido(ruta, metodo, body, callback) {
     const token = localStorage.getItem("token");
@@ -16,7 +14,6 @@ function pedido(ruta, metodo, body, callback) {
         }
     };
 
-    // Si es FormData (como las imágenes), no seteamos Content-Type
     if (body instanceof FormData) {
         opciones.body = body;
     } else if (body) {
@@ -26,15 +23,15 @@ function pedido(ruta, metodo, body, callback) {
 
     fetch(BASE_URL + ruta, opciones)
         .then(async (res) => {
-            const texto = await res.text(); // Leemos el texto primero
-            
+            const texto = await res.text();
+
             if (!texto) {
                 throw new Error("El servidor devolvió una respuesta vacía. (Código " + res.status + ")");
             }
 
             let json;
             try {
-                json = JSON.parse(texto); // Intentamos convertir a JSON
+                json = JSON.parse(texto);
             } catch (e) {
                 throw new Error("El servidor no devolvió un JSON válido. (Código " + res.status + ")");
             }

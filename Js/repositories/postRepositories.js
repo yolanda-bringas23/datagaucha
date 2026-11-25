@@ -2,9 +2,16 @@
    This code is licensed under the MIT License (see LICENSE file for details) */
 
 function getPosts({ currentPage, pageSize, orderBy = "createdAt", orderDirection = "desc", search = "" }, callback) {
-    const q = new URLSearchParams({ currentPage, pageSize, orderBy, orderDirection, search }).toString();
+    // Armamos la base de la URL
+    const params = new URLSearchParams({ currentPage, pageSize, orderBy, orderDirection });
+    
+    // Solo agregamos 'search' si realmente hay algo escrito
+    const searchValue = search ? search.trim() : "";
+    if (searchValue) {
+        params.append("search", searchValue);
+    }
 
-    pedido(`post?${q}`, "GET", null, (payload) => {
+    pedido(`post?${params.toString()}`, "GET", null, (payload) => {
         callback((payload ?? []).map((p) => new Post(p)));
     });
 }

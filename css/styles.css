@@ -1,4 +1,4 @@
-*{
+﻿*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -1240,34 +1240,6 @@ header #darkMode {
     font-size: 2.2rem;
 }
 
-.search-results article {
-    display: grid;
-    grid-template-columns: 4rem 1fr;
-    gap: 1rem;
-    margin-bottom: 2rem;
-    padding-bottom: 1.5rem;
-    border-bottom: 0.1rem solid #adaca9;
-}
-
-.search-results article img {
-    width: 3.2rem;
-    height: 3.2rem;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-.search-results article h2 {
-    grid-column: 2;
-    font-size: 1.6rem;
-}
-
-.search-results article p {
-    grid-column: 2;
-    font-size: 1.2rem;
-    font-weight: 400;
-    line-height: 1.4;
-}
-
 .comments-container {
     display: grid;
     grid-template-columns: 18rem 1fr;
@@ -1369,229 +1341,49 @@ header #darkMode {
 
 /* comentarios.html */
 
-body:has(.dropdown-menu),
-body:has(.Dropdown-menu) {
-    min-height: 100vh;
-    background-color: #eef0f2;
-}
+/* comentarios.html - Fix para que no rompa el home ni búsqueda */
 
-body:has(.dropdown-menu) > nav,
-body:has(.Dropdown-menu) > nav {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    padding: 1rem 2rem;
-    background-color: #50849D;
-    color: #ffffff;
-}
-
-body:has(.dropdown-menu) > nav ul,
-body:has(.Dropdown-menu) > nav ul {
-    display: flex;
-    align-items: center;
-    gap: 1.6rem;
-    margin: 0;
-    padding: 0;
-}
-
-body:has(.dropdown-menu) > nav li,
-body:has(.Dropdown-menu) > nav li {
-    font-size: 1.3rem;
-    font-weight: 700;
-}
-
-body:has(.dropdown-menu) button,
-body:has(.Dropdown-menu) button {
-    border: none;
-    border-radius: 1.2rem;
-    padding: 0.7rem 1rem;
-    font-family: inherit;
-    font-weight: 700;
-    cursor: pointer;
-}
-
-body:has(.dropdown-menu) .container,
-body:has(.Dropdown-menu) .container {
-    max-width: 95rem;
-    margin: 2rem auto;
-    padding: 0 1.6rem;
-}
-
-body:has(.dropdown-menu) header form {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin-bottom: 2rem;
-}
-
-body:has(.dropdown-menu) header input {
-    flex: 1;
-    min-width: 20rem;
-    padding: 0.9rem;
-    border: 0.1rem solid #adaca9;
-    border-radius: 1rem;
-    font-family: inherit;
-}
-
-body:has(.dropdown-menu) header ul,
-body:has(.dropdown-menu) .container > nav ul {
-    display: flex;
-    gap: 1rem;
-    width: 100%;
-    padding: 0;
-}
-
-body:has(.dropdown-menu) a {
-    color: #000000;
-    font-size: 1.2rem;
-    font-weight: 700;
-}
-
-body:has(.dropdown-menu) main h1 {
-    margin-bottom: 1.8rem;
-    font-size: 2.2rem;
-}
-
-body:has(.dropdown-menu) article {
-    display: grid;
-    grid-template-columns: 4rem 1fr;
-    gap: 1rem;
-    margin-bottom: 2rem;
-    padding-bottom: 1.5rem;
-    border-bottom: 0.1rem solid #adaca9;
-}
-
-body:has(.dropdown-menu) article img {
-    width: 3.2rem;
-    height: 3.2rem;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-body:has(.dropdown-menu) article h2,
-body:has(.dropdown-menu) article p {
-    grid-column: 2;
-}
-
-body:has(.dropdown-menu) article p {
-    font-size: 1.2rem;
-    font-weight: 400;
-    line-height: 1.4;
-}
-
-
-body:has(.Dropdown-menu) .container {
-    display: block;
-    margin: 1rem;
-    padding: 0;
-}
-
-body:has(.Dropdown-menu) aside {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-body:has(.Dropdown-menu) aside form {
-    display: flex;
-    flex-direction: column;
-    gap: 0.8rem;
-}
-
-body:has(.Dropdown-menu) main {
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
-}
-
-body:has(.Dropdown-menu) input,
-body:has(.Dropdown-menu) textarea {
-    width: 100%;
-    padding: 0.9rem;
-    border: 0.1rem solid #adaca9;
-    font-family: inherit;
-}
-
-body:has(.Dropdown-menu) textarea {
-    min-height: 5rem;
-    resize: vertical;
-}
-
-body:has(.Dropdown-menu) .Description textarea {
-    min-height: 9rem;
-}
-
-body:has(.Dropdown-menu) main img {
-    width: 100%;
-}
-
-body:has(.Dropdown-menu) main > div:nth-of-type(4) {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-body:has(.Dropdown-menu) .User-comment {
-    display: block;
-    margin-top: 1rem;
-    padding: 1rem;
-    background-color: #ffffff;
-}
-
-body:has(.Dropdown-menu) .User-comment p {
-    font-size: 1.2rem;
-}
-
-body:has(.Dropdown-menu) > nav {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 1rem;
-    padding: 1rem;
-}
-
-body:has(.Dropdown-menu) > nav ul {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 0.8rem;
-}
-
+.comments-page { min-height: 100vh; background-color: #eef0f2; }
+.comments-page > nav { display: flex; align-items: center; gap: 2rem; padding: 1rem 2rem; background-color: #50849D; color: #ffffff; }
+.comments-page > nav ul { display: flex; align-items: center; gap: 1.6rem; margin: 0; padding: 0; }
+.comments-page > nav li { font-size: 1.3rem; font-weight: 700; }
+.comments-page button { border: none; border-radius: 1.2rem; padding: 0.7rem 1rem; font-family: inherit; font-weight: 700; cursor: pointer; }
+.comments-page .container { max-width: 95rem; margin: 2rem auto; padding: 0 1.6rem; }
+.comments-page header form { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 2rem; }
+.comments-page header input { flex: 1; min-width: 20rem; padding: 0.9rem; border: 0.1rem solid #adaca9; border-radius: 1rem; font-family: inherit; }
+.comments-page header ul,
+.comments-page .container > nav ul { display: flex; gap: 1rem; width: 100%; padding: 0; }
+.comments-page a { color: #000000; font-size: 1.2rem; font-weight: 700; }
+.comments-page main h1 { margin-bottom: 1.8rem; font-size: 2.2rem; }
+.comments-page article { display: grid; grid-template-columns: 4rem 1fr; gap: 1rem; margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 0.1rem solid #adaca9; }
+.comments-page article img { width: 3.2rem; height: 3.2rem; border-radius: 50%; object-fit: cover; }
+.comments-page article h2,
+.comments-page article p { grid-column: 2; }
+.comments-page article p { font-size: 1.2rem; font-weight: 400; line-height: 1.4; }
+.comments-page aside { display: flex; flex-direction: column; gap: 1rem; }
+.comments-page aside form { display: flex; flex-direction: column; gap: 0.8rem; }
+.comments-page main { display: flex; flex-direction: column; gap: 1.2rem; }
+.comments-page input,
+.comments-page textarea { width: 100%; padding: 0.9rem; border: 0.1rem solid #adaca9; font-family: inherit; }
+.comments-page textarea { min-height: 5rem; resize: vertical; }
+.comments-page .Description textarea { min-height: 9rem; }
+.comments-page main img { width: 100%; }
+.comments-page main > div:nth-of-type(4) { display: flex; flex-direction: column; gap: 1rem; }
+.comments-page .User-comment { display: block; margin-top: 1rem; padding: 1rem; background-color: #ffffff; }
+.comments-page .User-comment p { font-size: 1.2rem; }
+.comments-page > nav { align-items: flex-start; flex-direction: column; gap: 1rem; padding: 1rem; }
+.comments-page > nav ul { align-items: flex-start; flex-direction: column; gap: 0.8rem; }
 @media (min-width: 769px) {
-    body:has(.Dropdown-menu) > nav {
-        align-items: center;
-        flex-direction: row;
-    }
-
-    body:has(.Dropdown-menu) > nav ul {
-        align-items: center;
-        flex-direction: row;
-    }
-
-    body:has(.Dropdown-menu) main > div:nth-of-type(4) {
-        flex-direction: row;
-    }
-
-    body:has(.Dropdown-menu) .container {
-        display: grid;
-        grid-template-columns: 18rem 1fr;
-        gap: 1rem;
-    }
+    .comments-page > nav { align-items: center; flex-direction: row; }
+    .comments-page > nav ul { align-items: center; flex-direction: row; }
+    .comments-page main > div:nth-of-type(4) { flex-direction: row; }
+    .comments-page .container { display: grid; grid-template-columns: 18rem 1fr; gap: 1rem; }
 }
-
-
 @media (max-width: 480px) {
-    body:has(.dropdown-menu) .container {
-        margin-top: 1.2rem;
-        padding: 0 1.2rem;
-    }
-
-    body:has(.dropdown-menu) article {
-        grid-template-columns: 1fr;
-    }
-
-    body:has(.dropdown-menu) article h2,
-    body:has(.dropdown-menu) article p {
-        grid-column: 1;
-    }
+    .comments-page .container { margin-top: 1.2rem; padding: 0 1.2rem; }
+    .comments-page article { grid-template-columns: 1fr; }
+    .comments-page article h2,
+    .comments-page article p { grid-column: 1; }
 }
 
 /* ── GRID LAYOUT (home / busqueda / comments con .grid) ── */
@@ -2268,72 +2060,6 @@ body::-webkit-scrollbar-thumb {
     color: #ADACA9;
 }
 
-.search-card {
-    display: flex;
-    flex-direction: column;
-    gap: 0.6rem;
-    padding: 1.2rem;
-    margin-bottom: 1.2rem;
-    background-color: #eef0f2;
-    border-radius: 0.25rem;
-}
-
-.light .search-card {
-    background-color: #0b0f1a;
-}
-
-.search-card .btn-user {
-    align-self: center;
-}
-
-.search-card .btn-user .user-btn {
-    color: #000000;
-    font-size: 1.8rem;
-}
-
-.search-meta {
-    margin: 0;
-    color: #000000;
-    font-size: 1.2rem;
-}
-
-.search-meta span {
-    margin-left: 0.6rem;
-    font-weight: 400;
-    color: #000000;
-}
-
-.search-time {
-    align-self: flex-start;
-    margin-top: -0.6rem;
-    margin-left: 2.4rem;
-    font-weight: bold;
-    font-size: 1.2rem;
-    color: #000000;
-}
-
-.search-heading {
-    margin: 0;
-    color: #000000;
-    font-size: 2.2rem;
-}
-
-.search-text {
-    margin: 0;
-    color: #000000;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.45;
-}
-
-.search-image {
-    width: 100%;
-    max-height: 18rem;
-    margin-top: 0.5rem;
-    object-fit: cover;
-    border-radius: 0.4rem;
-}
-
 /* ── copyright dentro del nav ── */
 
 #nav .p-index {
@@ -2644,745 +2370,6 @@ body.light .dropdown-item:hover {
 }
 
 /* 2. Botón Follow (Búsqueda) */
-.search-card-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    gap: 1.5rem;
-}
-
-.search-card-content .btn-user {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    flex: 1;
-    background: transparent;
-    border: none;
-    text-align: left;
-    padding: 0;
-}
-
-.btn-follow {
-    background: transparent;
-    border: 0.2rem solid #50849D;
-    color: #50849D;
-    padding: 0.6rem 1.5rem;
-    border-radius: 2rem;
-    font-weight: bold;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    white-space: nowrap;
-}
-
-.btn-follow:hover {
-    background: #50849D;
-    color: #ffffff;
-    box-shadow: 0 0.4rem 0.8rem rgba(80, 132, 157, 0.3);
-    transform: translateY(-2px);
-}
-
-.btn-follow.is-following {
-    border-color: #6c757d;
-    color: #6c757d;
-}
-
-.btn-follow.is-following:hover {
-    background: #dc3545;
-    border-color: #dc3545;
-    color: #ffffff;
-    box-shadow: 0 0.4rem 0.8rem rgba(220, 53, 69, 0.3);
-}
-
-.light .btn-follow {
-    border-color: #50849D;
-    color: #50849D;
-}
-
-.light .btn-follow:hover {
-    background: #50849D;
-    color: #ffffff;
-}
-
-.light .btn-follow.is-following {
-    border-color: #ADACA9;
-    color: #ADACA9;
-}
-
-.light .btn-follow.is-following:hover {
-    background: #dc3545;
-    border-color: #dc3545;
-    color: #ffffff;
-}
-/* ══════════════════════════════════════════════════════════════════
-   INDEX: posts con la misma forma que comentarios.html
-   (card-header con autor a la izquierda + tres puntos a la derecha,
-   dropdown de Ban incluido)
-   ══════════════════════════════════════════════════════════════════ */
-
-/* 0. Anular las reglas viejas body:has(.dropdown-menu) article/img/p
-      que rompían la card en el index */
-#section .publication-card {
-    display: flex;
-    grid-template-columns: none;
-    gap: 0.38rem;
-    border-bottom: none;
-}
-
-#section .publication-card h2,
-#section .publication-card p {
-    grid-column: auto;
-}
-
-#section .publication-card .p-index {
-    line-height: 1.5;
-}
-
-#section .publication-card .image-publication {
-    width: 100%;
-    height: auto;
-    border-radius: 0.2rem;
-    object-fit: cover;
-}
-
-/* 1. Título igual que el h1 de comentarios */
-.publication-card h2 {
-    font-size: 2.2rem;
-}
-
-/* 2. Cabecera: autor a la izquierda, tres puntos a la derecha */
-#section .publication-card .card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-#section .publication-card .btn-user {
-    padding: 0.4rem 0.8rem;
-    border-radius: 6px;
-}
-
-.post-options {
-    position: relative;
-    margin-left: auto;
-    flex-shrink: 0;
-}
-
-#section .publication-card .btn-more-options {
-    padding: 0.4rem;
-    border-radius: 50%;
-}
-
-/* 3. Dropdown (oculto hasta que se abre) */
-#section .publication-card .dropdown-menu {
-    display: none;
-    width: auto;
-    gap: 0;
-    padding: 0.5rem 0;
-}
-
-#section .publication-card .dropdown-menu.show {
-    display: block;
-}
-
-#section .publication-card .dropdown-item {
-    display: block;
-    width: 100%;
-    padding: 0.25rem 1rem;
-    border-radius: 0;
-    background: transparent;
-    color: #ffffff;
-    font-size: 1.2rem;
-    font-weight: bold;
-    text-align: left;
-}
-
-#section .publication-card .dropdown-item:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    color: #ffffff;
-}
-
-.light #section .publication-card .dropdown-item {
-    color: #333333;
-}
-
-.light #section .publication-card .dropdown-item:hover {
-    background-color: rgba(0, 0, 0, 0.05);
-    color: #000000;
-}
-
-/* que el menú abierto no quede tapado por la card de abajo */
-.publication-card:has(.dropdown-menu.show) {
-    position: relative;
-    z-index: 20;
-}
-
-/* 4. Botón de comentarios (<a>) con la misma forma que los <button> */
-#section .publication-card .btn-group-actions a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    min-width: 3.8rem;
-    min-height: 3.8rem;
-    padding: 0.6rem;
-    color: #000000;
-    font-size: 1.1rem;
-    font-weight: bold;
-    text-decoration: none;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-#section .publication-card .btn-group-actions a:hover {
-    transform: scale(1.2);
-}
-
-#section .publication-card .btn-group-actions a:active {
-    transform: scale(1.05);
-}
-
-/* ══════════════════════════════════════════════════════════════════
-   BUSQUEDA: cards con los mismos colores que home / comentarios
-   - Modo claro  → card #50849D
-   - Modo oscuro (.light) → card #2f3e56
-   Texto y avatar (Font Awesome) en blanco en ambos modos
-   ══════════════════════════════════════════════════════════════════ */
-
-.search-card {
-    background-color: #50849D;
-}
-
-.light .search-card {
-    background-color: #2f3e56;
-}
-
-/* todo el texto y los íconos dentro de la card en blanco */
-.search-card,
-.search-card p,
-.search-card span,
-.search-card h1,
-.search-card h2,
-.search-card h3,
-.search-card h4,
-.search-card .search-meta,
-.search-card .search-meta span,
-.search-card .search-time,
-.search-card .search-heading,
-.search-card .search-text,
-.search-card .search-name,
-.search-card .search-username,
-.search-card .btn-user,
-.search-card .btn-user .user-btn,
-.search-card i {
-    color: #ffffff;
-}
-
-/* el botón del usuario no debe tapar el fondo de la card */
-.search-card .btn-user,
-.light .search-card .btn-user {
-    background-color: transparent;
-}
-
-/* Botón Follow: el borde #50849D se perdía sobre la card del mismo color */
-.search-card .btn-follow,
-.light .search-card .btn-follow {
-    border-color: #ffffff;
-    color: #ffffff;
-}
-
-.search-card .btn-follow:hover,
-.light .search-card .btn-follow:hover {
-    background: #ffffff;
-    border-color: #ffffff;
-    color: #50849D;
-}
-
-.search-card .btn-follow.is-following,
-.light .search-card .btn-follow.is-following {
-    border-color: rgba(255, 255, 255, 0.6);
-    color: rgba(255, 255, 255, 0.8);
-}
-
-.search-card .btn-follow.is-following:hover,
-.light .search-card .btn-follow.is-following:hover {
-    background: #dc3545;
-    border-color: #dc3545;
-    color: #ffffff;
-}
-/* ══════════════════════════════════════════════════════════════════
-   Cabecera de la card (autor + tres puntos) con el mismo color de la card
-   - Modo claro  → #50849D
-   - Modo oscuro (.light) → #2f3e56
-   ══════════════════════════════════════════════════════════════════ */
-
-.publication-card .card-header,
-.publication-card .btn-user,
-.publication-card .btn-more-options {
-    background-color: #50849D;
-}
-
-.light .publication-card .card-header,
-.light .publication-card .btn-user,
-.light .publication-card .btn-more-options {
-    background-color: #2f3e56;
-}
-
-/* hover de los tres puntos (si no, mi regla de arriba lo pisa) */
-.publication-card .btn-more-options:hover {
-    background-color: rgba(255, 255, 255, 0.15);
-}
-
-/* ══════════════════════════════════════════════════════════════════
-   Botón "Crear Publicación" siempre #50849D (modo claro y oscuro)
-   ══════════════════════════════════════════════════════════════════ */
-
-#buttonModal,
-.light #buttonModal,
-#buttonModal:hover,
-.light #buttonModal:hover,
-#buttonModal:focus,
-.light #buttonModal:focus,
-#buttonModal:active,
-.light #buttonModal:active {
-    background-color: #50849D;
-    border-color: #50849D;
-    color: #ffffff;
-}
-
-#buttonModal:focus {
-    box-shadow: 0 0 0 0.25rem rgba(80, 132, 157, 0.5);
-}
-/* ══════════════════════════════════════════════════════════════════
-   PERFIL (antes en perfil.css)
-   ══════════════════════════════════════════════════════════════════ */
-
-.user-avatar {
-    border-radius: 50%;
-    object-fit: cover;
-    flex: none;
-    width: 2.6rem;
-    height: 2.6rem;
-}
-
-.comment-avatar {
-    width: 2rem;
-    height: 2rem;
-}
-
-.btn-follow {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 8.5rem;
-    padding: 0.45rem 1rem;
-    border: 2px solid #50849D;
-    border-radius: 0.5rem;
-    background-color: #50849D;
-    color: #ffffff;
-    font-weight: bold;
-    font-size: 1rem;
-    font-family: inherit;
-    line-height: 1.2;
-    cursor: pointer;
-    transition: background-color 0.25s ease, color 0.25s ease,
-                border-color 0.25s ease, transform 0.15s ease;
-}
-
-.btn-follow:hover {
-    background-color: #3d6b81;
-    border-color: #3d6b81;
-    transform: scale(1.03);
-}
-
-.btn-follow.is-following {
-    background-color: transparent;
-    color: #50849D;
-    border-color: #50849D;
-}
-
-.btn-follow.is-following:hover {
-    background-color: rgba(176, 42, 55, 0.12);
-    color: #b02a37;
-    border-color: #b02a37;
-}
-
-.btn-follow:active {
-    transform: scale(0.97);
-}
-
-#section .btn-follow {
-    display: inline-flex;
-    flex-direction: row;
-    color: #ffffff;
-    background-color: #50849D;
-    border: 2px solid #50849D;
-    padding: 0.45rem 1rem;
-}
-
-#section .btn-follow.is-following {
-    color: #50849D;
-    background-color: transparent;
-    border-color: #50849D;
-}
-
-#section .btn-quitar {
-    color: #b02a37;
-}
-
-.profile-page .btn-follow,
-.profile-page .user-row-btn.btn-follow {
-    background-color: #50849D;
-    border: 2px solid #50849D;
-    color: #ffffff;
-    padding: 0.45rem 1rem;
-}
-
-.profile-page .btn-follow.is-following,
-.profile-page .user-row-btn.btn-follow.is-following {
-    background-color: transparent;
-    border-color: #50849D;
-    color: #50849D;
-}
-
-.profile-page .btn-follow.is-following:hover {
-    background-color: rgba(176, 42, 55, 0.12);
-    border-color: #b02a37;
-    color: #b02a37;
-}
-
-.profile-page .btn-quitar,
-#section .btn-quitar {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 8.5rem;
-    padding: 0.45rem 1rem;
-    border: 1px solid rgba(176, 42, 55, 0.5);
-    border-radius: 0.5rem;
-    background-color: transparent;
-    color: #b02a37;
-    font-weight: bold;
-    font-size: 1rem;
-    font-family: inherit;
-    cursor: pointer;
-    transition: background-color 0.25s ease, transform 0.15s ease;
-}
-
-.profile-page .btn-quitar:hover,
-#section .btn-quitar:hover {
-    background-color: rgba(176, 42, 55, 0.12);
-    transform: scale(1.03);
-}
-
-#section .btn-follow.btn-follow-sm,
-.btn-follow.btn-follow-sm {
-    min-width: 6.5rem;
-    padding: 0.3rem 0.7rem;
-    font-size: 0.85rem;
-    border-width: 1px;
-}
-
-.comment-follow {
-    margin-left: auto;
-}
-
-.user-link {
-    text-decoration: none;
-    color: #eef0f2;
-}
-
-.user-link:hover {
-    text-decoration: none;
-    opacity: 0.9;
-}
-
-.user-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 0.8rem;
-    padding: 0.6rem 0.9rem;
-    background-color: #eef0f2;
-    border-radius: 0.6rem;
-}
-
-.user-row-link {
-    display: flex;
-    align-items: center;
-    gap: 0.7rem;
-    min-width: 0;
-    text-decoration: none;
-    color: inherit;
-}
-
-.user-row-link:hover {
-    text-decoration: none;
-    opacity: 0.85;
-}
-
-.user-row-info {
-    min-width: 0;
-    text-align: left;
-}
-
-.user-row-name {
-    margin: 0;
-    font-weight: bold;
-    font-size: 1rem;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.user-row-username {
-    margin: 0;
-    font-size: 0.85rem;
-    color: #50849D;
-}
-
-.user-row-badge {
-    padding: 0.35rem 0.7rem;
-    border-radius: 0.5rem;
-    background-color: #ADACA9;
-    color: #1a1a1a;
-    font-weight: bold;
-    font-size: 0.9rem;
-}
-
-.profile-users,
-#listaSeguidores,
-#listaSeguidos {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-}
-
-.search-card {
-    align-items: center;
-    border: 1px solid rgba(80, 132, 157, 0.45);
-}
-
-.search-card .user-link {
-    justify-content: flex-start;
-    width: 100%;
-    text-decoration: none;
-    color: inherit;
-}
-
-.search-card-actions {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    flex-wrap: wrap;
-}
-
-.link-volver {
-    font-weight: bold;
-    font-size: 0.95rem;
-    color: #50849D;
-    text-decoration: none;
-}
-
-.link-volver:hover {
-    text-decoration: underline;
-    color: #3d6b81;
-}
-
-.link-ver-perfil {
-    text-decoration: none;
-}
-
-.link-ver-perfil:hover {
-    text-decoration: none;
-}
-
-.search-name {
-    margin: 0;
-    font-size: 1.2rem;
-}
-
-.search-username {
-    margin: 0;
-    font-size: 0.95rem;
-    font-weight: normal;
-    opacity: 0.8;
-}
-
-.author-row {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    flex-wrap: wrap;
-    width: 100%;
-}
-
-.author-row .btn-user {
-    width: auto;
-    max-width: 100%;
-    justify-content: flex-start;
-}
-
-.author-row .btn-user .p-index {
-    margin: 0;
-}
-
-.comment-author-link {
-    font-weight: bold;
-    color: #50849D;
-    text-decoration: none;
-}
-
-.comment-author-link:hover {
-    text-decoration: underline;
-}
-
-.User-comment .user-comment-header {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.profile-username {
-    margin: 0 0 0.6rem 0;
-    color: #50849D;
-    font-weight: bold;
-    font-size: 1.2rem;
-}
-
-.profile-bio {
-    max-width: 32rem;
-    margin: 0 auto 0.6rem auto;
-    line-height: 1.5;
-    font-size: 1.05rem;
-}
-
-.profile-email {
-    margin: 0;
-    font-size: 0.95rem;
-    opacity: 0.85;
-}
-
-.profile-email i {
-    margin-right: 0.35rem;
-    color: #50849D;
-}
-
-.profile-actions {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    flex-wrap: wrap;
-    margin-top: 1rem;
-}
-
-.profile-hint {
-    max-width: 34rem;
-    margin: 0 auto 1rem auto;
-    text-align: center;
-    font-size: 0.95rem;
-    opacity: 0.75;
-}
-
-.profile-empty {
-    margin: 0.4rem 0;
-    font-style: italic;
-    opacity: 0.8;
-    text-align: center;
-}
-
-#perfilPublicaciones .publication-card {
-    max-width: 48rem;
-    margin: 1rem auto;
-}
-
-#perfilPublicaciones .image-publication {
-    max-height: 22rem;
-}
-
-.profile-toast {
-    position: fixed;
-    left: 50%;
-    bottom: 1.5rem;
-    z-index: 2000;
-    transform: translateX(-50%) translateY(1rem);
-    max-width: 90vw;
-    padding: 0.8rem 1.2rem;
-    border-radius: 0.6rem;
-    background-color: #1a1a1a;
-    color: #ffffff;
-    font-weight: bold;
-    text-align: center;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.25s ease, transform 0.25s ease;
-}
-
-.profile-toast.is-visible {
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
-}
-
-.profile-toast.is-error {
-    background-color: #b02a37;
-}
-
-.light .profile-username,
-.light .profile-email i,
-.light .user-row-username,
-.light .link-volver,
-.light .comment-author-link {
-    color: #ADACA9;
-}
-
-.light .link-ver-perfil {
-    text-decoration: none;
-}
-
-.light .user-row {
-    background-color: #0b0f1a;
-    color: #ADACA9;
-}
-
-.light .user-row-name {
-    color: #EEF0F2;
-}
-
-.light .user-row-badge {
-    background-color: #2f3e56;
-    color: #EEF0F2;
-}
-
-.light .btn-follow,
-.light #section .btn-follow,
-.light .profile-page .btn-follow {
-    background-color: #50849D;
-    color: #ffffff;
-    border-color: #50849D;
-}
-
-.light .btn-follow.is-following,
-.light #section .btn-follow.is-following,
-.light .profile-page .btn-follow.is-following {
-    background-color: transparent;
-    color: #ADACA9;
-    border-color: #ADACA9;
-}
-
-.light .profile-page .btn-quitar,
-.light #section .btn-quitar {
-    color: #f2b8bd;
-    border-color: rgba(242, 184, 189, 0.5);
-}
-
-.light .profile-toast {
-    background-color: #EEF0F2;
-    color: #0b0f1a;
-}
 
 @media (max-width: 576px) {
     .user-row,
@@ -3399,5 +2386,628 @@ body.light .dropdown-item:hover {
     .user-row {
         flex-direction: column;
         align-items: stretch;
+    }
+}
+/* =======================================================
+   FIX: COMPORTAMIENTO DE TARJETAS Y TEXTOS LARGOS
+   ======================================================= */
+
+/* 1. Evitar que la sección principal se desborde horizontalmente */
+#section {
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden; /* Corta cualquier cosa que se salga a los costados */
+}
+
+/* 2. Ajustar el contenedor de la lista */
+#listaPublicaciones {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 3. Hacer que la tarjeta mantenga un tamaño decente y no se rompa */
+#section .publication-card {
+    align-items: stretch; /* En lugar de center, que ocupe todo el ancho */
+    min-height: 12rem; /* Altura mínima para que no se vea "chiquito" */
+    word-break: break-word; /* Fuerza a cortar palabras larguísimas */
+    overflow-wrap: break-word;
+    box-sizing: border-box;
+}
+
+/* 4. Controlar los textos (título y descripción) para que bajen de línea */
+#section .publication-card h2,
+#section .publication-card p.p-index {
+    width: 100%;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    white-space: pre-wrap; /* Respeta los saltos de línea (Enter) que puso el usuario */
+    text-align: center; /* O 'left' si preferís que esté alineado a la izquierda */
+    margin-bottom: 0.5rem;
+}
+
+/* 5. Evitar que las imágenes se salgan de la tarjeta */
+#section .publication-card img.image-publication {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+/* FIX: Centrar los botones de Like/Comentario/Dislike dentro de la tarjeta */
+#section .publication-card .btn-group-actions {
+    width: 100%;
+    justify-content: center;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+/* (Bloque search-card eliminado de acá — movido al final del archivo) */
+
+/* Arregla que el nombre de usuario en el Home se parta verticalmente */
+.publication-card .btn-user {
+    white-space: nowrap;
+}
+.publication-card .btn-user .user-name {
+    white-space: nowrap;
+    writing-mode: horizontal-tb;
+}
+/* =========================================================
+   RESTAURACIÓN DEL DISEÑO CLÁSICO DEL HOME (POSTS)
+   ========================================================= */
+
+/* 1. Forzar a la tarjeta a ser vertical y ocupar su espacio */
+#listaPublicaciones .publication-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70%;
+    margin: 1rem auto;
+    background-color: #50849D;
+    padding: 1.5rem;
+    border-radius: 0.25rem;
+}
+
+body.light #listaPublicaciones .publication-card {
+    background-color: #2f3e56;
+}
+
+/* 2. La cabecera (Avatar + Nombre y Puntitos) */
+#listaPublicaciones .publication-card .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 0.75rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #d1d5db;
+}
+
+/* 3. El enlace del usuario */
+#listaPublicaciones .publication-card .btn-user {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #eef0f2;
+    text-decoration: none;
+    background: transparent;
+    padding: 0;
+}
+
+/* 4. Evitar que el nombre se corte letra por letra */
+#listaPublicaciones .publication-card .user-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    white-space: nowrap; /* ESTO ES LO QUE ARREGLA EL TEXTO VERTICAL */
+}
+
+/* 5. Título y Texto centrados */
+#listaPublicaciones .publication-card h2 {
+    font-size: 2rem;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+#listaPublicaciones .publication-card .p-index {
+    font-size: 1.2rem;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 1rem;
+    word-break: break-word;
+}
+
+/* 6. La imagen de la publicación */
+#listaPublicaciones .publication-card .image-publication {
+    width: 100%;
+    max-height: 50rem;
+    object-fit: cover;
+    border-radius: 0.2rem;
+    margin-bottom: 1rem;
+}
+
+/* 7. Los botones (Like, Comentario, Dislike) centrados abajo */
+#listaPublicaciones .publication-card .btn-group-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+#listaPublicaciones .publication-card .btn-group-actions button,
+#listaPublicaciones .publication-card .btn-group-actions a {
+    background: transparent;
+    border: none;
+    padding: 0.6rem;
+    font-size: 1.8rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+EGLO DE LA TARJETA DEL HOME */
+#listaPublicaciones .publication-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70%;
+    margin: 1rem auto;
+    background-color: #50849D;
+    padding: 1.5rem;
+    border-radius: 0.25rem;
+}
+
+#listaPublicaciones .publication-card .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 0.75rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #d1d5db;
+}
+
+/* ESTO ES LO QUE EVITA QUE EL NOMBRE SE VUELVA VERTICAL */
+#listaPublicaciones .publication-card .btn-user {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    white-space: nowrap; /* Mantiene el texto en horizontal */
+}
+
+#listaPublicaciones .publication-card .user-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+#listaPublicaciones .publication-card h2 {
+    font-size: 2rem;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+#listaPublicaciones .publication-card .p-index {
+    font-size: 1.2rem;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 1rem;
+    word-break: break-word;
+}
+
+#listaPublicaciones .publication-card .image-publication {
+    width: 100%;
+    max-height: 50rem;
+    object-fit: cover;
+    border-radius: 0.2rem;
+    margin-bottom: 1rem;
+}
+
+#listaPublicaciones .publication-card .btn-group-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   FIX FINAL: HOME (index.html) — agregado al final del archivo
+   ══════════════════════════════════════════════════════════════ */
+
+/* 1. Ocultar de verdad los <article hidden> */
+.publication-card[hidden] {
+    display: none;
+}
+
+/* 2. Card del home: fondo visible + marco para la imagen */
+#listaPublicaciones .publication-card {
+    background-color: #50849D;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 70%;
+    margin: 1rem auto;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    gap: 0.5rem;
+}
+
+body.light #listaPublicaciones .publication-card {
+    background-color: #2f3e56;
+}
+
+/* 3. Imagen: separada del texto, sin tocar bordes */
+#listaPublicaciones .publication-card .image-publication {
+    display: block;
+    width: 100%;
+    max-height: 50rem;
+    object-fit: cover;
+    border-radius: 0.4rem;
+    margin: 0.5rem 0 0.75rem 0;
+}
+
+/* 4. Header: usuario a la izquierda, puntitos a la derecha */
+#listaPublicaciones .publication-card .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+#listaPublicaciones .publication-card .btn-user {
+    white-space: nowrap;
+    background: transparent;
+    color: #eef0f2;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0;
+    border: none;
+    text-decoration: none;
+}
+
+#listaPublicaciones .publication-card .user-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+/* 5. Textos centrados y blancos */
+#listaPublicaciones .publication-card h2,
+#listaPublicaciones .publication-card .p-index {
+    color: #ffffff;
+    text-align: center;
+    margin: 0.25rem 0;
+    word-break: break-word;
+    white-space: pre-wrap;
+}
+
+/* 6. Botones de acción centrados */
+#listaPublicaciones .publication-card .btn-group-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    width: 100%;
+    margin-top: 0.5rem;
+}
+
+/* 7. Dropdown: se ve solo cuando tiene .show, y flota por encima de todo */
+#listaPublicaciones .dropdown-menu {
+    position: absolute;
+    z-index: 2000;
+    min-width: 12rem;
+    background-color: #2f3e56;
+    border: 1px solid #444;
+    border-radius: 0.4rem;
+    padding: 0.3rem 0;
+    margin-top: 0.3rem;
+    box-shadow: 0 0.4rem 1rem rgba(0,0,0,0.4);
+}
+
+#listaPublicaciones .dropdown-menu:not(.show) {
+    display: none;
+}
+
+#listaPublicaciones .dropdown-menu.show {
+    display: block;
+}
+
+#listaPublicaciones .dropdown-item {
+    color: #ffffff;
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    background: transparent;
+    border: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+}
+
+#listaPublicaciones .dropdown-item:hover {
+    background-color: rgba(255,255,255,0.1);
+}
+/* ══════════════════════════════════════════════════════════════
+   AJUSTES FINALES: Header, botón, nombre y buscador.
+   Usamos selectores más específicos para ganar sin !important.
+   ══════════════════════════════════════════════════════════════ */
+
+/* 1. Header de la tarjeta: mismo color que la card, sin fondo oscuro */
+body #listaPublicaciones .publication-card .card-header {
+    background-color: #50849D;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    margin-bottom: 0.5rem;
+}
+
+body.light #listaPublicaciones .publication-card .card-header {
+    background-color: #2f3e56;
+}
+
+/* 2. Los 3 puntitos de "Ban user": color blanco y sin fondo oscuro */
+body #listaPublicaciones .publication-card .btn-more-options {
+    color: #ffffff;
+    background: transparent;
+    font-size: 1.4rem;
+}
+
+body #listaPublicaciones .publication-card .btn-more-options:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+}
+
+/* 3. Botón "Crear Publicación": mismo color de fondo que la card */
+body #buttonModal.btn-crear {
+    background-color: #50849D;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 0.5rem;
+    padding: 0.6rem 1.5rem;
+    font-weight: bold;
+    box-shadow: none;
+    transition: all 0.2s ease;
+}
+
+body.light #buttonModal.btn-crear {
+    background-color: #2f3e56;
+}
+
+body #buttonModal.btn-crear:hover {
+    background-color: #3d6b82;
+    transform: scale(1.05);
+}
+
+/* 4. Nombre de usuario: SIN subrayado y con fondo transparente */
+body #listaPublicaciones .publication-card .btn-user {
+    text-decoration: none;
+    background-color: transparent;
+    color: #ffffff;
+}
+
+body #listaPublicaciones .publication-card .btn-user:hover {
+    text-decoration: none;
+    opacity: 0.8;
+}
+
+body #listaPublicaciones .publication-card .btn-user .user-name {
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ffffff;
+    white-space: nowrap;
+}
+
+/* 5. Buscador centrado vertical y horizontalmente en el header */
+body #header .search-form {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: min(40rem, 70%);
+    margin: 0;
+}
+
+/* Opcional: ocultar el texto al lado del icono de perfil en el header (si querés) */
+body #header .btn-profile .text-profile {
+    display: none;
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   SEARCH CARD (busqueda.html) — Completo y Corregido
+   ══════════════════════════════════════════════════════════════════ */
+
+#searchResults .search-card {
+    background-color: #50849D;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1.2rem;
+    width: 100%;
+    box-sizing: border-box;
+    display: block;
+}
+
+body.light #searchResults .search-card {
+    background-color: #2f3e56;
+}
+
+#searchResults .search-card .search-card-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 1.5rem;
+}
+
+#searchResults .search-card .search-card-content .btn-user {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.2rem;
+    text-decoration: none;
+    background: transparent;
+    border: none;
+    padding: 0;
+    border-radius: 0;
+    text-align: left;
+    flex: 1; 
+    min-width: 0;
+}
+
+#searchResults .search-card .search-card-content .btn-user:hover {
+    opacity: 0.85;
+    transform: none;
+    background: transparent;
+}
+
+#searchResults .search-card .search-card-content .btn-user img {
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+#searchResults .search-card .search-user-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 0;
+}
+
+#searchResults .search-card .search-user-info .search-name {
+    margin: 0;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #ffffff;
+    line-height: 1.2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#searchResults .search-card .search-user-info .search-username {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: normal;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#searchResults .search-card .search-card-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-shrink: 0; 
+}
+
+#searchResults .search-card .btn-follow {
+    background-color: transparent;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    padding: 0.5rem 1.5rem;
+    border-radius: 2rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    width: auto;
+    display: inline-block;
+    line-height: normal;
+}
+
+#searchResults .search-card .btn-follow:hover {
+    background-color: #ffffff;
+    color: #50849D;
+    box-shadow: none;
+    transform: none;
+}
+
+#searchResults .search-card .btn-follow.is-following {
+    border-color: rgba(255, 255, 255, 0.6);
+    color: rgba(255, 255, 255, 0.8);
+}
+
+#searchResults .search-card .btn-follow.is-following:hover {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    color: #ffffff;
+}
+
+#searchResults .search-card .btn-more-options {
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 1.4rem;
+    padding: 0.5rem;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#searchResults .search-card .btn-more-options:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    transform: none;
+}
+
+body.light #searchResults .search-card .btn-more-options {
+    color: #ADACA9;
+}
+
+/* ÍCONOS DE FONTAWESOME (Cuando no hay foto de perfil) */
+#searchResults .search-card .user-avatar-icon {
+    font-size: 4.5rem;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4.5rem;
+    height: 4.5rem;
+    flex-shrink: 0;
+}
+
+#searchResults .search-card .user-avatar-img {
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+@media (max-width: 600px) {
+    #searchResults .search-card {
+        padding: 1.2rem;
+    }
+    
+    #searchResults .search-card .search-card-content {
+        flex-direction: column;
+        align-items: stretch; 
+        gap: 1rem;
+    }
+    
+    #searchResults .search-card .search-card-content .btn-user {
+        width: 100%;
+    }
+
+    #searchResults .search-card .search-card-actions {
+        width: 100%;
+        justify-content: space-between;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        padding-top: 1rem;
+        margin-top: 0.5rem;
+    }
+
+    #searchResults .search-card .btn-follow {
+        flex: 1;
+        text-align: center;
+        padding: 0.7rem 1.5rem;
     }
 }
