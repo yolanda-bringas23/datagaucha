@@ -2,6 +2,7 @@
    This code is licensed under the MIT License (see LICENSE file for details) */
 
 const BASE_URL = "http://localhost:5033/api/";
+const BACKEND_HOST = "http://localhost:5033/";
 
 function mostrarErrorPedido(titulo, mensaje, tipo = "error") {
     if (typeof show === "function") {
@@ -21,7 +22,10 @@ function pedido(ruta, metodo, body, callback) {
         }
     };
 
+<<<<<<< HEAD:Js/repositories/pedido.js
     // Si es FormData, dejamos que fetch establezca Content-Type.
+=======
+>>>>>>> 73236046b084d5b720af04ba82acbbca4022bf9f:Js/repositories/pedidoRepositories.js
     if (body instanceof FormData) {
         opciones.body = body;
     } else if (body) {
@@ -43,10 +47,15 @@ function pedido(ruta, metodo, body, callback) {
 
             try {
                 json = JSON.parse(texto);
+<<<<<<< HEAD:Js/repositories/pedido.js
             } catch (error) {
                 throw new Error(
                     "El servidor no devolvió un JSON válido. (Código " + res.status + ")"
                 );
+=======
+            } catch (e) {
+                throw new Error("El servidor no devolvió un JSON válido. (Código " + res.status + ")");
+>>>>>>> 73236046b084d5b720af04ba82acbbca4022bf9f:Js/repositories/pedidoRepositories.js
             }
 
             if (!res.ok || !json.success) {
