@@ -26,16 +26,23 @@ class User {
             .replaceAll('"', "&quot;");
     }
 
-    // CORREGIDO: La ruta para que el perfil funcione desde busqueda.html
-    getProfileHref() {
-        return `perfil.html?usuario=${encodeURIComponent(this.userName)}`;
-    }
-    
-    getAvatarPresentation(classes = "user-avatar") {
-        return `<img class="${classes}" src="${User.escape(this.avatar)}" alt="Profile picture of ${User.escape(this.fullName)}" width="44" height="44">`;
+    static getFullImageUrl(url) {
+        if (!url) return "";
+        return url.startsWith("http")
+            ? url
+            : `${BACKEND_HOST}${url.replace(/^\/+/, "")}`;
     }
 
-    getProfilePresentation() {
+    getProfileUrl() {
+        return `perfil.html?usuario=${encodeURIComponent(this.userName)}`;
+    }
+
+    getAvatarHtml(classes = "user-avatar") {
+        const url = User.getFullImageUrl(this.avatar);
+        return `<img class="${classes}" src="${User.escape(url)}" alt="Profile picture of ${User.escape(this.fullName)}" width="44" height="44">`;
+    }
+
+    getProfileHtml() {
         return `
             <h1>${User.escape(this.fullName)}</h1>
             <p class="profile-username">@${User.escape(this.userName)}</p>
@@ -44,11 +51,11 @@ class User {
         `;
     }
 
-    getFollowButtonPresentation(isFollowing, extraClass = "") {
+    getFollowButtonHtml(isFollowing, extraClass = "") {
         const classes = ["btn-follow", isFollowing ? "is-following" : "", extraClass]
             .filter(Boolean)
             .join(" ");
-        
+
         const text = isFollowing ? "Siguiendo" : "Seguir";
 
         return `<button
@@ -60,15 +67,16 @@ class User {
                 >${text}</button>`;
     }
 
-    // CORREGIDO: Ahora usa FontAwesome si no hay imagen, y la estructura correcta
-    getSearchCardPresentation(isFollowing) {
+    getSearchCardHtml(isFollowing) {
+        const avatarUrl = User.getFullImageUrl(this.avatar);
+
         const avatarHTML = (this.avatar && this.avatar !== "null" && this.avatar !== "")
-            ? `<img src="${User.escape(this.avatar)}" class="user-avatar-img" alt="Avatar">` 
+            ? `<img src="${User.escape(avatarUrl)}" class="user-avatar-img" alt="Avatar">`
             : `<i class="fa-solid fa-circle-user user-avatar-icon"></i>`;
 
-        const siguiendo = isFollowing ? "is-following" : "";
-        const textoBoton = isFollowing ? "Siguiendo" : "Seguir";
-        const profileUrl = this.getProfileHref();
+        const followingClass = isFollowing ? "is-following" : "";
+        const buttonText = isFollowing ? "Siguiendo" : "Seguir";
+        const profileUrl = this.getProfileUrl();
 
         return `
             <article class="search-card" data-user-id="${this.id}">
@@ -83,11 +91,11 @@ class User {
                     </a>
                     
                     <div class="search-card-actions">
-                        <button class="btn-follow ${siguiendo}" 
+                        <button class="btn-follow ${followingClass}" 
                                 type="button"
                                 data-action="toggle" 
                                 data-user-id="${this.id}">
-                            ${textoBoton}
+                            ${buttonText}
                         </button>
                         
                         <div class="dropdown post-options">
@@ -97,7 +105,7 @@ class User {
                                     aria-label="Más opciones">
                                 <i class="fa-solid fa-ellipsis-vertical"></i>
                             </button>
-                            <ul class="dropdown-menu dropdown-menu-end">
+                            <ul class="dropdown-menu">
                                 <li>
                                     <button class="dropdown-item" type="button" 
                                             data-action="ban" 
@@ -114,7 +122,7 @@ class User {
         `;
     }
 
-    getProfileRowPresentation(action) {
+    getProfileRowHtml(action) {
         const button = action
             ? `<button
                     type="button"
@@ -128,8 +136,8 @@ class User {
 
         return `
             <div class="user-row" data-user-id="${this.id}">
-                <a class="user-row-link" href="${this.getProfileHref()}">
-                    ${this.getAvatarPresentation("user-row-avatar")}
+                <a class="user-row-link" href="${this.getProfileUrl()}">
+                    ${this.getAvatarHtml("user-row-avatar")}
                     <div class="user-row-info">
                         <p class="user-row-name">${User.escape(this.fullName)}</p>
                         <p class="user-row-username">@${User.escape(this.userName)}</p>
@@ -140,26 +148,26 @@ class User {
         `;
     }
 
-    getAuthorPresentation(isFollowing, showFollowButton = true) {
+    getAuthorHtml(isFollowing, showFollowButton = true) {
         return `
             <div class="author-row">
-                <a class="btn-user user-link" href="${this.getProfileHref()}">
-                    ${this.getAvatarPresentation("user-avatar")}
+                <a class="btn-user user-link" href="${this.getProfileUrl()}">
+                    ${this.getAvatarHtml("user-avatar")}
                     <p class="p-index">${User.escape(this.fullName)}</p>
                 </a>
-                ${showFollowButton ? this.getFollowButtonPresentation(isFollowing) : ""}
+                ${showFollowButton ? this.getFollowButtonHtml(isFollowing) : ""}
             </div>
         `;
     }
 
-    getCommentPresentation(text, isFollowing, showButton = true) {
-        const button = showButton ? this.getFollowButtonPresentation(isFollowing, "btn-follow-sm") : "";
+    getCommentHtml(text, isFollowing, showButton = true) {
+        const button = showButton ? this.getFollowButtonHtml(isFollowing, "btn-follow-sm") : "";
 
         return `
             <div class="User-comment" data-user-id="${this.id}">
                 <div class="user-comment-header">
-                    ${this.getAvatarPresentation("user-avatar comment-avatar")}
-                    <a class="comment-username comment-author-link" href="${this.getProfileHref()}">${User.escape(this.fullName)}</a>
+                    ${this.getAvatarHtml("user-avatar comment-avatar")}
+                    <a class="comment-username comment-author-link" href="${this.getProfileUrl()}">${User.escape(this.fullName)}</a>
                     <span class="comment-follow">${button}</span>
                 </div>
                 <p class="comment-text">${User.escape(text)}</p>

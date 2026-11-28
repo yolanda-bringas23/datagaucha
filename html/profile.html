@@ -6,6 +6,7 @@
     <meta name="keywords" content="perfil, red social, seguidores, usuarios, comunidad, programación, instituto técnico, desarrollo de software">
     <meta name="description" content="Accede a tu perfil de usuario en DataGaucha. Controla tus publicaciones, revisa tu lista de seguidores y gestiona quiénes te siguen de forma rápida y sencilla.">
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/perfil.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
@@ -24,9 +25,9 @@
     <nav class="nav-profile">
         <ul>
                 <li><a href="../index.html"><i class="bi bi-house"></i> Home</a></li>
-                <li><a href="searching.html"><i class="bi bi-search"></i> Búsqueda</a></li>
-                <li><a href="terms-of-use.html"><i class="bi bi-file-text"></i> Condiciones de uso</a></li>
-                <li><a href="login.html"><i class="bi bi-box-arrow-left"></i> Cerrar Sesión</a></li>
+                <li><a href="busqueda.html"><i class="bi bi-search"></i> Búsqueda</a></li>
+                <li><a href="condiciones-de-uso.html?urlCallback=perfil.html"><i class="bi bi-file-text"></i> Condiciones de uso</a></li>
+                <li><a href="loguear.html"><i class="bi bi-box-arrow-left"></i> Cerrar Sesión</a></li>
                 <li><button id="darkMode">Darkmode</button></li>
         </ul>
     </nav>
@@ -151,15 +152,14 @@
     </div>
 
     <script src="../Js/darkMode.js"></script>
-    <script src="../Js/termsOfUsePresentation.js"></script>
+    <script src="../Js/condicionesDeUsoPresentation.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script src="../Js/repositories/pedido.js"></script>
     <script src="../Js/repositories/userRepositories.js"></script>
     <script src="../Js/repositories/postRepositories.js"></script>
     <script src="../Js/classes/user.js"></script>
     <script src="../Js/classes/post.js"></script>
     <script src="../Js/classes/toast.js"></script>
-    <script src="../Js/profilePresentation.js"></script>
+    <script src="../Js/perfilPresentation.js"></script>
 </body>
 </html>

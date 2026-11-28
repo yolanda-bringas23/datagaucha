@@ -12,15 +12,15 @@ class Ban {
         this.expiresAt = expiresAt ?? null;
     }
 
-    getBanPresentation() {
-        const nombre = Ban.escape(this.userName);
-        const motivo = Ban.escape(this.reason);
+    getBanHtml() {
+        const name = Ban.escape(this.userName);
+        const reason = Ban.escape(this.reason);
         return `
             <article class="publication-card" data-ban-id="${this.id}">
                 <header class="card-header">
-                    <span class="user-name">@${nombre}</span>
+                    <span class="user-name">@${name}</span>
                 </header>
-                <p class="p-index">Motivo: ${motivo}</p>
+                <p class="p-index">Motivo: ${reason}</p>
                 <p class="p-index">Desde: ${this.bannedAt ?? "—"}</p>
                 <p class="p-index">Hasta: ${this.expiresAt ?? "permanente"}</p>
             </article>

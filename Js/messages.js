@@ -8,3 +8,5 @@ function show(title, body, icon){
         icon : icon,
     })
 }
+
+const showMessage = show;

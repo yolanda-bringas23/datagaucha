@@ -17,7 +17,7 @@
 </head>
 <body>
     <div class="grid">
-        <header id="header" class="">
+        <header id="header">
             <form class="search-form" action="">
                 <div class="input-group">
                     <button class="btn-submit" type="submit">
@@ -30,16 +30,17 @@
                 </div>
             </form>
             <a href="html/profile.html" class="btn-profile" type="button">
-                    <i id="btnUser-header" class="fa-solid fa-circle-user user-btn"></i>
-                    <span class="text-profile"></span>
+                <i id="btnUser-header" class="fa-solid fa-circle-user user-btn"></i>
+                <span class="text-profile"></span>
             </a>
         </header>
+
         <nav id="nav" class="nav-index">
             <button class="btn-menu" type="button" id="btn-menu">
                 <i class="fa-solid fa-bars"></i>
             </button>
             <ul>
-                <li><a href="html/searching.html"><i class="bi bi-search"></i> Búsqueda</a></li>
+                <li><a href="html/search.html"><i class="bi bi-search"></i> Búsqueda</a></li>
                 <li><a href="html/profile.html"><i class="bi bi-person-circle"></i> Perfil</a></li>
                 <li><a href="html/terms-of-use.html"><i class="bi bi-file-text"></i> Condiciones de Uso</a></li>
                 <li><a href="html/login.html"><i class="bi bi-box-arrow-left"></i> Cerrar Sesión</a></li>
@@ -54,109 +55,27 @@
                 Crear Publicación
             </button>
 
-            <!-- POSTEO 1 -->
-            <article class="publication-card">
-
-                <!-- Cabecera de la publicación -->
-                <header class="card-header">
-                    <div class="autor-publicacion">
-                        <button class="btn-user" type="button">
-                            <i class="fa-solid fa-circle-user user-btn"></i>
-                            <span class="user-name">Nombre de usuario</span>
-                        </button>
-                    </div>
-
-                    <!-- Tres puntitos con dropdown -->
-                    <div class="dropdown post-options">
-                        <button class="btn-more-options" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Más opciones">
-                            <i class="fa-solid fa-ellipsis-vertical"></i>
-                        </button>
-                        <ul class="dropdown-menu dropdown-menu-end">
-                            <li>
-                                <button class="dropdown-item" type="button" data-action="ban" data-user-id="1" data-user-name="Nombre de usuario">Ban user</button>
-                            </li>
-                        </ul>
-                    </div>
-                </header>
-
-                <h2>Mi día</h2>
-
-                <p class="p-index">Hoy tuve un buen día con mi familia</p>
-
-                <img class="image-publication" src="img/image.jpg" alt="Publicación de usuario: foto del día en familia">
-
-                <div class="btn-group-actions">
-                    <button type="button"><i class="fa-solid fa-heart btn-like"></i></button>
-                    </a>
-                    <button type="button"><i class="fa-solid fa-face-sad-tear"></i></button>
-                </div>
-            </article>
-
-            <!-- POSTEO 2 -->
-            <article class="publication-card">
-
-                <!-- Cabecera de la publicación -->
-                <header class="card-header">
-                    <div class="autor-publicacion">
-                        <button class="btn-user" type="button">
-                            <i class="fa-solid fa-circle-user user-btn"></i>
-                            <span class="user-name">Nombre de usuario</span>
-                        </button>
-                    </div>
-
-                    <!-- Tres puntitos con dropdown -->
-                    <div class="dropdown post-options">
-                        <button class="btn-more-options" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Más opciones">
-                            <i class="fa-solid fa-ellipsis-vertical"></i>
-                        </button>
-                        <ul class="dropdown-menu dropdown-menu-end">
-                            <li>
-                                <button class="dropdown-item" type="button" data-action="ban" data-user-id="2" data-user-name="Nombre de usuario">Ban user</button>
-                            </li>
-                        </ul>
-                    </div>
-                </header>
-
-                <h2>Mi día</h2>
-
-                <p class="p-index">Ayer me encontre con Messi disfrutando de unos mates en la entrada de su casa,
-                    obviamente le pedi una foto y mi mala suerte que no tenia un fibron para pedirle su firma y
-                    tatuarmela, aun asi me quedo con eso ya
-                </p>
-
-                <div class="btn-group-actions">
-                    <button type="button"><i class="fa-solid fa-heart btn-like"></i>4000</button>
-                    <button type="button"><i class="fa-solid fa-face-smile btn-share"></i></button>
-                </div>
-            </article>
+            <div id="listaPublicaciones"></div>
         </section>
     </div>
-
 
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content" id="modal">
-
-
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Crear Publicación</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-
-
                 <div class="modal-body">
                     <form id="formCrearPost" action="" method="post" enctype="multipart/form-data">
                         <h2>Título de la Publicación</h2>
                         <input id="contentModal" type="text" name="title" placeholder="Escribe un título atractivo..." required class="form-control mb-3">
 
-
                         <h2>Contenido</h2>
                         <textarea id="contentModal" name="content" placeholder="Escribe el contenido de la publicación aquí..." required class="form-control mb-3"></textarea>
 
-
                         <h2>Imagen de la publicación (opcional)</h2>
                         <input id="contentModal" type="file" name="image" class="form-control mb-3">
-
 
                         <div class="modal-footer">
                             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
@@ -164,32 +83,26 @@
                         </div>
                     </form>
                 </div>
-
-
             </div>
         </div>
     </div>
 
+    <script src="Js/repositories/requestRepository.js"></script>   
+    <script src="Js/messages.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-
-    <script src="Js/repositories/pedidoRepositories.js"></script>
-    <script src="Js/messages.js"></script>
-    <script src="Js/paginado.js"></script>
     
-    <script src="Js/classes/user.js"></script>
-    <script src="Js/classes/post.js"></script>
+    <script src="Js/classes/pagination.js"></script>                  
+    <script src="Js/classes/user.js"></script>                       
+    <script src="Js/classes/post.js"></script>                       
     <script src="Js/classes/ban.js"></script>
-    
-    <script src="Js/repositories/postRepositories.js"></script>
-    <script src="Js/repositories/reactionRepositories.js"></script>
-    <script src="Js/repositories/userRepositories.js"></script>
-    <script src="Js/repositories/banRepositories.js"></script>
-    
+
+    <script src="Js/repositories/postRepository.js"></script>        
+    <script src="Js/repositories/reactionRepository.js"></script>
+    <script src="Js/repositories/userRepository.js"></script>        
+    <script src="Js/repositories/banRepository.js"></script>
+
     <script src="Js/indexPresentation.js"></script>
     <script src="Js/darkMode.js"></script>
-    <script src="Js/termsOfUsePresentation.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-
 </body>
 </html>

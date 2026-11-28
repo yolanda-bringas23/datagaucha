@@ -16,7 +16,7 @@ class Post {
 
     static escape(t) { return User.escape(t); }
 
-    static renderImage(url) {
+    static renderImageHtml(url) {
         if (!url) return "";
 
         const fullUrl = url.startsWith("http")
@@ -26,7 +26,7 @@ class Post {
         return `<img class="image-publication" src="${Post.escape(fullUrl)}" alt="Post image" loading="lazy" decoding="async">`;
     }
 
-    getPostPresentation() {
+    getPostHtml() {
         const likeActive = this.myReaction === "Like" ? "reaction-active" : "";
         const dislikeActive = this.myReaction === "Dislike" ? "reaction-active" : "";
         const userName = Post.escape(this.userName);
@@ -56,7 +56,7 @@ class Post {
                 
                 <h2>${Post.escape(this.title)}</h2>
                 <p class="p-index">${Post.escape(this.body)}</p>
-                ${Post.renderImage(this.image)}
+                ${Post.renderImageHtml(this.image)}
                 
                 <div class="btn-group-actions">
                     <button type="button" class="${likeActive}"
